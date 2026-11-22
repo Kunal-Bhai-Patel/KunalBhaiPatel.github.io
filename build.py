@@ -1785,10 +1785,505 @@ def generate_rio_sio_detail(site, trans, project, lang):
         depth=3
     )
 
+
+def generate_ufo_detail(site, trans, project, lang):
+    """Generates the dedicated Universal File Organizer project page with release details, walkthrough, and code inspection."""
+    pfx = get_base_prefix(3)
+    p_content = project["content"][lang]
+    p_tmpl = trans["project_template"]
+    p_title = project["title"][lang]
+    p_oneliner = project["one_liner"][lang]
+    p_status = project["status"][lang]
+    
+    # Specs rows
+    specs_rows = []
+    for spec in p_content["specs"]:
+        specs_rows.append(f"""
+        <tr>
+          <td class="spec-key">{spec['key']}</td>
+          <td class="spec-val">{spec['value']}</td>
+        </tr>
+        """)
+    specs_table_html = "".join(specs_rows)
+
+    # Localized text blocks
+    if lang == "de":
+        kicker_text = "PORTABLES WINDOWS-TOOL · VERÖFFENTLICHT V1.0.0"
+        hero_title = "Universal File Organizer"
+        hero_lead = "Ein portables Windows-Dienstprogramm zur automatischen Sortierung überfüllter Downloads-Ordner. Ordner auswählen, geplante Verschiebungen in der Konsole prüfen und mit <strong>Y</strong> bestätigen. Die Anwendung läuft lokal auf dem PC und erfordert keine Python-Installation."
+        how_it_works_title = "Funktionsweise"
+        how_it_works_p = "Das Programm scannt die erste Ebene des ausgewählten Ordners und sortiert Dateien anhand ihrer Dateiendung in Kategorien wie Photos, Documents und PDFs. Es zeigt die geplanten Zielpfade sowie die Anzahl der Dateien und Ordner an. Auch gewöhnliche Verzeichnisse können als Ganzes verschoben werden. Beginnen Sie mit einem Testordner, bevor Sie das Tool auf Ihren Downloads-Ordner anwenden."
+        download_btn_text = "⬇ Download für Windows (64-Bit)"
+        view_source_text = "🐙 Quellcode auf GitHub ansehen"
+        release_panel_title = "Windows-Release & Dateiverifikation"
+        release_note = "<strong>Hinweis zu Windows SmartScreen:</strong> Da diese portable EXE direkt aus Python via PyInstaller kompiliert wurde und für ein unabhängiges Entwicklerprojekt noch kein kommerzielles Signaturzertifikat hinterlegt ist (Authenticode NotSigned), zeigt Windows beim ersten Start möglicherweise einen Sicherheitshinweis an. Sie können die SHA-256-Prüfsumme mit der offiziellen Datei <code>SHA256SUMS.txt</code> abgleichen, den vollständigen Quellcode auf GitHub einsehen, die Datei lokal mit Ihrem Virenscanner prüfen und 'Trotzdem ausführen' wählen."
+        walkthrough_title = "Schritt-für-Schritt-Ablauf & Originale Windows-Aufnahmen"
+        step1_title = "Download & Ablageort"
+        step1_desc = "Laden Sie die <code>UniversalFileOrganizer.exe</code> (v1.0.0) herunter. Wenn der Browser die Datei im Downloads-Ordner speichert, verschieben Sie die EXE auf den Desktop oder in ein separates Tool-Verzeichnis außerhalb des zu organisierenden Zielordners."
+        step2_title = "Ordner auswählen im nativen Dialog"
+        step2_desc = "Starten Sie die EXE per Doppelklick. Im Dialogfeld <strong>Choose a folder to organize</strong> wählen Sie den gewünschten Ordner (z. B. <code>C:\\\\SampleFolder</code>) aus und klicken auf die Schaltfläche <strong>Select Folder</strong>."
+        step3_title = "Konsolenvorschau & Prüfbericht"
+        step3_desc = "Das Terminalfenster listet den gewählten Pfad, die Gesamtanzahl der Dateien und Ordner, die Zielkategorien, geplante Duplikatsanpassungen sowie übersprungene Dateien auf. Unvollständige Downloads (wie <code>.part</code>) werden sicher übersprungen."
+        step4_title = "Bestätigung mit 'Y' oder Abbruch mit 'N'"
+        step4_desc = "An der Eingabeaufforderung <code>Do you want to organize this folder? [Y] Yes / [N] No:</code> tippen Sie <strong>Y</strong> und drücken <strong>Enter</strong>, um die Dateien zu verschieben. Tippen Sie <strong>N</strong> für einen sofortigen Abbruch ohne jegliche Dateiänderungen."
+        step5_title = "Ergebnisbericht & File Explorer"
+        step5_desc = "Nach Ausführung meldet das Tool jede einzelne Verschiebung und eventuelle Betriebssystemfehler, gefolgt von <code>Press Enter to close this window...</code>. Im Windows Explorer sehen Sie die sauber strukturierten Kategorieordner."
+        cat_title = "Acht Zielkategorien & Sortierregeln"
+        rules_title = "Sicherheitsarchitektur & Dateiregeln"
+        code_title = "Python-Quellcode einsehen"
+        code_sub = "Kernfunktionen: Nicht-rekursiver Scan, Dateierkennung und interaktive Bestätigung (file_organizer.py)"
+        build_title = "Aus dem Quellcode ausführen & Selbst kompilieren"
+        enlarge_text = "🔍 Klicken zum Vergrößern"
+    else:
+        kicker_text = "PORTABLE WINDOWS UTILITY · RELEASED V1.0.0"
+        hero_title = "Universal File Organizer"
+        hero_lead = "A portable Windows utility I built to sort a cluttered Downloads folder. Pick a folder, review the proposed moves, and type <strong>Y</strong> to apply them. The app runs on your computer and requires no Python installation."
+        how_it_works_title = "How It Works"
+        how_it_works_p = "The organizer scans the first level of the selected folder and sorts files by extension into categories such as Photos, Documents and PDFs. It shows proposed destinations and the number of files and folders it plans to move. Ordinary folders can also be moved as whole folders. Start with a sample folder, then try it on Downloads."
+        download_btn_text = "⬇ Download for Windows (64-bit)"
+        view_source_text = "🐙 View Source on GitHub"
+        release_panel_title = "Windows Release & File Verification"
+        release_note = "<strong>Note on Windows SmartScreen:</strong> Because this portable executable was packaged directly from Python using PyInstaller and is unsigned (Authenticode NotSigned), Windows Defender or SmartScreen may display an unrecognized publisher prompt on first launch. You can verify the published SHA-256 hash against <code>SHA256SUMS.txt</code>, inspect the entire Python source code on GitHub, scan the executable with your local antivirus software, and select <strong>More info → Run anyway</strong> if you trust the file."
+        walkthrough_title = "Step-by-Step Visitor Walkthrough & Real Windows Captures"
+        step1_title = "Download & Executable Placement"
+        step1_desc = "Click <strong>Download for Windows (64-bit)</strong> to download <code>UniversalFileOrganizer.exe</code> from GitHub Releases. If your browser saves it to Downloads, move the executable to your Desktop or a dedicated tools folder outside the folder you intend to organize."
+        step2_title = "Choose Folder in Native Dialog"
+        step2_desc = "Double-click <code>UniversalFileOrganizer.exe</code> in File Explorer. In the native <strong>Choose a folder to organize</strong> dialog, select your sample folder and click <strong>Select Folder</strong> (the exact button label on this Windows build)."
+        step3_title = "Review the Console Preview"
+        step3_desc = "The console displays the selected folder path, file and folder counts, per-category breakdown, planned source and destination paths, duplicate adjustments, and skipped items. Temporary incomplete downloads (such as <code>.part</code>) are safely skipped."
+        step4_title = "Confirm with 'Y' or Cancel with 'N'"
+        step4_desc = "At the prompt <code>Do you want to organize this folder? [Y] Yes / [N] No:</code>, type capital <strong>Y</strong> and press <strong>Enter</strong> to move the listed items. Type <strong>N</strong> and press <strong>Enter</strong> to cancel immediately with zero file modifications."
+        step5_title = "Review Results in File Explorer"
+        step5_desc = "The console prints each individual move and any filesystem errors, followed by <code>Press Enter to close this window...</code>. Open the sample folder in File Explorer to verify the organized category directories."
+        cat_title = "Eight Target Categories & Extension Rules"
+        rules_title = "Safety Architecture & Integrity Rules"
+        code_title = "Inspect the Python Code"
+        code_sub = "Core implementation: Non-recursive scan, extension matching, and interactive confirmation (file_organizer.py)"
+        build_title = "Running from Source & Compiling"
+        enlarge_text = "🔍 Click to enlarge"
+
+    content = f"""
+    <!-- Back Navigation -->
+    <div class="container" style="padding-top: 1.5rem; padding-bottom: 0.5rem;">
+      <a href="{pfx}{lang}/projects/" class="back-link">{p_tmpl['back_to_projects']}</a>
+    </div>
+
+    <!-- Project Header Hero -->
+    <header class="page-header" style="padding-top: 1rem; padding-bottom: 2rem;">
+      <div class="container">
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
+          <span class="hero-pill" style="margin-bottom:0;">{project['category_label'][lang]}</span>
+          <span class="project-status-badge">{p_status}</span>
+        </div>
+        <span class="page-badge" style="margin-bottom: 0.5rem;">{kicker_text}</span>
+        <h1 class="page-title" style="margin-bottom: 1rem;">{hero_title}</h1>
+        <p class="page-lead" style="max-width: 820px; margin-bottom: 1.5rem;">{hero_lead}</p>
+        
+        <!-- Primary Action Buttons -->
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; margin-bottom: 2rem;">
+          <a href="https://github.com/Kunal-Bhai-Patel/Universal-File-Organizer/releases/download/v1.0.0/UniversalFileOrganizer.exe" 
+             class="btn btn-primary" style="font-weight: 600; padding: 0.75rem 1.5rem;">
+            {download_btn_text}
+          </a>
+          <a href="https://github.com/Kunal-Bhai-Patel/Universal-File-Organizer" 
+             target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="padding: 0.75rem 1.25rem;">
+            {view_source_text} ↗
+          </a>
+          <a href="https://github.com/Kunal-Bhai-Patel/Universal-File-Organizer/releases/tag/v1.0.0" 
+             target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+            Release Notes (v1.0.0) ↗
+          </a>
+        </div>
+
+        <!-- Hero Graphic -->
+        <figure class="ufo-screenshot-frame" style="max-width: 100%; margin-top: 1rem;">
+          <a href="{pfx}media/projects/universal-file-organizer/ufo_hero.png" target="_blank" rel="noopener noreferrer" title="{enlarge_text}">
+            <img src="{pfx}media/projects/universal-file-organizer/ufo_hero.png" alt="Universal File Organizer Cover Overview" loading="eager" width="1200" height="675" />
+          </a>
+          <div class="ufo-screenshot-caption">
+            <span>Universal File Organizer v1.0.0 · Portable Windows Utility</span>
+            <span style="font-family: var(--font-mono); font-size: 0.75rem;">{enlarge_text}</span>
+          </div>
+        </figure>
+      </div>
+    </header>
+
+    <!-- Main Content Layout -->
+    <section class="section" style="padding-top: 1rem;">
+      <div class="container">
+        <div class="detail-layout">
+          <!-- Main Narrative Column -->
+          <div class="detail-main">
+            
+            <!-- Compact Release Details Panel -->
+            <div class="ufo-release-card">
+              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.5rem;">
+                📦 {release_panel_title}
+              </h3>
+              <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+                Standalone single-file console executable compiled with PyInstaller from verified standard-library Python source code.
+              </p>
+
+              <div class="ufo-release-grid">
+                <div class="ufo-release-item">
+                  <span class="ufo-release-label">Release Version</span>
+                  <span class="ufo-release-value">v1.0.0 (October 2026)</span>
+                </div>
+                <div class="ufo-release-item">
+                  <span class="ufo-release-label">Target Platform</span>
+                  <span class="ufo-release-value">Windows 10 / 11 (64-bit)</span>
+                </div>
+                <div class="ufo-release-item">
+                  <span class="ufo-release-label">Binary Size</span>
+                  <span class="ufo-release-value">11,097,084 bytes (~10.6 MB)</span>
+                </div>
+                <div class="ufo-release-item">
+                  <span class="ufo-release-label">Signing Status</span>
+                  <span class="ufo-release-value" style="color: var(--accent-steel);">NotSigned (Developer build)</span>
+                </div>
+              </div>
+
+              <div style="background: rgba(0,0,0,0.2); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 0.85rem 1rem; margin-top: 0.75rem; font-family: var(--font-mono); font-size: 0.82rem;">
+                <span style="color: var(--text-muted); display: block; margin-bottom: 0.25rem;">SHA-256 Checksum:</span>
+                <span style="color: #6ee7b7; word-break: break-all; font-weight: 600;">888a3c5b639558bcf668f16c2a5a61658962fd0208131dc5ac44e1ca76cea2ad</span>
+              </div>
+
+              <div style="margin-top: 1rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                <a href="https://github.com/Kunal-Bhai-Patel/Universal-File-Organizer/releases/download/v1.0.0/SHA256SUMS.txt" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                  📋 SHA256SUMS.txt ↗
+                </a>
+                <a href="https://github.com/Kunal-Bhai-Patel/Universal-File-Organizer/releases/tag/v1.0.0" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                  🏷️ GitHub Release v1.0.0 ↗
+                </a>
+              </div>
+
+              <p style="font-size: 0.84rem; color: var(--text-secondary); line-height: 1.6; margin-top: 1.25rem; border-top: 1px solid var(--border-subtle); padding-top: 0.85rem;">
+                {release_note}
+              </p>
+            </div>
+
+            <!-- 01. How It Works -->
+            <div style="margin-bottom: 3rem;">
+              <h2 class="detail-section-title">
+                <span style="color:var(--accent-steel);">01.</span> {how_it_works_title}
+              </h2>
+              <p style="font-size: 1.05rem; line-height: 1.75; color: var(--text-secondary); margin-bottom: 1.25rem;">
+                {how_it_works_p}
+              </p>
+            </div>
+
+            <!-- 02. Visitor Walkthrough & Real Captures -->
+            <div style="margin-bottom: 3rem;">
+              <h2 class="detail-section-title">
+                <span style="color:var(--accent-steel);">02.</span> {walkthrough_title}
+              </h2>
+
+              <!-- Step 1 Card -->
+              <div class="ufo-step-card">
+                <div class="ufo-step-header">
+                  <span class="ufo-step-badge">STEP 1</span>
+                  <h3 class="ufo-step-title">{step1_title}</h3>
+                </div>
+                <p style="color: var(--text-secondary); line-height: 1.65;">{step1_desc}</p>
+              </div>
+
+              <!-- Step 2 Card -->
+              <div class="ufo-step-card">
+                <div class="ufo-step-header">
+                  <span class="ufo-step-badge">STEP 2</span>
+                  <h3 class="ufo-step-title">{step2_title}</h3>
+                </div>
+                <p style="color: var(--text-secondary); line-height: 1.65;">{step2_desc}</p>
+                <figure class="ufo-screenshot-frame">
+                  <a href="{pfx}media/projects/universal-file-organizer/ufo_folder_picker.png" target="_blank" rel="noopener noreferrer" title="{enlarge_text}">
+                    <img src="{pfx}media/projects/universal-file-organizer/ufo_folder_picker.png" alt="Native Windows Folder Picker Dialog showing Select Folder button" loading="lazy" width="880" height="500" />
+                  </a>
+                  <div class="ufo-screenshot-caption">
+                    <span>Windows 11 Folder Picker · Dialog title "Choose a folder to organize" with active "Select Folder" button</span>
+                    <span style="font-family: var(--font-mono); font-size: 0.75rem;">{enlarge_text}</span>
+                  </div>
+                </figure>
+              </div>
+
+              <!-- Step 3 Card -->
+              <div class="ufo-step-card">
+                <div class="ufo-step-header">
+                  <span class="ufo-step-badge">STEP 3</span>
+                  <h3 class="ufo-step-title">{step3_title}</h3>
+                </div>
+                <p style="color: var(--text-secondary); line-height: 1.65;">{step3_desc}</p>
+                <figure class="ufo-screenshot-frame">
+                  <a href="{pfx}media/projects/universal-file-organizer/ufo_console_preview.png" target="_blank" rel="noopener noreferrer" title="{enlarge_text}">
+                    <img src="{pfx}media/projects/universal-file-organizer/ufo_console_preview.png" alt="Console preview showing counts, destinations, and confirmation prompt" loading="lazy" width="920" height="660" />
+                  </a>
+                  <div class="ufo-screenshot-caption">
+                    <span>Console Preview · Real terminal output with counts (5 files, 1 folder), 8 categories, and [Y]/[N] prompt</span>
+                    <span style="font-family: var(--font-mono); font-size: 0.75rem;">{enlarge_text}</span>
+                  </div>
+                </figure>
+              </div>
+
+              <!-- Step 4 Card -->
+              <div class="ufo-step-card">
+                <div class="ufo-step-header">
+                  <span class="ufo-step-badge">STEP 4</span>
+                  <h3 class="ufo-step-title">{step4_title}</h3>
+                </div>
+                <p style="color: var(--text-secondary); line-height: 1.65;">{step4_desc}</p>
+              </div>
+
+              <!-- Step 5 Card -->
+              <div class="ufo-step-card">
+                <div class="ufo-step-header">
+                  <span class="ufo-step-badge">STEP 5</span>
+                  <h3 class="ufo-step-title">{step5_title}</h3>
+                </div>
+                <p style="color: var(--text-secondary); line-height: 1.65;">{step5_desc}</p>
+                <figure class="ufo-screenshot-frame">
+                  <a href="{pfx}media/projects/universal-file-organizer/ufo_file_explorer.png" target="_blank" rel="noopener noreferrer" title="{enlarge_text}">
+                    <img src="{pfx}media/projects/universal-file-organizer/ufo_file_explorer.png" alt="Resulting organized category directories in Windows File Explorer" loading="lazy" width="880" height="500" />
+                  </a>
+                  <div class="ufo-screenshot-caption">
+                    <span>File Explorer Result · Categorized subfolders created upon confirmation; unfinished.part preserved at root</span>
+                    <span style="font-family: var(--font-mono); font-size: 0.75rem;">{enlarge_text}</span>
+                  </div>
+                </figure>
+              </div>
+            </div>
+
+            <!-- 03. Categories & Rules -->
+            <div style="margin-bottom: 3rem;">
+              <h2 class="detail-section-title">
+                <span style="color:var(--accent-steel);">03.</span> {cat_title}
+              </h2>
+              <table class="specs-table" style="margin-bottom: 1.5rem;">
+                <thead>
+                  <tr style="border-bottom: 2px solid var(--border-medium); text-align: left;">
+                    <th style="padding: 0.75rem; color: var(--text-primary); font-size: 0.9rem;">Category</th>
+                    <th style="padding: 0.75rem; color: var(--text-primary); font-size: 0.9rem;">Recognized Extensions</th>
+                    <th style="padding: 0.75rem; color: var(--text-primary); font-size: 0.9rem;">Behavior</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="spec-key">📁 Photos</td>
+                    <td class="spec-val">.jpg, .jpeg, .png, .gif, .bmp, .webp, .heic, .tiff, .svg</td>
+                    <td class="spec-val">Raster & vector graphics</td>
+                  </tr>
+                  <tr>
+                    <td class="spec-key">📁 Videos</td>
+                    <td class="spec-val">.mp4, .mkv, .avi, .mov, .wmv, .flv, .webm, .m4v</td>
+                    <td class="spec-val">Video formats</td>
+                  </tr>
+                  <tr>
+                    <td class="spec-key">📁 Audios</td>
+                    <td class="spec-val">.mp3, .wav, .flac, .aac, .ogg, .m4a, .wma, .opus</td>
+                    <td class="spec-val">Audio tracks</td>
+                  </tr>
+                  <tr>
+                    <td class="spec-key">📁 Documents</td>
+                    <td class="spec-val">.txt, .doc, .docx, .rtf, .odt, .ods, .odp, .odg, .odf, .odb, .csv, .xls, .xlsx, .ppt, .pptx</td>
+                    <td class="spec-val">Office & LibreOffice OpenDocument</td>
+                  </tr>
+                  <tr>
+                    <td class="spec-key">📁 PDFs</td>
+                    <td class="spec-val">.pdf</td>
+                    <td class="spec-val">PDF documents</td>
+                  </tr>
+                  <tr>
+                    <td class="spec-key">📁 Zips</td>
+                    <td class="spec-val">.zip, .rar, .7z, .tar, .gz, .bz2, .xz, .tgz</td>
+                    <td class="spec-val">Compressed archives (moved intact)</td>
+                  </tr>
+                  <tr>
+                    <td class="spec-key">📁 Folders</td>
+                    <td class="spec-val">Existing ordinary subdirectories</td>
+                    <td class="spec-val">Moved intact with all contents</td>
+                  </tr>
+                  <tr>
+                    <td class="spec-key">📁 UnCategorised</td>
+                    <td class="spec-val">Unknown extensions & extensionless files</td>
+                    <td class="spec-val">Safely isolated by name only</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <h4 style="font-size: 1.1rem; color: var(--text-primary); margin-top: 1.5rem; margin-bottom: 0.75rem;">
+                🛡️ {rules_title}
+              </h4>
+              <ul class="contribution-list">
+                <li><strong>Non-Recursive Scan:</strong> Scans solely the top level of the selected folder (<code>Path.iterdir()</code>). It never enters nested folders or unzips archives.</li>
+                <li><strong>Path & Extension Matching:</strong> Files are never executed, opened, or parsed for binary data. Sorting relies solely on <code>path.suffix.casefold()</code>.</li>
+                <li><strong>Automatic Exclusions:</strong> Symbolic links, Windows junctions, protected category directories, and incomplete downloads (<code>.crdownload</code>, <code>.part</code>, <code>.tmp</code>) are automatically skipped.</li>
+                <li><strong>Self-Skip Logic:</strong> In Python source mode, the running script is skipped automatically. The compiled EXE is not covered by this check and belongs outside the target folder.</li>
+                <li><strong>Duplicate Protection:</strong> If a destination file already exists, it is renamed with a numbered suffix (e.g. <code>photo (1).jpg</code>) and checked again immediately before moving.</li>
+                <li><strong>Atomic Confirmation vs. Individual Moves:</strong> The preview creates zero folders. Once confirmed, moves happen individually using <code>shutil.move()</code>; errors on a single locked item do not rewind earlier successful moves.</li>
+                <li><strong>Ordinary Directory Prerequisite:</strong> Destination logic requires ordinary folders. The utility should not be used on target paths containing junction-redirected category folders.</li>
+              </ul>
+            </div>
+
+            <!-- 04. Inspect the Python Code -->
+            <div style="margin-bottom: 3rem;">
+              <h2 class="detail-section-title">
+                <span style="color:var(--accent-steel);">04.</span> {code_title}
+              </h2>
+              <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+                {code_sub}
+              </p>
+
+              <pre class="ufo-code-container"><code><span style="color:#7ee787;">def</span> <span style="color:#d2a8ff;">scan_folder</span>(target: Path) -&gt; ScanResult:
+    <span style="color:#8b949e;"># Scan only immediate children and create a preview plan</span>
+    plans, skipped, unknown_files = [], [], []
+    script_path = Path(__file__).resolve()
+
+    <span style="color:#ff7b72;">for</span> item <span style="color:#ff7b72;">in</span> target.iterdir():
+        <span style="color:#ff7b72;">if</span> is_link_or_junction(item):
+            skipped.append((item, <span style="color:#a5d6ff;">"symbolic link or junction"</span>))
+            <span style="color:#ff7b72;">continue</span>
+        <span style="color:#ff7b72;">if</span> item.resolve() == script_path:
+            skipped.append((item, <span style="color:#a5d6ff;">"the running Python script"</span>))
+            <span style="color:#ff7b72;">continue</span>
+        <span style="color:#ff7b72;">if</span> item.is_dir():
+            <span style="color:#ff7b72;">if</span> is_category_folder(item):
+                skipped.append((item, <span style="color:#a5d6ff;">"protected category folder"</span>))
+            <span style="color:#ff7b72;">else</span>:
+                dest = available_destination(existing_category_folder(target, FOLDER_CATEGORY) / item.name, reserved)
+                plans.append(MovePlan(item, FOLDER_CATEGORY, dest))
+            <span style="color:#ff7b72;">continue</span>
+        <span style="color:#ff7b72;">if</span> item.suffix.casefold() <span style="color:#ff7b72;">in</span> TEMPORARY_EXTENSIONS:
+            skipped.append((item, <span style="color:#a5d6ff;">"temporary or incomplete download"</span>))
+            <span style="color:#ff7b72;">continue</span>
+
+        category = category_for_file(item) <span style="color:#ff7b72;">or</span> UNCATEGORISED_CATEGORY
+        dest = available_destination(existing_category_folder(target, category) / item.name, reserved)
+        plans.append(MovePlan(item, category, dest))
+
+    <span style="color:#ff7b72;">return</span> ScanResult(plans, skipped, unknown_files)
+
+<span style="color:#7ee787;">def</span> <span style="color:#d2a8ff;">main</span>() -&gt; <span style="color:#79c0ff;">None</span>:
+    target = choose_target_folder()
+    <span style="color:#ff7b72;">if</span> target <span style="color:#ff7b72;">is</span> <span style="color:#79c0ff;">None</span>: <span style="color:#ff7b72;">return</span>
+    result = scan_folder(target)
+    print_preview(target, result)
+    <span style="color:#ff7b72;">if</span> <span style="color:#ff7b72;">not</span> result.plans: <span style="color:#ff7b72;">return</span>
+
+    answer = input(<span style="color:#a5d6ff;">"\nDo you want to organize this folder? [Y] Yes / [N] No: "</span>)
+    <span style="color:#ff7b72;">if</span> answer.strip().casefold() != <span style="color:#a5d6ff;">"y"</span>:
+        print(<span style="color:#a5d6ff;">"No changes were made."</span>)
+        <span style="color:#ff7b72;">return</span>
+
+    apply_plans(target, result.plans)
+    print(<span style="color:#a5d6ff;">"\nFinished."</span>)</code></pre>
+
+              <div style="margin-top: 1rem;">
+                <a href="https://github.com/Kunal-Bhai-Patel/Universal-File-Organizer/blob/main/file_organizer.py" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                  Inspect Full file_organizer.py on GitHub ↗
+                </a>
+              </div>
+            </div>
+
+            <!-- 05. Running from Source & Building -->
+            <div style="margin-bottom: 2rem;">
+              <h2 class="detail-section-title">
+                <span style="color:var(--accent-steel);">05.</span> {build_title}
+              </h2>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 1.25rem;">
+                  <strong style="color: var(--text-primary); display: block; margin-bottom: 0.5rem;">Run with Python</strong>
+                  <pre style="background:#0d1117; color:#7ee787; padding:0.65rem 0.85rem; border-radius:var(--radius-sm); font-family:var(--font-mono); font-size:0.85rem; margin:0.5rem 0;">py file_organizer.py</pre>
+                  <span style="font-size: 0.82rem; color: var(--text-secondary);">Runs directly using standard library only.</span>
+                </div>
+                <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 1.25rem;">
+                  <strong style="color: var(--text-primary); display: block; margin-bottom: 0.5rem;">Run Unit Tests</strong>
+                  <pre style="background:#0d1117; color:#7ee787; padding:0.65rem 0.85rem; border-radius:var(--radius-sm); font-family:var(--font-mono); font-size:0.85rem; margin:0.5rem 0;">py -m unittest -v</pre>
+                  <span style="font-size: 0.82rem; color: var(--text-secondary);">Executes 13 unit tests in isolated temporary folders.</span>
+                </div>
+                <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 1.25rem;">
+                  <strong style="color: var(--text-primary); display: block; margin-bottom: 0.5rem;">Build Executable</strong>
+                  <pre style="background:#0d1117; color:#7ee787; padding:0.65rem 0.85rem; border-radius:var(--radius-sm); font-family:var(--font-mono); font-size:0.85rem; margin:0.5rem 0;">.\\build_exe.ps1</pre>
+                  <span style="font-size: 0.82rem; color: var(--text-secondary);">Bundles Python 3.13 &amp; tkinter via PyInstaller into dist/UniversalFileOrganizer.exe.</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Sidebar Column -->
+          <aside class="detail-sidebar">
+            <!-- Specifications Table -->
+            <div class="sidebar-box">
+              <h3 class="sidebar-box-title">{p_tmpl['specs_label']}</h3>
+              <table class="specs-table">
+                <tbody>
+                  {specs_table_html}
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Direct Download & Release Box -->
+            <div class="sidebar-box" style="border-left: 3px solid var(--accent-steel);">
+              <h3 class="sidebar-box-title">Download & Source</h3>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+                Download the verified standalone executable for Windows (64-bit) or inspect the Python source repository on GitHub.
+              </p>
+              <a href="https://github.com/Kunal-Bhai-Patel/Universal-File-Organizer/releases/download/v1.0.0/UniversalFileOrganizer.exe" 
+                 class="btn btn-primary btn-sm" style="width: 100%; margin-bottom: 0.65rem;">
+                ⬇ Download v1.0.0 EXE
+              </a>
+              <a href="https://github.com/Kunal-Bhai-Patel/Universal-File-Organizer" 
+                 target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="width: 100%; margin-bottom: 0.65rem;">
+                🐙 GitHub Repository ↗
+              </a>
+              <a href="https://github.com/Kunal-Bhai-Patel/Universal-File-Organizer/releases/tag/v1.0.0" 
+                 target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="width: 100%;">
+                🏷️ Release Notes (v1.0.0) ↗
+              </a>
+            </div>
+
+            <!-- Classification & Meta -->
+            <div class="sidebar-box">
+              <h3 class="sidebar-box-title">{p_tmpl['classification_title']}</h3>
+              <div style="font-size: 0.88rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.5rem;">
+                <div><strong>{p_tmpl['category_label']}</strong> {project['category_label'][lang]}</div>
+                <div><strong>{p_tmpl['organization_label']}</strong> {project['organization']}</div>
+                <div><strong>{p_tmpl['timeline_label']}</strong> {project['period']}</div>
+                <div><strong>Author:</strong> Kunal Bhai Patel</div>
+              </div>
+            </div>
+
+            <!-- Contact Box -->
+            <div class="sidebar-box">
+              <h3 class="sidebar-box-title">{"Feedback & Inquiries" if lang == "en" else "Rückfragen & Kontakt"}</h3>
+              <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.6;">
+                {"Interested in code customization, automation workflows, or collaboration?" if lang == "en" else "Interesse an Anpassungen, Automatisierungsskripten oder technischem Austausch?"}
+              </p>
+              <a href="{pfx}{lang}/contact/" class="btn btn-secondary btn-sm" style="width: 100%;">
+                {trans['nav']['contact']} →
+              </a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+    """
+
+    return render_html_shell(
+        title=f"{p_title} | {site['site_name']}",
+        description=p_oneliner,
+        lang=lang,
+        content=content,
+        site=site,
+        trans=trans,
+        current_page=f"project-{project['id']}",
+        depth=3
+    )
+
 def generate_project_detail(site, trans, project, lang):
     """Generates an individual project case study page."""
     if project["id"] == "rio-sio":
         return generate_rio_sio_detail(site, trans, project, lang)
+    if project["id"] == "universal-file-organizer":
+        return generate_ufo_detail(site, trans, project, lang)
 
     pfx = get_base_prefix(3)
     p_content = project["content"][lang]

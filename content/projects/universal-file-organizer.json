@@ -1,0 +1,104 @@
+{
+  "id": "universal-file-organizer",
+  "category": "personal",
+  "category_label": {
+    "en": "Software / Automation & Tools",
+    "de": "Software / Automatisierung & Tools"
+  },
+  "featured": true,
+  "status": {
+    "en": "Completed & Released v1.0.0",
+    "de": "Abgeschlossen & Veröffentlicht v1.0.0"
+  },
+  "provenance": "USER-DISCUSSED",
+  "period": "October 2026",
+  "organization": "Independent Engineering Utility",
+  "title": {
+    "en": "Universal File Organizer: Portable Windows Sorting Tool",
+    "de": "Universal File Organizer: Portables Windows-Sortierwerkzeug"
+  },
+  "one_liner": {
+    "en": "A portable Windows utility built to sort a cluttered Downloads folder: pick a folder, review proposed moves in the console, and type Y to apply them.",
+    "de": "Ein portables Windows-Dienstprogramm zur automatischen Sortierung von Downloads: Ordner wählen, Vorschau prüfen und mit Y bestätigen."
+  },
+  "image": "media/projects/universal-file-organizer/ufo_hero.png",
+  "tags": ["Python 3.13", "Windows 10/11", "PyInstaller", "Automation", "tkinter GUI", "Console Utility", "Standard Library"],
+  "content": {
+    "en": {
+      "problem": "A messy Downloads folder quickly accumulates hundreds of mixed files: photos, invoices, videos, archives, and half-downloaded temporary files. Organizing them by hand is tedious and error-prone. Many commercial organizer utilities are either ad-supported bloatware, require administrator privileges, or move files automatically without showing the user what is about to change.",
+      "approach": "Built a lightweight, safety-first Python utility designed to be approachable for beginners and 100% offline. It uses Python's standard library (Pathlib, shutil, tkinter) without external pip packages. For convenience, it is packaged as a standalone 64-bit Windows console executable using PyInstaller, allowing anyone to run it immediately without configuring Python or VS Code. The utility launches a native folder picker, runs a non-recursive scan on the immediate folder level, prints an explicit preview plan with per-category counts and duplicate adjustments, and requires capital 'Y' confirmation before applying any change.",
+      "contributions": [
+        "Architected a non-recursive folder scanner using standard-library Pathlib with strict exclusion rules.",
+        "Implemented case-insensitive extension classification across eight discrete categories including Microsoft Office and LibreOffice formats.",
+        "Integrated safe duplicate name resolution (e.g. 'photo (1).jpg') to prevent overwriting existing items.",
+        "Added automatic skipping of symbolic links, Windows junctions, protected category directories, and in-progress temporary downloads (.crdownload, .part, .tmp).",
+        "Engineered a zero-dependency dual-entry architecture (source script file_organizer.py and double-clickable console wrapper app_entry.py).",
+        "Configured reproducible PyInstaller packaging script (build_exe.ps1) targeting Windows 10/11 x64.",
+        "Created an automated test suite (test_file_organizer.py) covering 13 test scenarios using isolated temporary directories."
+      ],
+      "specs": [
+        {"key": "Target Platform", "value": "Windows 10 / Windows 11 (64-bit)", "source": "VERIFIED"},
+        {"key": "Runtime", "value": "Python 3.13 (Standard Library only — zero pip dependencies)", "source": "VERIFIED"},
+        {"key": "Distribution", "value": "Standalone portable executable (UniversalFileOrganizer.exe, ~10.6 MB)", "source": "VERIFIED"},
+        {"key": "SHA-256 Checksum", "value": "888a3c5b639558bcf668f16c2a5a61658962fd0208131dc5ac44e1ca76cea2ad", "source": "VERIFIED"},
+        {"key": "Signature Status", "value": "NotSigned (Unsigned Authenticode / Local developer build)", "source": "VERIFIED"},
+        {"key": "Destinations", "value": "8 categories: Photos, Videos, Audios, Documents, PDFs, Zips, Folders, UnCategorised", "source": "VERIFIED"},
+        {"key": "Privacy & Network", "value": "100% Offline — No telemetry, no network calls, zero file uploads", "source": "VERIFIED"}
+      ],
+      "iterations": "Initial iterations used standard command-line arguments, but proved cumbersome for non-technical users. Integrated tkinter's native directory picker while maintaining headless override via TARGET_FOLDER. Earlier prototypes closed the terminal immediately upon finishing; introduced app_entry.py with an interactive 'Press Enter to close this window...' prompt in a finally block so users can inspect move outcomes and any filesystem errors. Added duplicate auto-numbering and pre-move destination checks to ensure non-destructive operation.",
+      "results": "Packaged and released Universal File Organizer v1.0.0 on GitHub. Tested across multiple test environments and real messy folders. Verified complete preservation of files on cancellation ('N'), accurate extension classification, intact folder relocation, and reliable protection of in-progress downloads.",
+      "lessons": "A utility that moves personal files must prioritize transparency over full automation. Showing an unambiguous preview with exact counts and requiring active confirmation gives users confidence. Furthermore, keeping the codebase restricted strictly to the Python standard library eliminates dependency drift and simplifies single-file binary compilation."
+    },
+    "de": {
+      "problem": "In Downloads-Ordnern sammeln sich schnell Hunderte gemischter Dateien an: Fotos, Rechnungen, Videos, Archive und unvollständige Download-Fragmente. Das manuelle Sortieren ist zeitaufwendig und fehleranfällig. Viele kommerzielle Sortiertools sind mit Werbung überladen, verlangen Administratorrechte oder verschieben Dateien automatisch ohne vorherige Kontrolle.",
+      "approach": "Entwicklung eines leichtgewichtigen, sicherheitsorientierten Python-Werkzeugs, das auf der Python-Standardbibliothek (Pathlib, shutil, tkinter) basiert. Zur einfachen Nutzung wurde das Programm mit PyInstaller als eigenständige 64-Bit-Windows-Konsolenanwendung kompiliert – lauffähig ohne vorherige Python-Installation. Die Anwendung öffnet einen nativen Ordnerauswahldialog, scannt ausschließlich die erste Ordnerebene, zeigt eine detaillierte Vorschau mit Dateianzahlen und Duplikatsanpassungen an und führt Verschiebungen erst nach Bestätigung mit 'Y' aus.",
+      "contributions": [
+        "Architektur eines nicht-rekursiven Ordnerscanners mit Pathlib und definierten Ausschlussregeln.",
+        "Fallunabhängige Dateierkennung für acht Kategorien inkl. Microsoft Office und LibreOffice OpenDocument-Formaten.",
+        "Sichere Duplikatsauflösung mit fortlaufender Nummerierung (z. B. 'photo (1).jpg') zur Vermeidung von Überschreibungen.",
+        "Automatischer Ausschluss von symbolischen Links, Windows-Junctions, geschützten Zielordnern und temporären Download-Dateien (.crdownload, .part, .tmp).",
+        "Entwicklung einer anwenderfreundlichen Konsolenführung mit Enter-Verweildauer (app_entry.py) zur Prüfung von Ergebnissen und Fehlermeldungen.",
+        "Erstellung eines automatisierten PowerShell-Build-Skripts (build_exe.ps1) für Windows 10/11 x64.",
+        "Umfassende Unittests (test_file_organizer.py) mit 13 Testszenarien in temporären Verzeichnissen."
+      ],
+      "specs": [
+        {"key": "Zielplattform", "value": "Windows 10 / Windows 11 (64-Bit)", "source": "VERIFIED"},
+        {"key": "Laufzeitumgebung", "value": "Python 3.13 (Ausschließlich Standardbibliothek — keine Fremdpakete)", "source": "VERIFIED"},
+        {"key": "Auslieferung", "value": "Portables Konsolenprogramm (UniversalFileOrganizer.exe, ~10,6 MB)", "source": "VERIFIED"},
+        {"key": "SHA-256 Prüfsumme", "value": "888a3c5b639558bcf668f16c2a5a61658962fd0208131dc5ac44e1ca76cea2ad", "source": "VERIFIED"},
+        {"key": "Signaturstatus", "value": "NotSigned (Unsigniertes Authenticode / Lokaler Entwickler-Build)", "source": "VERIFIED"},
+        {"key": "Zielkategorien", "value": "8 Ordner: Photos, Videos, Audios, Documents, PDFs, Zips, Folders, UnCategorised", "source": "VERIFIED"},
+        {"key": "Datenschutz & Netzwerk", "value": "100 % Offline — Keine Telemetrie, keine Netzwerkverbindungen", "source": "VERIFIED"}
+      ],
+      "iterations": "Frühe Entwürfe erforderten Konsolenparameter, was für Einsteiger unpraktisch war. Durch die Integration des tkinter-Auswahldialogs wurde die Bedienung intuitiv. Zudem schloss sich das Konsolenfenster nach Programmende sofort; durch den Wrapper app_entry.py mit Enter-Bestätigung bleiben Statusberichte und eventuelle Dateifehler sichtbar. Die Duplikatsprüfung wurde um einen Vorab-Check unmittelbar vor dem Verschiebevorgang erweitert.",
+      "results": "Universal File Organizer v1.0.0 wurde erfolgreich als GitHub Release bereitgestellt. Umfangreiche Tests bestätigen den sicheren Abbruch bei 'N', fehlerfreie Dateiklassifizierung, Beibehaltung von Ordnerstrukturen und zuverlässigen Schutz temporärer Downloads.",
+      "lessons": "Ein Werkzeug, das persönliche Dateien bewegt, muss Transparenz über Vollautomatisierung stellen. Eine eindeutige Vorschau vor dem ersten Verschiebevorgang schafft Vertrauen. Der ausschließliche Einsatz der Standardbibliothek garantiert zudem maximale Langlebigkeit und einfache Portierbarkeit."
+    }
+  },
+  "links": [
+    {
+      "label": "Download for Windows (64-bit) — v1.0.0",
+      "url": "https://github.com/Kunal-Bhai-Patel/Universal-File-Organizer/releases/download/v1.0.0/UniversalFileOrganizer.exe",
+      "type": "download",
+      "verified": true
+    },
+    {
+      "label": "View Source on GitHub",
+      "url": "https://github.com/Kunal-Bhai-Patel/Universal-File-Organizer",
+      "type": "external",
+      "verified": true
+    },
+    {
+      "label": "GitHub Release v1.0.0 & Release Notes",
+      "url": "https://github.com/Kunal-Bhai-Patel/Universal-File-Organizer/releases/tag/v1.0.0",
+      "type": "external",
+      "verified": true
+    },
+    {
+      "label": "SHA256SUMS.txt Verification Asset",
+      "url": "https://github.com/Kunal-Bhai-Patel/Universal-File-Organizer/releases/download/v1.0.0/SHA256SUMS.txt",
+      "type": "external",
+      "verified": true
+    }
+  ]
+}
