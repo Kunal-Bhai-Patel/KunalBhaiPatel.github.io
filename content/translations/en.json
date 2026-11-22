@@ -173,5 +173,149 @@
     "tags_title": "Engineering Tags & Tools",
     "schematic_caption_title": "Illustrative Kinematic Diagram",
     "schematic_caption_sub": "Concept schematic · Original photography to be integrated upon review"
+  },
+  "rio_sio_case_study": {
+    "meta": {
+      "kicker": "FEATURED RESEARCH / MASTER'S THESIS",
+      "title": "Rio sio.<br>Seeing what the eye can miss.",
+      "lead": "Robotic inspection of imperfections on optical surfaces: combining precision mechanics, collaborative robotics, calibrated imaging, and multi-angle illumination.",
+      "tags": ["Technologie Campus Teisnach Optik", "TH Deggendorf", "FANUC CR-7iA/L", "Optical metrology"],
+      "cta_explore": "Explore the project ↓",
+      "cta_publication": "Research & publication",
+      "hero_caption": "Kunal working with the FANUC CR-7iA/L collaborative robot during the research project."
+    },
+    "demo": {
+      "num": "SYSTEM DEMONSTRATION / REAL ROBOT MOVEMENT",
+      "title": "Rio sio in motion.",
+      "intro": "Watch the collaborative robot move the optical specimen through the inspection setup and see examples of recorded surface images. This is the complete demonstration sequence, not a cropped preview.",
+      "video_title": "Video 02 — Robot movement & optical inspection demonstration",
+      "video_label": "BPWU8855.MP4 · 2:52 · complete duration · optimized playback copy"
+    },
+    "challenge": {
+      "num": "01 / THE CHALLENGE",
+      "title": "From human judgement to repeatable inspection.",
+      "lead": "Optical surfaces are traditionally examined under controlled illumination using magnification. Distinguishing a permanent scratch or dig from removable contamination, however, is difficult, time-consuming and partly dependent on the inspector's experience.",
+      "caption_2hi": "Traditional visual inspection: manually examining an optical sample under directed light with a magnifier.",
+      "story_title": "The question behind Rio sio",
+      "story_p1": "Could we reproduce the flexibility of a human inspector, but make positioning and image capture more consistent? The project developed an experimental robotic inspection system intended to distinguish defects from contamination on precision optical surfaces.",
+      "story_p2": "The FANUC robot serves as the handling system, while a high-resolution camera, calibrated optical path, and controllable illumination reveal details that are difficult to evaluate by eye alone.",
+      "metric_cobot_val": "6 axes",
+      "metric_cobot_lbl": "Collaborative robot",
+      "metric_cam_val": "102 MP",
+      "metric_cam_lbl": "High-resolution camera"
+    },
+    "design": {
+      "num": "02 / SYSTEM DESIGN",
+      "title": "Replacing the hand, eye and light source.",
+      "lead": "I helped design and integrate the physical inspection architecture: robot-assisted specimen handling, a high-resolution imaging assembly, an eight-direction lighting arrangement, and the mechanical structures holding these systems together.",
+      "caption_concept": "Original annotated concept: the human arm, magnifier and light source translated into robotic handling, imaging and controlled illumination.",
+      "caption_sundial": "Sundial-inspired method for aligning the illumination angle using a shadow of known geometry.",
+      "metric_directions_val": "8",
+      "metric_directions_lbl": "Illumination directions",
+      "metric_led_val": "410 nm",
+      "metric_led_lbl": "Collimated LED illumination",
+      "metric_uv_val": "365 nm",
+      "metric_uv_lbl": "Fluorescence experiments"
+    },
+    "optics": {
+      "num": "03 / OPTICAL DESIGN & CALIBRATION",
+      "title": "When fractions of a millimetre matter.",
+      "lead": "To achieve useful image magnification, two objectives had to be positioned and aligned along a common optical axis. I built and adjusted experimental arrangements on a precision rail system, investigated working distances, and used interferometric measurements with a plane mirror to guide alignment.",
+      "caption_6poc": "Initial proof-of-concept camera and two-objective setup on an OWIS optical rail; labelled experimental arrangement.",
+      "caption_6full": "Close-up of the optical lens mounting and alignment arrangement after mechanical changes.",
+      "caption_lab": "Real laboratory photograph of the optical alignment experiment on the granite surface.",
+      "caption_mirror": "Interferometry software capture and wavefront profile used during focal-plane and mirror alignment.",
+      "note": "Portfolio copy deliberately omits over-specific alignment claims until checked against the matching thesis experiment and figure captions."
+    },
+    "illumination": {
+      "num": "04 / MULTI-ANGLE ILLUMINATION",
+      "title": "Different light directions. Different information.",
+      "lead": "Light incident from different sides changes the shadows and scattering around an imperfection. I developed and calibrated the illumination arrangement so each direction could be tested individually, helping reveal how defects and particles respond under changing lighting geometry.",
+      "caption_dig": "A dig illuminated from eight directions. Red arrows identify the incoming light direction for each recorded view.",
+      "caption_gp": "A glass particle viewed under eight illumination directions, demonstrating direction-dependent scattering and highlights.",
+      "caption_scratch": "A surface scratch / defect example under several illumination directions; compare the apparent features and shadows.",
+      "callout_title": "What the images demonstrate",
+      "callout_p": "The same feature can look very different as the illumination direction changes. This was central to experimenting with contrast, shadow geometry, and differentiation of real surface damage from surface contamination.",
+      "callout_note": "These are experimental visual examples, not a claim that the image-analysis algorithms shown were programmed by Kunal."
+    },
+    "mechanical": {
+      "num": "05 / MECHANICAL ENGINEERING & INTEGRATION",
+      "title": "Designing around precision and stray light.",
+      "lead": "Beyond the optical principles, the system needed rigid mounts, accessible components, controlled wiring, and an enclosure to keep unwanted ambient light out of the inspection area. My work included CAD design, mechanical fixtures, optomechanical assembly and system integration.",
+      "caption_cad": "CAD concept for the light-shielding enclosure and structural frame.",
+      "caption_enclosure": "Actual enclosure with the FANUC inspection setup; photo taken while operating the robot at the enclosure opening.",
+      "caption_cabinet": "Project electrical cabinet illustrating the connected illumination, trigger and I/O subsystems.",
+      "callout_title": "Built as a working prototype",
+      "callout_p": "Mechanical and optical subsystems had to be assembled, aligned, tested and revised together. Iterative CAD work and practical laboratory adjustments were an essential part of making the complete inspection arrangement usable.",
+      "callout_note": "Electrical cabinet construction and software contributions are credited to the wider team where appropriate."
+    },
+    "robot": {
+      "num": "06 / ROBOT HANDLING & CALIBRATION",
+      "title": "Before automated movement came manual understanding.",
+      "lead": "Before implementing a repeatable scanning workflow, I used the FANUC teach pendant to move the robot manually, assess the reachable positions around the imaging station and work out practical motion sequences. This early validation informed the later positioning and capture workflow.",
+      "video_title": "Video 01 — Manual robot calibration & path exploration",
+      "video_label": "20250506_175754.mp4 · 1:05 · complete duration · optimized playback copy",
+      "after_video": "Manual teach-pendant positioning helped me assess reachable positions and develop the practical movement sequence before automation.",
+      "caption_teach": "Actual laboratory photograph of manual robot calibration."
+    },
+    "results": {
+      "num": "07 / PROTOTYPE IN ACTION",
+      "title": "From calibrated hardware to captured evidence.",
+      "lead": "The integrated prototype moves an optical specimen through the inspection arrangement and records images under controlled conditions. Testing included optical alignment, inspection demonstrations and resolving-power verification with USAF 1951 targets.",
+      "story_title": "Engineering outcome",
+      "story_p1": "The Rio sio experimental system brought together collaborative robot positioning, a custom illumination architecture and high-resolution imaging in a working research demonstrator.",
+      "story_p2": "Tests documented micron-scale inspection capability. The full thesis contains the detailed USAF target measurements, calibration procedures, experimental images and limitations.",
+      "metric_usaf_val": "USAF 1951",
+      "metric_usaf_lbl": "Resolution verification",
+      "metric_res_val": "Research",
+      "metric_res_lbl": "Prototype, not commercial product"
+    },
+    "contribution": {
+      "num": "08 / MY CONTRIBUTION",
+      "title": "What I designed, built and tested.",
+      "lead": "This was collaborative research. I want my contribution to be clear without presenting another student's work as my own.",
+      "work_title": "My main engineering work",
+      "work_items": [
+        "Mechanical concept and CAD development of fixtures, mounts and the experimental structure.",
+        "Optomechanical assembly and alignment of the imaging components.",
+        "Design, integration and adjustment of multi-angle illumination hardware.",
+        "FANUC handling, manual calibration and practical robot motion/path exploration.",
+        "Experimental setup, laboratory tests, documentation and hardware troubleshooting."
+      ],
+      "collab_title": "Collaborative contributions",
+      "collab_p1": "Python image-processing software for defect identification, dimensional analysis and image stitching was developed by another student. I contributed to the physical system and experimental workflow in which those methods were used.",
+      "collab_p2": "Specialized machining, cabinet wiring and other institutional support were also collaborative activities."
+    },
+    "publication": {
+      "num": "09 / RESEARCH DISSEMINATION",
+      "title": "From laboratory development to a research paper.",
+      "lead": "Rio sio resulted in a conference research contribution and presentation material. The full scientific paper is accessible through the publisher's DOI; it remains separate from the master's thesis.",
+      "caption_poster": "University / research poster display featuring the collaborative optical inspection work and demonstration material.",
+      "kicker": "SPIE Proceedings · 2026",
+      "paper_title": "Cobotic inspection of surface imperfections with collimated illumination",
+      "paper_sub": "Research publication, SPIE Proceedings, Vol. 13789, Paper 137890C.",
+      "cta_paper": "Open official SPIE paper ↗",
+      "paper_note": "This links to the official publisher; no publisher PDF is re-hosted here.",
+      "explainer_num": "RESEARCH PAPER / VIDEO EXPLAINER",
+      "explainer_title": "The Micro Detective",
+      "explainer_sub": "NotebookLM-generated explanation based on my SPIE research paper.",
+      "video_title": "The Micro Detective — Research paper explained",
+      "video_label": "NotebookLM · 9:21 · complete video · AI-generated explainer based on the SPIE publication",
+      "explainer_copy": "The research paper is technical. I prepared this video with NotebookLM to introduce the research concept in an accessible way. It is an AI-generated explanation based on the published paper, not a recording of my laboratory experiments."
+    },
+    "documentation": {
+      "num": "10 / TECHNICAL DOCUMENTATION",
+      "title": "Go deeper into the engineering.",
+      "lead": "For recruiters who want the complete design process, the research material includes the underlying calculations, hardware selection, CAD approach, experiments and validation methods.",
+      "thesis_title": "Master's thesis — complete PDF",
+      "thesis_sub": "Rio sio: Automated Robotic Inspection of Imperfections on Optical Surfaces · TH Deggendorf · 2025",
+      "thesis_cta": "PDF release pending institutional & partner clearance (available upon request)",
+      "thesis_note": "Review copy only. In accordance with institutional guidelines, the PDF will be made downloadable once formal release permissions are finalized.",
+      "paper_title": "SPIE research paper",
+      "paper_sub": "Official publisher page via DOI: 10.1117/12.3111698",
+      "paper_cta": "Open publication ↗",
+      "author_title": "Project context",
+      "author_p": "This portfolio is a personal account of my engineering contribution to collaborative research undertaken at Technologie Campus Teisnach Optik, TH Deggendorf. Technical results and figures are based on the original thesis and project documentation. The complete thesis PDF will be privacy-reviewed before public download."
+    }
   }
 }

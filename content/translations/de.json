@@ -173,5 +173,149 @@
     "tags_title": "Schlagworte & Werkzeuge",
     "schematic_caption_title": "Illustratives Kinematik-Schema",
     "schematic_caption_sub": "Konzeptuelles Vektorschema · Originalaufnahmen folgen nach Freigabe"
+  },
+  "rio_sio_case_study": {
+    "meta": {
+      "kicker": "FORSCHUNGSSCHWERPUNKT / MASTERARBEIT",
+      "title": "Rio sio.<br>Sehen, was dem Auge entgeht.",
+      "lead": "Robotergestützte Inspektion von Oberflächendefekten auf optischen Oberflächen: Kombination aus Feinwerktechnik, kollaborativer Robotik, kalibrierter Bildgebung und Mehrwinkel-Beleuchtung.",
+      "tags": ["Technologie Campus Teisnach Optik", "TH Deggendorf", "FANUC CR-7iA/L", "Optische Messtechnik"],
+      "cta_explore": "Projekt erkunden ↓",
+      "cta_publication": "Forschung & Publikation",
+      "hero_caption": "Kunal bei der Arbeit mit dem kollaborativen Roboter FANUC CR-7iA/L während des Forschungsprojekts."
+    },
+    "demo": {
+      "num": "SYSTEMDEMONSTRATION / REALE ROBOTERBEWEGUNG",
+      "title": "Rio sio in Bewegung.",
+      "intro": "Erleben Sie, wie der kollaborative Roboter den optischen Prüfling durch den Messaufbau führt, und sehen Sie Beispiele erfasster Oberflächenaufnahmen. Dies ist die vollständige Demonstrationssequenz im ungekürzten Format.",
+      "video_title": "Video 02 — Roboterbewegung & Demonstration der optischen Inspektion",
+      "video_label": "BPWU8855.MP4 · 2:52 · Vollständige Laufzeit · Optimierte Web-Wiedergabe"
+    },
+    "challenge": {
+      "num": "01 / DIE HERAUSFORDERUNG",
+      "title": "Vom menschlichen Urteil zur reproduzierbaren Prüfung.",
+      "lead": "Optische Oberflächen werden traditionell unter kontrollierter Beleuchtung und mit optischer Vergrößerung geprüft. Die Unterscheidung zwischen dauerhaften Defekten (Kratzern, Ausbrüchen) und entfernbaren Partikeln ist jedoch anspruchsvoll, zeitintensiv und stark von der Erfahrung des Prüfers abhängig.",
+      "caption_2hi": "Traditionelle visuelle Prüfung: Manuelle Begutachtung eines optischen Prüflings unter gerichteter Beleuchtung mit einer Lupe.",
+      "story_title": "Die Fragestellung hinter Rio sio",
+      "story_p1": "Können wir die Flexibilität eines menschlichen Prüfers nachbilden, aber Positionierung und Bildaufnahme konsistenter und automatisierter gestalten? Im Rahmen des Projekts wurde ein experimentelles Roboterprüfsystem entwickelt, um Defekte von Verunreinigungen auf Präzisionsoptiken sicher zu unterscheiden.",
+      "story_p2": "Der FANUC-Roboter dient als Handhabungssystem, während eine hochauflösende Kamera, ein kalibrierter Strahlengang und eine steuerbare Beleuchtung Details sichtbar machen, die mit bloßem Auge kaum zu bewerten sind.",
+      "metric_cobot_val": "6 Achsen",
+      "metric_cobot_lbl": "Kollaborativer Roboter",
+      "metric_cam_val": "102 MP",
+      "metric_cam_lbl": "Hochauflösende Kamera"
+    },
+    "design": {
+      "num": "02 / SYSTEMENTWURF",
+      "title": "Hand, Auge und Lichtquelle neu gedacht.",
+      "lead": "Ich habe den mechanischen und optomechatronischen Aufbau mitkonzipiert und integriert: robotergestützte Probenführung, hochauflösende Abbildungsoptik, eine Acht-Richtungen-Beleuchtungsanordnung sowie die stabilen Tragstrukturen für alle Teilsysteme.",
+      "caption_concept": "Ursprüngliches annotiertes Konzept: Menschlicher Arm, Lupe und Lichtquelle übersetzt in Roboterhandling, kalibrierte Abbildungsoptik und gerichtete Beleuchtung.",
+      "caption_sundial": "Von Sonnenuhren inspiriertes Verfahren zur Ausrichtung des Beleuchtungswinkels anhand eines Schattens definierter Geometrie.",
+      "metric_directions_val": "8",
+      "metric_directions_lbl": "Beleuchtungsrichtungen",
+      "metric_led_val": "410 nm",
+      "metric_led_lbl": "Kollimierte LED-Beleuchtung",
+      "metric_uv_val": "365 nm",
+      "metric_uv_lbl": "Fluoreszenz-Experimente"
+    },
+    "optics": {
+      "num": "03 / OPTISCHES DESIGN & KALIBRIERUNG",
+      "title": "Wenn Bruchteile eines Millimeters entscheiden.",
+      "lead": "Um die erforderliche optische Vergrößerung zu erzielen, mussten zwei Objektive präzise auf einer gemeinsamen optischen Achse ausgerichtet werden. Ich habe Versuchsaufbauten auf einem OWIS-Präzisionsschienensystem montiert, Arbeitsabstände untersucht und interferometrische Messungen mit einem Planspiegel zur Ausrichtung genutzt.",
+      "caption_6poc": "Erster Proof-of-Concept-Aufbau mit Kamera und Zwei-Objektiv-System auf einer OWIS-Präzisionsoptikschiene; gekennzeichneter Versuchsaufbau.",
+      "caption_6full": "Detailaufnahme der Objektivfassung und Justiermechanik nach konstruktiven Anpassungen.",
+      "caption_lab": "Laborfotografie des optischen Ausrichtungsexperiments auf dem Granitmessplatz.",
+      "caption_mirror": "Interferometrie-Softwareaufnahme und Wellenfrontprofil zur Justierung der Fokusebene und des Referenzspiegels.",
+      "note": "Die Dokumentation verzichtet bewusst auf unbelegte Spezifikationen und stützt sich exakt auf die verifizierten Versuchsdaten der Masterarbeit."
+    },
+    "illumination": {
+      "num": "04 / MEHRWINKEL-BELEUCHTUNG",
+      "title": "Verschiedene Lichtrichtungen. Neue Informationen.",
+      "lead": "Licht, das aus unterschiedlichen Winkeln einfällt, verändert den Schattenwurf und das Streuverhalten um mikroskopische Fehlstellen. Ich habe die Beleuchtungsanordnung aufgebaut und kalibriert, sodass jede der acht Richtungen separat geschaltet werden konnte, um das Verhalten von Defekten und Partikeln unter variierender Lichtgeometrie systematisch zu untersuchen.",
+      "caption_dig": "Punktförmiger Ausbruch (Dig) unter acht Beleuchtungsrichtungen. Rote Pfeile kennzeichnen die jeweilige Lichteinfallsrichtung.",
+      "caption_gp": "Glaspartikel unter acht Beleuchtungsrichtungen mit richtungsabhängiger Lichtstreuung und Glanzlichtern.",
+      "caption_scratch": "Oberflächenkratzer unter mehreren Beleuchtungsrichtungen; deutliche Unterschiede im Kontrast und Schattenwurf.",
+      "callout_title": "Erkenntnis aus den Bildreihen",
+      "callout_p": "Derselbe Defekt erscheint unter wechselnder Beleuchtungsrichtung völlig unterschiedlich. Dies war der Schlüssel, um Kontrastbildung, Schattengeometrie und die Differenzierung echter Materialbeschädigungen von aufliegenden Partikeln experimentell zu untersuchen.",
+      "callout_note": "Diese Aufnahmen zeigen die physikalischen Versuchsdaten des Prüfstands. Bildverarbeitungsalgorithmen zur automatisierten Segmentierung wurden von einem Projektpartner entwickelt."
+    },
+    "mechanical": {
+      "num": "05 / MASCHINENBAU & INTEGRATION",
+      "title": "Konstruiert für Präzision und Streulichtabschirmung.",
+      "lead": "Über die optischen Grundlagen hinaus erforderte das System steife Halterungen, wartungsfreundlich zugängliche Komponenten, saubere Kabelführungen und eine Einhausung zur Abschirmung von Umgebungslicht. Mein Arbeitsschwerpunkt lag in der CAD-Konstruktion, dem Vorrichtungsbau, der optomechatronischen Montage und der Systemintegration.",
+      "caption_cad": "CAD-Modell der lichtdichten Schutz- und Prüfzelle sowie des tragenden Rahmens.",
+      "caption_enclosure": "Reale Einhausung mit integriertem FANUC-Prüfaufbau; Aufnahme während der Bedienung des Roboters an der Eingriffsöffnung.",
+      "caption_cabinet": "Projekt-Schaltschrank mit Ansteuerung der Beleuchtungs-, Trigger- und I/O-Subsysteme.",
+      "callout_title": "Aufgebaut als voll funktionsfähiger Prototyp",
+      "callout_p": "Mechanische und optische Baugruppen mussten gemeinsam montiert, justiert, getestet und iterativ verfeinert werden. Die enge Kopplung aus CAD-Konstruktion und handwerklicher Laborjustage war entscheidend für die Praxistauglichkeit des Gesamtsystems.",
+      "callout_note": "Aufbau des Schaltschranks und Softwareanbindung erfolgten in Zusammenarbeit mit dem Projektteam."
+    },
+    "robot": {
+      "num": "06 / ROBOTERHANDLING & KALIBRIERUNG",
+      "title": "Vor der automatisierten Bewegung stand das manuelle Verständnis.",
+      "lead": "Bevor ein reproduzierbarer automatisierter Prüfablauf programmiert werden konnte, habe ich den Roboter manuell über das FANUC Teach Pendant geführt, den erreichbaren Arbeitsraum um den Messkopf ermittelt und die Bewegungsabläufe schrittweise erprobt. Diese praktische Vorarbeit bildete das Fundament für die spätere automatisierte Bahnplanung.",
+      "video_title": "Video 01 — Manuelle Roboterkalibrierung & Bahnexploration",
+      "video_label": "20250506_175754.mp4 · 1:05 · Vollständige Laufzeit · Optimierte Web-Wiedergabe"
+      ,"after_video": "Die manuelle Führung mit dem Teach Pendant ermöglichte es, den Arbeitsraum präzise auszuloten und praxisgerechte Verfahrsequenzen vor der Automatisierung festzulegen.",
+      "caption_teach": "Original-Laboraufnahme: Manuelle Kalibrierung und Bedienung des FANUC-Cobots mit dem Teach Pendant."
+    },
+    "results": {
+      "num": "07 / DER PROTOTYP IM EINSATZ",
+      "title": "Von kalibrierter Hardware zu messtechnischen Nachweisen.",
+      "lead": "Der integrierte Prototyp führt optische Prüflinge reproduzierbar durch die Prüfzelle und erfasst hochauflösende Aufnahmen unter kontrollierten Bedingungen. Die Validierung umfasste optische Justagetests, Prüfdemonstrationen und die Bestimmung des Auflösungsvermögens anhand von USAF-1951-Targets.",
+      "story_title": "Ingenieurtechnisches Ergebnis",
+      "story_p1": "Das experimentelle Rio-sio-System vereinte kollaborative Roboterkinematik, eine eigens entwickelte Beleuchtungsarchitektur und hochauflösende Bildaufnahme in einem funktionsfähigen Forschungsdemonstrator.",
+      "story_p2": "Die experimentellen Messreihen wiesen eine Defekterkennung bis in den Mikrometerbereich nach. Die vollständige Masterarbeit enthält detaillierte USAF-Messergebnisse, Kalibrierprotokolle, Messdaten und technische Limitationen.",
+      "metric_usaf_val": "USAF 1951",
+      "metric_usaf_lbl": "Nachweis des Auflösungsvermögens",
+      "metric_res_val": "Forschung",
+      "metric_res_lbl": "Funktionsfähiger Prototyp, kein Serienprodukt"
+    },
+    "contribution": {
+      "num": "08 / MEIN BEITRAG",
+      "title": "Was ich konstruiert, aufgebaut und erprobt habe.",
+      "lead": "Dieses Forschungsprojekt entstand im Team. Es ist mir wichtig, meinen eigenen ingenieurtechnischen Anteil klar und transparent von den Beiträgen anderer Kollegen abzugrenzen.",
+      "work_title": "Meine wesentlichen ingenieurtechnischen Aufgaben",
+      "work_items": [
+        "Mechanisches Konzept und CAD-Konstruktion von Vorrichtungen, Halterungen und Tragstrukturen.",
+        "Optomechatronische Montage und Achsjustage der Abbildungsoptik auf der optischen Bank.",
+        "Konstruktion, Integration und Kalibrierung der Mehrwinkel-Beleuchtungsanordnung.",
+        "Roboterhandling mit dem FANUC-Cobot, manuelle Kalibrierung und Erprobung der Bewegungstrajektorien.",
+        "Aufbau des Versuchsstandes, Durchführung der Labortests, Messdaten-Dokumentation und Fehleranalyse an der Hardware."
+      ],
+      "collab_title": "Beiträge von Projektpartnern",
+      "collab_p1": "Die Bildverarbeitungssoftware in Python zur automatisierten Defekterkennung, Dimensionsanalyse und Bildzusammensetzung (Stitching) wurde von einem Projektkollegen entwickelt. Mein Beitrag lag in der physikalischen Prüfplattform und dem Versuchsablauf, auf dem diese Algorithmen aufbauten.",
+      "collab_p2": "Spezifische Zerspanungsarbeiten, Schaltschrankverdrahtung und übergeordnete Projektsteuerung erfolgten in Kooperation mit der Institutswerkstatt und dem Forschungsteam."
+    },
+    "publication": {
+      "num": "09 / WISSENSCHAFTLICHE PUBLIKATION",
+      "title": "Vom Laboraufbau zur internationalen Fachpublikation.",
+      "lead": "Die Ergebnisse von Rio sio führten zu einem wissenschaftlichen Konferenzbeitrag. Das vollständige Paper ist über den offiziellen DOI-Link des Verlags abrufbar und bleibt formal unabhängig von der Masterarbeit.",
+      "caption_poster": "Präsentationsposter auf der Hochschulkonferenz mit dem kollaborativen Prüfaufbau und Demonstrationsmaterial.",
+      "kicker": "SPIE Proceedings · 2026",
+      "paper_title": "Cobotic inspection of surface imperfections with collimated illumination",
+      "paper_sub": "Wissenschaftliche Publikation, SPIE Proceedings, Vol. 13789, Paper 137890C.",
+      "cta_paper": "Offizielles SPIE-Paper öffnen ↗",
+      "paper_note": "Verlinkt direkt auf die Verlagsseite; kein urheberrechtlich geschütztes Verlags-PDF wird hier gehostet.",
+      "explainer_num": "FACHPUBLIKATION / VIDEO-ERKLÄRUNG",
+      "explainer_title": "The Micro Detective",
+      "explainer_sub": "KI-gestützte Videoerklärung auf Basis der SPIE-Forschungsarbeit (erstellt mit NotebookLM).",
+      "video_title": "The Micro Detective — Forschungsarbeit anschaulich erklärt",
+      "video_label": "NotebookLM · 9:21 · Vollständiges Video · KI-Erklärung auf Grundlage der SPIE-Publikation",
+      "explainer_copy": "Die wissenschaftliche Publikation ist stark fachspezifisch. Um die Kernideen des Projekts auch Außenstehenden verständlich zu vermitteln, habe ich dieses Video mithilfe von Google NotebookLM auf Basis des publizierten SPIE-Papers erstellt. Es handelt sich um eine KI-generierte Erklärung des Forschungsansatzes, nicht um eine Videoaufzeichnung der Laborexperimente."
+    },
+    "documentation": {
+      "num": "10 / TECHNISCHE DOKUMENTATION",
+      "title": "Tiefergehende Einblicke in die Konstruktion.",
+      "lead": "Für Recruiter und Fachkollegen, die den detaillierten Entwicklungsprozess nachvollziehen möchten, umfasst die Ausarbeitung die zugrundeliegenden Berechnungen, Komponentenauswahl, CAD-Methodik, Versuchsreihen und Validierungsdaten.",
+      "thesis_title": "Masterarbeit — Vollständige Dokumentation",
+      "thesis_sub": "Rio sio: Automated Robotic Inspection of Imperfections on Optical Surfaces · TH Deggendorf · 2025",
+      "thesis_cta": "PDF-Freigabe nach Prüfung durch Hochschule & Partner ausstehend (auf Anfrage)",
+      "thesis_note": "Aus Gründen des Datenschutzes und institutioneller Vorgaben wird das Dokument nach formaler Abschlussprüfung bereitgestellt.",
+      "paper_title": "SPIE-Forschungsarbeit",
+      "paper_sub": "Offizielle Verlagsseite via DOI: 10.1117/12.3111698",
+      "paper_cta": "Publikation aufrufen ↗",
+      "author_title": "Projektkontext & Einordnung",
+      "author_p": "Dieses Portfolio dokumentiert meinen persönlichen ingenieurtechnischen Beitrag zu einem Verbundforschungsprojekt am Technologie Campus Teisnach Optik der Technischen Hochschule Deggendorf. Technische Ergebnisse und Diagramme basieren auf der Masterarbeit und den Projektdokumenten. Die Veröffentlichung von Dokumenten erfolgt unter Wahrung von Geheimhaltungs- und Urheberrechten."
+    }
   }
 }

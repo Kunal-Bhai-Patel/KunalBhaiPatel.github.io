@@ -16,15 +16,15 @@ secrets.*
 *.key
 credentials.*
 
-# Internal briefing notes and prompt specifications
+# Reference materials and draft files
+_reference/
 docs/
-
-# Phase 2 draft visual assets, videos, thesis drafts, and interim reports
 Visuals/
 Report_Phase 1.pdf
 *.pdf
-*.mp4
-*.MP4
+
+# Allow public media assets including optimized web video previews
+!public/media/research/rio-sio/*.mp4
 
 # Local distribution directory (built automatically by GitHub Actions in CI/CD)
 dist/

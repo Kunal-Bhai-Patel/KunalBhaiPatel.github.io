@@ -127,4 +127,34 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
+
+  // 6. Viewport-Aware Autoplay for Videos
+  const autoplayVideos = document.querySelectorAll('video.autoplay-when-visible');
+  if (autoplayVideos.length) {
+    const attemptPlay = (v) => {
+      v.muted = true;
+      v.defaultMuted = true;
+      const p = v.play();
+      if (p && typeof p.catch === 'function') {
+        p.catch(() => {});
+      }
+    };
+
+    if ('IntersectionObserver' in window) {
+      const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const v = entry.target;
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.35) {
+            attemptPlay(v);
+          } else if (!v.paused) {
+            v.pause();
+          }
+        });
+      }, { threshold: [0, 0.35, 0.65] });
+
+      autoplayVideos.forEach(v => videoObserver.observe(v));
+    } else {
+      autoplayVideos.forEach(attemptPlay);
+    }
+  }
 })();
