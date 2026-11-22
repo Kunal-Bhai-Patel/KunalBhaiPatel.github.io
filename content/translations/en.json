@@ -102,30 +102,98 @@
     "badge": "Biography & Background",
     "title": "About Kunal Bhai Patel",
     "lead": "Mechanical & Mechatronics Engineer, Builder, and Technology Enthusiast based in Germany. Grounded in rigorous CAD design, robotic automation, and physical maker experimentation.",
-    "intro_title": "Engineering by Profession. Maker by Curiosity.",
-    "intro_text": "My background brings together mechanical engineering and mechatronics. During my research work at Technologie Campus Teisnach Optik, I helped develop a robotic setup for inspecting microscopic imperfections on optical surfaces. Outside the lab, I am happiest solving practical problems at my workbench — whether that means refining a 3D-printed mechanism, getting a pen plotter to draw reliably over Wi-Fi, or configuring an older computer as a private Debian home server.",
-    "education_title": "Academic Training & Qualifications",
-    "education_items": [
+    "hero_headline": "Curiosity Was Always the Starting Point.",
+    "hero_subtitle": "My journey from taking apart toy cars to building robotic inspection systems.",
+    "hero_caption": "Kunal Bhai Patel · M.Eng. Mechatronic Systems · Mechanical Engineer",
+    "chapters": [
       {
-        "degree": "M.Eng. Mechatronic and Cyber-Physical Systems",
-        "institution": "Technische Hochschule Deggendorf (THD), Germany",
-        "period": "10/2021 – 10/2025",
-        "focus": "Robotic inspection systems, collaborative robotics, optical metrology, sensor integration, Master's thesis grade 2.0."
+        "kicker": "01 / BEGINNINGS",
+        "title": "Understanding How Things Work",
+        "paragraphs": [
+          "My fascination with engineering began long before I knew what an engineer actually did.",
+          "As a child, I loved playing with toy cars, especially those with motors, lights, and simple electronic controls. I still remember having a car that responded to clapping: one clap made it move forward, and another made it reverse.",
+          "But something interested me more than simply playing with these toys: understanding how they worked.",
+          "Usually, within a week or two of getting a new toy, I would find myself taking it apart. I wanted to see the motors, understand how the batteries were connected, and discover what made everything move. Sometimes I managed to put things back together. Sometimes the experiments were a little more adventurous!",
+          "One of my earliest projects was a small remote-controlled robot that I built with my cousin. It had a simple mechanism for grabbing empty bottles. Looking back, it was a modest project, but for us, making something that could actually move and interact with objects was incredibly exciting.",
+          "My curiosity wasn't limited to toys. I also loved visiting the car workshop of one of my father's friends. I would watch him repair vehicles and ask endless questions about engines, mechanical components, and how different systems worked together. He patiently explained things in a way a curious child could understand.",
+          "Those experiences stayed with me."
+        ]
       },
       {
-        "degree": "B.Eng. Mechanical Engineering",
-        "institution": "Shri Shankaracharya Engineering College, Bhilai, India",
-        "period": "06/2015 – 11/2019",
-        "focus": "Mechanical manufacturing, CAD modeling, structural mechanics, finite element analysis (ANSYS) bachelor project."
+        "kicker": "02 / EDUCATION",
+        "title": "From Curiosity to Mechanical Engineering",
+        "paragraphs": [
+          "When the time came to choose my university studies, the decision was surprisingly simple. I didn't seriously consider other engineering disciplines. I wanted to become a mechanical engineer.",
+          "I pursued my bachelor's degree in Mechanical Engineering in India, where I developed a stronger understanding of mechanical systems, design, manufacturing, and engineering fundamentals.",
+          "After graduating, I decided to continue my education in Germany, a country whose engineering tradition, manufacturing expertise, and technological innovation had long impressed me.",
+          "I knew that learning German would be important, so I began studying the language while I was still in India and earned my Goethe-Zertifikat B2 before moving.",
+          "In December 2020, I arrived in Germany to begin the next chapter of my journey.",
+          "Initially, I enrolled in a German-taught master's programme in Mechanical Engineering. After approximately one year, I decided to broaden my technical perspective and switched to Mechatronics and Cyber-Physical Systems at Technische Hochschule Deggendorf.",
+          "It turned out to be a meaningful decision. Mechatronics brought together several fields that had fascinated me since childhood: mechanical design, electronics, automation, and intelligent systems."
+        ]
+      },
+      {
+        "kicker": "03 / EXPERIENCE & RESEARCH",
+        "title": "Engineering Beyond the Classroom",
+        "paragraphs": [
+          "During my studies, I gained practical industrial experience at MAN Energy Solutions (now Everllence), and later became involved in research at Technologie Campus Teisnach Optik.",
+          "For my master's thesis, I worked on <a href=\"{pfx}{lang}/projects/rio-sio/\">Rio sio — Automated Robotic Inspection of Imperfections on Optical Surfaces</a>.",
+          "The project combined a FANUC collaborative robot, high-resolution imaging, optical measurement techniques, and mechanical design. It gave me the opportunity to work with real laboratory equipment, develop and integrate mechanical components, and investigate practical engineering challenges.",
+          "It was particularly rewarding because it connected theoretical engineering knowledge with physical systems that I could build, adjust, test, and improve."
+        ]
+      },
+      {
+        "kicker": "04 / WORKSHOP & TODAY",
+        "title": "Still Curious. Still Building.",
+        "paragraphs": [
+          "My curiosity doesn't stop when the working day ends.",
+          "In my spare time, I enjoy experimenting with 3D printing, mechanical design, microcontrollers, electronics, Linux servers, and automation.",
+          "Whether I'm developing my <a href=\"{pfx}{lang}/projects/plottu/\">Plottu pen plotter</a>, designing a custom <a href=\"{pfx}{lang}/projects/hdd-enclosure/\">HDD enclosure</a>, configuring a home server, or experimenting with an ESP32, I enjoy the process of taking an idea and gradually turning it into something functional.",
+          "I've also continued developing my CAD skills through additional professional training.",
+          "Today, with a master's degree in Mechatronics and Cyber-Physical Systems, research experience, and a growing collection of independent technical projects, I'm looking for an opportunity to contribute to meaningful engineering work while continuing to learn and develop.",
+          "<strong>The tools and projects have changed over the years, but the curiosity that started with those little toy cars is still exactly the same.</strong>"
+        ]
       }
     ],
-    "training_title": "Intensive Professional CAD Training",
-    "training_text": "Currently expanding advanced engineering CAD capabilities through intensive Creo Konstrukteur professional qualification: parametric modeling, complex assemblies, skeleton/top-down modeling, surfacing, sheet metal, and GD&T technical drawings.",
+    "milestones_title": "Milestones & Journey",
+    "milestones": [
+      {
+        "period": "06/2015 – 11/2019",
+        "title": "B.Eng. Mechanical Engineering",
+        "sub": "Bhilai, India · Manufacturing, CAD & mechanics"
+      },
+      {
+        "period": "2020",
+        "title": "Goethe-Zertifikat B2",
+        "sub": "German language qualification earned in India"
+      },
+      {
+        "period": "12/2020",
+        "title": "Arrival in Germany",
+        "sub": "Beginning master's studies in Bavaria"
+      },
+      {
+        "period": "10/2021 – 10/2025",
+        "title": "M.Eng. Mechatronic Systems",
+        "sub": "TH Deggendorf · Grade 2.0 · Robotics & metrology"
+      },
+      {
+        "period": "Industry",
+        "title": "MAN Energy Solutions (now Everllence)",
+        "sub": "Applied industrial engineering experience"
+      },
+      {
+        "period": "Research",
+        "title": "TC Teisnach Optik (THD)",
+        "sub": "Rio sio cobotic inspection system · SPIE publication"
+      }
+    ],
     "competencies_title": "Core Technical Competencies",
-    "workshop_title": "The Maker Workshop: Hands-On Prototyping",
-    "workshop_text": "To me, engineering is fundamentally about turning concepts into physical reality. My workshop is where theory meets practical tolerances: tuning FDM printers for functional mechanical parts with heat-set brass inserts, programming ESP32 microcontrollers with FluidNC, and building quiet thermal enclosures for data storage. Not everything works on the first attempt — iterative troubleshooting is where real engineering mastery is developed.",
+    "case_study_card_title": "Featured Research Milestone",
+    "case_study_card_text": "Explore the full multimedia research case study detailing cobotic kinematics, multi-angle illumination, and metrology.",
+    "case_study_card_cta": "View Rio sio Case Study →",
     "youtube_title": "Documenting the Journey: Kunal in Germany",
-    "youtube_text": "Through my YouTube channel, 'Kunal in Germany' (@kunalingermany), I share technical project logs, insights into engineering and living in Germany, and lessons learned while building hardware. It provides an authentic window into my ongoing learning process.",
+    "youtube_text": "Through my YouTube channel, 'Kunal in Germany' (@kunalingermany), I share technical project logs, insights into engineering and living in Germany, and lessons learned while building hardware.",
     "youtube_cta": "Visit @kunalingermany on YouTube ↗",
     "website_section": {
       "title": "About This Website",

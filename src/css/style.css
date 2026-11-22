@@ -1304,6 +1304,180 @@ a:focus-visible, button:focus-visible {
   color: var(--text-primary);
 }
 
+/* Editorial About Me Layout */
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3.5rem;
+  align-items: center;
+  margin-bottom: 3.5rem;
+}
+
+.about-hero-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-hero-headline {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  line-height: 1.18;
+  letter-spacing: -0.035em;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.about-hero-subtitle {
+  font-size: 1.2rem;
+  line-height: 1.55;
+  color: var(--accent-steel);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.about-hero-photo-wrapper {
+  margin: 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-medium);
+  box-shadow: var(--card-shadow);
+  background: var(--bg-surface);
+}
+
+.about-hero-photo-wrapper img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: 50% 16%;
+}
+
+.about-hero-photo-wrapper figcaption {
+  padding: 0.75rem 1.15rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  background: var(--bg-surface-subtle);
+  border-top: 1px solid var(--border-subtle);
+  font-family: var(--font-mono);
+}
+
+.about-chapter {
+  margin-bottom: 3rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.about-chapter:last-of-type {
+  border-bottom: none;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0;
+}
+
+.about-chapter-num {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent-steel);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.about-chapter-title {
+  font-size: clamp(1.4rem, 2.4vw, 1.85rem);
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+  line-height: 1.25;
+}
+
+.about-prose p {
+  color: var(--text-secondary);
+  line-height: 1.78;
+  font-size: 1.05rem;
+  margin-bottom: 1.25rem;
+  max-width: 780px;
+}
+
+.about-prose p:last-child {
+  margin-bottom: 0;
+}
+
+.about-prose strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.about-prose a {
+  color: var(--accent-steel);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.about-prose a:hover {
+  color: var(--accent-hover);
+}
+
+/* Subtle Milestone Timeline */
+.about-milestone-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1rem;
+  position: relative;
+}
+
+.about-milestone-list::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: var(--border-medium);
+}
+
+.about-milestone-item {
+  position: relative;
+  padding-left: 1.75rem;
+}
+
+.about-milestone-item::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--bg-surface);
+  border: 2px solid var(--accent-steel);
+}
+
+.about-milestone-period {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent-steel);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.15rem;
+}
+
+.about-milestone-title {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.35;
+}
+
+.about-milestone-sub {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-top: 0.15rem;
+}
+
 /* Rio sio Case Study & Rich Media Components */
 .herogrid {
   display: grid;
@@ -1623,6 +1797,7 @@ section.panel {
 
 /* Responsive Breakpoints */
 @media (max-width: 960px) {
+  .about-hero-grid,
   .hero-grid {
     grid-template-columns: 1fr;
     gap: 2rem;

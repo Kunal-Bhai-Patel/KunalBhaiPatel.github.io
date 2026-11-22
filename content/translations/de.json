@@ -102,30 +102,98 @@
     "badge": "Werdegang & Hintergrund",
     "title": "Über Kunal Bhai Patel",
     "lead": "Maschinenbau- & Mechatronikingenieur, Tüftler und Technikbegeisterter in Deutschland. Verwurzelt in präziser CAD-Konstruktion, Robotik und handwerklichem Werkstatt-Prototyping.",
-    "intro_title": "Ingenieur aus Berufung. Tüftler aus Leidenschaft.",
-    "intro_text": "Mein Werdegang verbindet fundierten Maschinenbau mit moderner Mechatronik. Während meiner Forschungsarbeit am Technologie Campus Teisnach Optik habe ich an einem robotergestützten System zur Erkennung mikroskopischer Fehler auf optischen Oberflächen mitgearbeitet. Außerhalb des Labors löse ich mit Begeisterung praktische Probleme an meiner Werkbank – vom optimierten 3D-Druck-Bauteil über einen WLAN-gesteuerten Stiftplotter bis zum energieeffizienten Debian-Heimserver.",
-    "education_title": "Akademischer Werdegang & Qualifikationen",
-    "education_items": [
+    "hero_headline": "Am Anfang stand die Neugier.",
+    "hero_subtitle": "Mein Weg vom Zerlegen kleiner Spielzeugautos zur Entwicklung robotergestützter Prüfsysteme.",
+    "hero_caption": "Kunal Bhai Patel · M.Eng. Mechatronische Systeme · Maschinenbauingenieur",
+    "chapters": [
       {
-        "degree": "M.Eng. Mechatronic and Cyber-Physical Systems",
-        "institution": "Technische Hochschule Deggendorf (THD), Deutschland",
-        "period": "10/2021 – 10/2025",
-        "focus": "Robotergestützte Prüftechnik, kollaborative Robotik, optische Messtechnik, Sensorintegration, Masterarbeit Note 2,0."
+        "kicker": "01 / ANFÄNGE",
+        "title": "Verstehen, wie die Dinge funktionieren",
+        "paragraphs": [
+          "Meine Begeisterung für Technik begann schon lange bevor ich überhaupt wusste, was ein Ingenieur macht.",
+          "Als Kind spielte ich besonders gerne mit Spielzeugautos und elektronischem Spielzeug. Ich erinnere mich noch an ein Spielzeugauto, das auf Klatschen reagierte: Einmal klatschen, und es fuhr vorwärts. Beim nächsten Klatschen wechselte es die Richtung.",
+          "Doch mich interessierte nicht nur das Spielen. Ich wollte vor allem verstehen, wie diese Dinge funktionierten.",
+          "Oft dauerte es nur ein oder zwei Wochen, bis ich ein neues Spielzeug auseinandernahm. Ich wollte herausfinden, wie der Motor funktionierte, wie die Batterien angeschlossen waren und wodurch sich die einzelnen Teile bewegten. Manchmal gelang es mir, die Teile wieder zusammenzubauen. Manchmal waren die Experimente etwas abenteuerlicher!",
+          "Eines meiner ersten eigenen Projekte war ein kleiner ferngesteuerter Roboter, den ich gemeinsam mit meinem Cousin baute. Er konnte mit einem einfachen Greifmechanismus leere Flaschen aufnehmen. Aus heutiger Sicht war das eine recht einfache Konstruktion, aber damals war es für uns etwas Besonderes, eine eigene funktionierende Maschine zu bauen.",
+          "Auch echte Autos faszinierten mich. Ich besuchte gerne die Werkstatt eines Freundes meines Vaters, schaute ihm bei Reparaturen zu und stellte unzählige Fragen über Motoren, mechanische Bauteile und das Zusammenspiel verschiedener Systeme. Er erklärte mir die Technik geduldig und verständlich.",
+          "Diese Erfahrungen haben meine Interessen nachhaltig geprägt."
+        ]
       },
       {
-        "degree": "B.Eng. Mechanical Engineering (Maschinenbau)",
-        "institution": "Shri Shankaracharya Engineering College, Bhilai, Indien",
-        "period": "06/2015 – 11/2019",
-        "focus": "Fertigungstechnik, CAD-Konstruktion, Festigkeitslehre, Finite-Elemente-Analyse (ANSYS) Bachelorprojekt."
+        "kicker": "02 / AUSBILDUNG",
+        "title": "Von der Begeisterung zum Maschinenbaustudium",
+        "paragraphs": [
+          "Als ich mich nach der Schule für einen Studiengang entscheiden musste, war die Wahl für mich klar: Ich wollte Maschinenbauingenieur werden.",
+          "Ich absolvierte mein Bachelorstudium im Maschinenbau in Indien und vertiefte dabei meine Kenntnisse in Konstruktion, Fertigung und technischen Grundlagen.",
+          "Anschließend entschied ich mich für ein Masterstudium in Deutschland. Die deutsche Ingenieurtradition, die Industrie und die technischen Entwicklungsmöglichkeiten hatten mich schon lange beeindruckt.",
+          "Da mir bewusst war, wie wichtig Deutsch für das Leben und Studium in Deutschland ist, begann ich bereits in Indien, die Sprache zu lernen, und erwarb das Goethe-Zertifikat B2.",
+          "Im Dezember 2020 kam ich nach Deutschland.",
+          "Zunächst begann ich ein deutschsprachiges Masterstudium im Maschinenbau. Nach ungefähr einem Jahr wechselte ich in den englischsprachigen Masterstudiengang Mechatronik und Cyber-Physical Systems an der Technischen Hochschule Deggendorf.",
+          "Damit konnte ich mein Wissen im Maschinenbau um weitere Bereiche erweitern, die mich schon seit meiner Kindheit faszinierten: Elektronik, Automatisierung und das Zusammenspiel unterschiedlicher technischer Systeme."
+        ]
+      },
+      {
+        "kicker": "03 / PRAXIS & FORSCHUNG",
+        "title": "Technik in der Praxis",
+        "paragraphs": [
+          "Während meines Studiums sammelte ich praktische Industrieerfahrung bei MAN Energy Solutions (heute Everllence) und arbeitete später am Technologie Campus Teisnach Optik an einem Forschungsprojekt.",
+          "Im Rahmen meiner Masterarbeit beschäftigte ich mich mit <a href=\"{pfx}{lang}/projects/rio-sio/\">Rio sio – der automatisierten robotergestützten Erkennung von Oberflächenfehlern auf optischen Bauteilen</a>.",
+          "Dabei arbeitete ich unter anderem mit einem kollaborativen FANUC-Roboter, hochauflösender Bildgebung, optischer Messtechnik sowie CAD-Konstruktion und Systemintegration.",
+          "Besonders interessant war für mich die Möglichkeit, theoretisches Wissen direkt an realen technischen Systemen anzuwenden, Komponenten zu entwickeln, Versuche durchzuführen und Lösungen schrittweise zu verbessern."
+        ]
+      },
+      {
+        "kicker": "04 / WERKSTATT & HEUTE",
+        "title": "Die Neugier ist geblieben",
+        "paragraphs": [
+          "Auch in meiner Freizeit beschäftige ich mich gerne mit technischen Projekten.",
+          "Dazu gehören unter anderem 3D-Druck, mechanische Konstruktion, Mikrocontroller, Elektronik, Linux-Server und Automatisierung.",
+          "Ob ich meinen selbst entwickelten Zeichenplotter <a href=\"{pfx}{lang}/projects/plottu/\">Plottu</a> weiterentwickle, ein <a href=\"{pfx}{lang}/projects/hdd-enclosure/\">Festplattengehäuse</a> konstruiere oder einen Heimserver konfiguriere: Mich begeistert vor allem der Weg von einer ersten Idee bis zu einer funktionierenden Lösung.",
+          "Zusätzlich habe ich meine CAD-Kenntnisse durch eine berufliche Weiterbildung vertieft.",
+          "Heute möchte ich meine Kenntnisse aus dem Masterstudium, meine Forschungserfahrung und meine praktische Begeisterung für Technik in eine anspruchsvolle Ingenieurtätigkeit einbringen und mich fachlich weiterentwickeln.",
+          "<strong>Vieles hat sich seit meiner Kindheit verändert. Aber die Neugier, mit der ich damals meine Spielzeugautos zerlegte, ist geblieben.</strong>"
+        ]
       }
     ],
-    "training_title": "Intensive CAD-Weiterbildung",
-    "training_text": "Kontinuierlicher Ausbau professioneller CAD-Fähigkeiten durch eine intensive Weiterbildung zum Creo Konstrukteur: parametrische Modellierung, Baugruppen, Skelettmodellierung (Top-Down), Freiformflächen, Blechkonstruktion und normgerechte Zeichnungserstellung.",
+    "milestones_title": "Meilensteine & Stationen",
+    "milestones": [
+      {
+        "period": "06/2015 – 11/2019",
+        "title": "B.Eng. Maschinenbau",
+        "sub": "Bhilai, Indien · Grundlagen in Fertigung, CAD & Mechanik"
+      },
+      {
+        "period": "2020",
+        "title": "Goethe-Zertifikat B2",
+        "sub": "Sprachzertifikat vor dem Wechsel nach Deutschland"
+      },
+      {
+        "period": "12/2020",
+        "title": "Ankunft in Deutschland",
+        "sub": "Beginn des Masterstudiums in Bayern"
+      },
+      {
+        "period": "10/2021 – 10/2025",
+        "title": "M.Eng. Mechatronische Systeme",
+        "sub": "TH Deggendorf · Note 2,0 · Robotik & optische Messtechnik"
+      },
+      {
+        "period": "Industrie",
+        "title": "MAN Energy Solutions (heute Everllence)",
+        "sub": "Praktische Industrieerfahrung im Maschinenbau"
+      },
+      {
+        "period": "Forschung",
+        "title": "TC Teisnach Optik (THD)",
+        "sub": "Rio sio Roboterprüfsystem · SPIE-Fachpublikation"
+      }
+    ],
     "competencies_title": "Kernkompetenzen & Werkzeuge",
-    "workshop_title": "Die Werkstatt: Praktisches Prototyping",
-    "workshop_text": "Für mich bedeutet Engineering, Konzepte in funktionierende physikalische Hardware zu überführen. In der Werkstatt trifft Theorie auf reale Toleranzen: FDM-Drucker für belastbare Funktionsteile mit Messing-Gewindeeinsätzen optimieren, ESP32-Mikrocontroller mit FluidNC programmieren und leise Gehäuse für Datenspeicher konstruieren. Nicht alles klappt beim ersten Versuch – genau dieses iterative Lösen macht für mich den Reiz des Ingenieurwesens aus.",
+    "case_study_card_title": "Forschungs-Meilenstein",
+    "case_study_card_text": "Detaillierte multimediale Fallstudie zur kollaborativen Robotik, Mehrwinkel-Beleuchtung und optischen Messtechnik.",
+    "case_study_card_cta": "Rio sio Fallstudie ansehen →",
     "youtube_title": "Den Weg dokumentieren: Kunal in Germany",
-    "youtube_text": "Auf meinem YouTube-Kanal „Kunal in Germany“ (@kunalingermany) teile ich Einblicke in technische Projekte, Lernerfahrungen und meinen Alltag in Deutschland. Für mich ist das eine weitere Möglichkeit, technische Erkenntnisse festzuhalten.",
+    "youtube_text": "Auf meinem YouTube-Kanal „Kunal in Germany“ (@kunalingermany) teile ich Einblicke in technische Projekte, Lernerfahrungen und meinen Alltag in Deutschland.",
     "youtube_cta": "Kanal @kunalingermany auf YouTube besuchen ↗",
     "website_section": {
       "title": "Über diese Website",

@@ -1020,20 +1020,34 @@ def generate_research_page(site, trans, lang):
     )
 
 def generate_about_page(site, trans, lang):
-    """Generates the dedicated About Me page, including the required 'About This Website' section."""
+    """Generates the dedicated About Me page with the approved personal story chapters and hero photograph."""
     pfx = get_base_prefix(2)
     a_trans = trans["about_page"]
     author = site["author"]
 
-    # Education Cards
-    education_html = "".join([f"""
-      <div class="education-card">
-        <span class="education-period">{item['period']}</span>
-        <h3 class="education-degree">{item['degree']}</h3>
-        <div class="education-institution">{item['institution']}</div>
-        <p class="education-focus">{item['focus']}</p>
+    # Editorial Chapters HTML
+    chapters_html = []
+    for ch in a_trans.get("chapters", []):
+        paras_html = "".join([f"<p>{p.replace('{pfx}', pfx).replace('{lang}', lang)}</p>" for p in ch["paragraphs"]])
+        chapters_html.append(f"""
+        <article class="about-chapter">
+          <span class="about-chapter-num">{ch['kicker']}</span>
+          <h2 class="about-chapter-title">{ch['title']}</h2>
+          <div class="about-prose">
+            {paras_html}
+          </div>
+        </article>
+        """)
+    all_chapters_str = "\n".join(chapters_html)
+
+    # Milestones Timeline
+    milestones_html = "".join([f"""
+      <div class="about-milestone-item">
+        <span class="about-milestone-period">{m['period']}</span>
+        <div class="about-milestone-title">{m['title']}</div>
+        <div class="about-milestone-sub">{m['sub']}</div>
       </div>
-    """ for item in a_trans['education_items']])
+    """ for m in a_trans.get("milestones", [])])
 
     # Competencies table localized
     if lang == "de":
@@ -1073,54 +1087,40 @@ def generate_about_page(site, trans, lang):
     <!-- About Main Content -->
     <section class="section">
       <div class="container">
-        <div class="detail-layout">
-          <!-- Main Narrative Column -->
-          <div class="detail-main">
-            <!-- 1. Engineering Philosophy -->
-            <div>
-              <h2 style="font-size: 1.35rem; margin-bottom: 1rem; color: var(--text-primary);">{a_trans['intro_title']}</h2>
-              <p style="color: var(--text-secondary); line-height: 1.72; font-size: 1.05rem;">
-                {a_trans['intro_text']}
-              </p>
-            </div>
-
-            <!-- 2. Academic Training -->
-            <div>
-              <h2 style="font-size: 1.35rem; margin-bottom: 1rem; color: var(--text-primary);">{a_trans['education_title']}</h2>
-              <div class="education-grid">
-                {education_html}
-              </div>
-            </div>
-
-            <!-- 3. Professional CAD Training -->
-            <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.75rem;">
-              <h3 style="font-size: 1.15rem; margin-bottom: 0.65rem; color: var(--text-primary);">{a_trans['training_title']}</h3>
-              <p style="color: var(--text-secondary); line-height: 1.68;">
-                {a_trans['training_text']}
-              </p>
-            </div>
-
-            <!-- 4. The Maker Workshop -->
-            <div>
-              <h2 style="font-size: 1.35rem; margin-bottom: 1rem; color: var(--text-primary);">{a_trans['workshop_title']}</h2>
-              <p style="color: var(--text-secondary); line-height: 1.72;">
-                {a_trans['workshop_text']}
-              </p>
-            </div>
-
-            <!-- 5. Documenting the Journey / YouTube -->
-            <div style="background: var(--bg-surface-subtle); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.75rem;">
-              <h3 style="font-size: 1.15rem; margin-bottom: 0.65rem; color: var(--text-primary);">📹 {a_trans['youtube_title']}</h3>
-              <p style="color: var(--text-secondary); line-height: 1.68; margin-bottom: 1.25rem;">
-                {a_trans['youtube_text']}
-              </p>
-              <a href="{author['youtube_url']}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
-                {a_trans['youtube_cta']}
+        <!-- Hero Introduction: Headline on Left, Selected Photograph on Right -->
+        <div class="about-hero-grid">
+          <div class="about-hero-content">
+            <span class="section-badge" style="margin-bottom: 0.75rem;">{a_trans['badge']}</span>
+            <h2 class="about-hero-headline">{a_trans['hero_headline']}</h2>
+            <p class="about-hero-subtitle">{a_trans['hero_subtitle']}</p>
+            <p style="color: var(--text-secondary); line-height: 1.72; font-size: 1.05rem; margin-bottom: 1.5rem;">
+              {"My fascination with engineering began long before I knew what an engineer actually did. From taking apart toy cars to explore their motors, to programming collaborative robots and custom kinematics in Bavaria." if lang == "en" else "Meine Begeisterung für Technik begann schon lange bevor ich überhaupt wusste, was ein Ingenieur macht. Vom Zerlegen kleiner Spielzeugautos bis zum Bau robotergestützter Prüfsysteme und eigener Bewegungssteuerungen in Bayern."}
+            </p>
+            <div style="display: flex; gap: 0.85rem; flex-wrap: wrap;">
+              <a href="{pfx}{lang}/projects/rio-sio/" class="btn btn-primary btn-sm">
+                {"Explore Rio sio Case Study →" if lang == "en" else "Rio sio Fallstudie erkunden →"}
+              </a>
+              <a href="{pfx}{lang}/projects/" class="btn btn-secondary btn-sm">
+                {"Workshop Projects →" if lang == "en" else "Werkstattprojekte →"}
               </a>
             </div>
+          </div>
 
-            <!-- 6. Required "About This Website" Section -->
-            <div style="background: var(--bg-surface); border: 1px solid var(--border-medium); border-left: 4px solid var(--accent-steel); border-radius: var(--radius-md); padding: 1.75rem;">
+          <figure class="about-hero-photo-wrapper">
+            <img src="{pfx}media/portrait/kunal_patel_about.jpg" alt="Kunal Bhai Patel — Mechanical & Mechatronics Engineer" loading="eager" width="1400" height="933" />
+            <figcaption>
+              <span>{a_trans['hero_caption']}</span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="detail-layout">
+          <!-- Main Narrative Column: 4 Editorial Chapters -->
+          <div class="detail-main">
+            {all_chapters_str}
+
+            <!-- Required "About This Website" Section -->
+            <div style="background: var(--bg-surface); border: 1px solid var(--border-medium); border-left: 4px solid var(--accent-steel); border-radius: var(--radius-md); padding: 1.75rem; margin-top: 2.5rem;">
               <h3 style="font-size: 1.2rem; margin-bottom: 0.75rem; color: var(--text-primary);">
                 🌐 {a_trans['website_section']['title']}
               </h3>
@@ -1130,8 +1130,17 @@ def generate_about_page(site, trans, lang):
             </div>
           </div>
 
-          <!-- Sidebar Column: Technical Competencies Table -->
-          <div class="detail-sidebar">
+          <!-- Sidebar Column: Milestones Timeline, Competencies, and Inquiries -->
+          <aside class="detail-sidebar">
+            <!-- Milestones Timeline Box -->
+            <div class="sidebar-box">
+              <div class="sidebar-box-title">{a_trans['milestones_title']}</div>
+              <div class="about-milestone-list">
+                {milestones_html}
+              </div>
+            </div>
+
+            <!-- Technical Competencies Table -->
             <div class="sidebar-box">
               <div class="sidebar-box-title">{a_trans['competencies_title']}</div>
               <table class="specs-table">
@@ -1141,17 +1150,28 @@ def generate_about_page(site, trans, lang):
               </table>
             </div>
 
+            <!-- Featured Case Study Card -->
+            <div class="sidebar-box" style="border-left: 3px solid var(--accent-steel);">
+              <div class="sidebar-box-title">{a_trans['case_study_card_title']}</div>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+                {a_trans['case_study_card_text']}
+              </p>
+              <a href="{pfx}{lang}/projects/rio-sio/" class="btn btn-secondary btn-sm" style="width: 100%;">
+                {a_trans['case_study_card_cta']}
+              </a>
+            </div>
+
+            <!-- Location & Contact Box -->
             <div class="sidebar-box">
               <div class="sidebar-box-title">Location & Contact</div>
               <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1rem;">
-                Based in Deggendorf / Bavaria, Germany.<br>
-                Available for engineering opportunities and collaborations.
+                {"Based in Deggendorf / Bavaria, Germany.<br>Available for engineering opportunities and collaborations." if lang == "en" else "Wohnhaft in Deggendorf / Bayern, Deutschland.<br>Offen für ingenieurtechnische Aufgaben und Kooperationen."}
               </p>
               <a href="{pfx}{lang}/contact/" class="btn btn-primary btn-sm" style="width: 100%;">
                 {trans['nav']['contact']} →
               </a>
             </div>
-          </div>
+          </aside>
         </div>
       </div>
     </section>
