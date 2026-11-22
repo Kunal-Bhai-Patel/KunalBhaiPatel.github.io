@@ -581,12 +581,15 @@ def generate_homepage(site, trans, projects, lang):
         detail_url = f"{pfx}{lang}/projects/{p_id}/"
 
         tags_html = "".join([f'<span class="tag-pill">{t}</span>' for t in p_tags])
-        schematic_svg = render_schematic(p_id, lang, is_detail=False)
+        if proj.get("image"):
+            card_visual = f'<img src="{pfx}{proj["image"]}" alt="{p_title}" class="project-card-img" loading="lazy" />'
+        else:
+            card_visual = render_schematic(p_id, lang, is_detail=False)
 
         featured_cards_html.append(f"""
         <article class="project-card" data-category="{proj['category']}">
           <a href="{detail_url}" class="card-media" aria-label="{p_title}">
-            {schematic_svg}
+            {card_visual}
           </a>
           <div class="card-body">
             <div class="card-meta">
@@ -811,12 +814,15 @@ def generate_projects_page(site, trans, projects, lang):
         
         detail_url = f"{pfx}{lang}/projects/{p_id}/"
         tags_html = "".join([f'<span class="tag-pill">{t}</span>' for t in p_tags])
-        schematic_svg = render_schematic(p_id, lang, is_detail=False)
+        if proj.get("image"):
+            card_visual = f'<img src="{pfx}{proj["image"]}" alt="{p_title}" class="project-card-img" loading="lazy" />'
+        else:
+            card_visual = render_schematic(p_id, lang, is_detail=False)
 
         project_cards_html.append(f"""
         <article class="project-card" data-category="{cat}">
           <a href="{detail_url}" class="card-media" aria-label="{p_title}">
-            {schematic_svg}
+            {card_visual}
           </a>
           <div class="card-body">
             <div class="card-meta">
@@ -981,12 +987,27 @@ def generate_research_page(site, trans, lang):
           </div>
         </div>
 
-        <!-- Schematic Display -->
-        <div class="detail-schematic-container" style="margin-bottom: 3rem;">
-          {schematic_svg}
-          <div class="schematic-caption">
-            <span>FANUC CR-7iA/L Robotic Optical Inspection Test Rig</span>
-            <span>Illustrative Vector Diagram · DOI: 10.1117/12.3111698</span>
+        <!-- Research Rig & Laboratory Showcase -->
+        <div class="research-rig-showcase">
+          <div class="detail-schematic-container">
+            {schematic_svg}
+            <div class="schematic-caption">
+              <span>FANUC CR-7iA/L Robotic Optical Inspection Test Rig</span>
+              <span>Vector Schematic · DOI: 10.1117/12.3111698</span>
+            </div>
+          </div>
+          <div class="research-photo-showcase">
+            <div class="research-photo-wrap">
+              <img src="{pfx}media/research/rio-sio/rio_sio_card.jpg" alt="Kunal Bhai Patel with FANUC CR-7iA/L robot test rig" loading="lazy" />
+            </div>
+            <div class="research-photo-desc">
+              <p>
+                {"Experimental cobotic metrology cell at TC Teisnach Optik: FANUC CR-7iA/L collaborative arm equipped with custom collimated dark-field illumination." if lang == "en" else "Kollaborative Messzelle am TC Teisnach Optik: FANUC CR-7iA/L Cobot mit eigens entwickelter kollimierter Dunkelfeldbeleuchtung."}
+              </p>
+              <a href="{pfx}{lang}/projects/rio-sio/" class="btn btn-secondary btn-sm">
+                {r_trans['view_case_study']}
+              </a>
+            </div>
           </div>
         </div>
 
@@ -1305,8 +1326,8 @@ def generate_rio_sio_detail(site, trans, project, lang):
             <a class="btn btn-secondary" href="#publication">{c['meta']['cta_publication']}</a>
           </div>
         </div>
-        <figure class="photo hero-photo">
-          <img alt="{c['meta']['hero_caption']}" loading="lazy" src="{pfx}media/research/rio-sio/20250506_175617.jpg" />
+        <figure class="rio-hero-photo">
+          <img alt="{c['meta']['hero_caption']}" loading="eager" src="{pfx}media/research/rio-sio/20250506_175617.jpg" />
           <figcaption>{c['meta']['hero_caption']}</figcaption>
         </figure>
       </div>
@@ -1315,21 +1336,21 @@ def generate_rio_sio_detail(site, trans, project, lang):
     <!-- 00b. System Demonstration Video -->
     <section class="panel" id="demo">
       <div class="container">
-        <div class="sectionhead">
+        <div class="sectionhead" style="text-align: center; max-width: 820px; margin: 0 auto 1.5rem;">
           <span class="num">{c['demo']['num']}</span>
           <h2>{c['demo']['title']}</h2>
-          <p class="video-intro">{c['demo']['intro']}</p>
+          <p class="video-intro" style="margin: 0.5rem auto 0;">{c['demo']['intro']}</p>
         </div>
-        <figure class="full-video" id="video2">
+        <figure class="video-showcase" id="video2">
           <div class="video-frame">
             <video class="autoplay-when-visible" controls loop muted playsinline preload="metadata" poster="{pfx}media/research/rio-sio/system_demo_poster.jpg" aria-label="{c['demo']['video_title']}">
               <source src="{pfx}media/research/rio-sio/system_demo_preview.mp4" type="video/mp4" />
               Your browser cannot play this video.
             </video>
           </div>
-          <figcaption>
-            <strong>{c['demo']['video_title']}</strong>
-            <span class="poster-label">{c['demo']['video_label']}</span>
+          <figcaption class="video-meta">
+            <span class="video-meta-title">{c['demo']['video_title']}</span>
+            <span class="video-meta-tag">{c['demo']['video_label']}</span>
           </figcaption>
         </figure>
       </div>
@@ -1344,8 +1365,10 @@ def generate_rio_sio_detail(site, trans, project, lang):
           <p class="lead">{c['challenge']['lead']}</p>
         </div>
         <div class="cols wide-left">
-          <figure class="photo">
-            <img alt="{c['challenge']['caption_2hi']}" loading="lazy" src="{pfx}media/research/rio-sio/2hi.jpg" />
+          <figure class="photo-card">
+            <div class="photo-card-media standard-photo">
+              <img alt="{c['challenge']['caption_2hi']}" loading="lazy" src="{pfx}media/research/rio-sio/2hi.jpg" />
+            </div>
             <figcaption>{c['challenge']['caption_2hi']}</figcaption>
           </figure>
           <div class="story">
@@ -1376,16 +1399,20 @@ def generate_rio_sio_detail(site, trans, project, lang):
           <p>{c['design']['lead']}</p>
         </div>
         <div class="cols">
-          <figure class="photo">
-            <img alt="{c['design']['caption_concept']}" loading="lazy" src="{pfx}media/research/rio-sio/system_concept.jpg" />
-            <figcaption>{c['design']['caption_concept']}</figcaption>
+          <figure class="photo-card">
+            <div class="photo-card-media contain-technical" data-lightbox>
+              <img alt="{c['design']['caption_concept']}" loading="lazy" src="{pfx}media/research/rio-sio/system_concept.jpg" data-zoomable />
+            </div>
+            <figcaption>{c['design']['caption_concept']} <span class="zoom-hint">🔍 Zoom</span></figcaption>
           </figure>
-          <figure class="photo">
-            <img alt="{c['design']['caption_sundial']}" loading="lazy" src="{pfx}media/research/rio-sio/5sunimpl.jpg" />
+          <figure class="photo-card">
+            <div class="photo-card-media standard-photo">
+              <img alt="{c['design']['caption_sundial']}" loading="lazy" src="{pfx}media/research/rio-sio/5sunimpl.jpg" />
+            </div>
             <figcaption>{c['design']['caption_sundial']}</figcaption>
           </figure>
         </div>
-        <div class="metricrow">
+        <div class="metricrow" style="margin-top: 1.75rem;">
           <div class="metric">
             <strong>{c['design']['metric_directions_val']}</strong>
             <span>{c['design']['metric_directions_lbl']}</span>
@@ -1411,27 +1438,35 @@ def generate_rio_sio_detail(site, trans, project, lang):
           <p>{c['optics']['lead']}</p>
         </div>
         <div class="cols">
-          <figure class="photo">
-            <img alt="{c['optics']['caption_6poc']}" loading="lazy" src="{pfx}media/research/rio-sio/6poc.jpg" />
-            <figcaption>{c['optics']['caption_6poc']}</figcaption>
+          <figure class="photo-card">
+            <div class="photo-card-media contain-technical" data-lightbox>
+              <img alt="{c['optics']['caption_6poc']}" loading="lazy" src="{pfx}media/research/rio-sio/6poc.jpg" data-zoomable />
+            </div>
+            <figcaption>{c['optics']['caption_6poc']} <span class="zoom-hint">🔍 Zoom</span></figcaption>
           </figure>
-          <figure class="photo">
-            <img alt="{c['optics']['caption_6full']}" loading="lazy" src="{pfx}media/research/rio-sio/6full.jpg" />
-            <figcaption>{c['optics']['caption_6full']}</figcaption>
+          <figure class="photo-card">
+            <div class="photo-card-media contain-technical" data-lightbox>
+              <img alt="{c['optics']['caption_6full']}" loading="lazy" src="{pfx}media/research/rio-sio/6full.jpg" data-zoomable />
+            </div>
+            <figcaption>{c['optics']['caption_6full']} <span class="zoom-hint">🔍 Zoom</span></figcaption>
           </figure>
         </div>
-        <div style="height: 1.25rem;"></div>
+        <div style="height: 1.5rem;"></div>
         <div class="cols wide-left">
-          <figure class="photo">
-            <img alt="{c['optics']['caption_lab']}" loading="lazy" src="{pfx}media/research/rio-sio/20240603_170901.jpg" />
+          <figure class="photo-card">
+            <div class="photo-card-media standard-photo">
+              <img alt="{c['optics']['caption_lab']}" loading="lazy" src="{pfx}media/research/rio-sio/20240603_170901.jpg" />
+            </div>
             <figcaption>{c['optics']['caption_lab']}</figcaption>
           </figure>
-          <figure class="photo">
-            <img alt="{c['optics']['caption_mirror']}" loading="lazy" src="{pfx}media/research/rio-sio/mirror0_375wave1706.jpg" />
-            <figcaption>{c['optics']['caption_mirror']}</figcaption>
+          <figure class="photo-card">
+            <div class="photo-card-media contain-technical" data-lightbox>
+              <img alt="{c['optics']['caption_mirror']}" loading="lazy" src="{pfx}media/research/rio-sio/mirror0_375wave1706.jpg" data-zoomable />
+            </div>
+            <figcaption>{c['optics']['caption_mirror']} <span class="zoom-hint">🔍 Zoom</span></figcaption>
           </figure>
         </div>
-        <p class="note" style="margin-top: 1rem; color: var(--text-muted); font-size: 0.82rem; font-family: var(--font-mono);">{c['optics']['note']}</p>
+        <p class="note" style="margin-top: 1.25rem; color: var(--text-muted); font-size: 0.85rem; font-family: var(--font-mono);">{c['optics']['note']}</p>
       </div>
     </section>
 
@@ -1443,27 +1478,35 @@ def generate_rio_sio_detail(site, trans, project, lang):
           <h2>{c['illumination']['title']}</h2>
           <p>{c['illumination']['lead']}</p>
         </div>
-        <div class="cols">
-          <figure class="photo">
-            <img alt="{c['illumination']['caption_dig']}" loading="lazy" src="{pfx}media/research/rio-sio/8trdig.jpg" />
-            <figcaption>{c['illumination']['caption_dig']}</figcaption>
+        
+        <!-- Orderly 3-Column Macro Grid -->
+        <div class="macro-grid">
+          <figure class="macro-card">
+            <div class="macro-img-wrap" data-lightbox>
+              <img alt="{c['illumination']['caption_dig']}" loading="lazy" src="{pfx}media/research/rio-sio/8trdig.jpg" data-zoomable />
+            </div>
+            <figcaption>{c['illumination']['caption_dig']} <span class="zoom-hint">🔍 Zoom</span></figcaption>
           </figure>
-          <figure class="photo">
-            <img alt="{c['illumination']['caption_gp']}" loading="lazy" src="{pfx}media/research/rio-sio/8trgp.jpg" />
-            <figcaption>{c['illumination']['caption_gp']}</figcaption>
+          
+          <figure class="macro-card">
+            <div class="macro-img-wrap" data-lightbox>
+              <img alt="{c['illumination']['caption_gp']}" loading="lazy" src="{pfx}media/research/rio-sio/8trgp.jpg" data-zoomable />
+            </div>
+            <figcaption>{c['illumination']['caption_gp']} <span class="zoom-hint">🔍 Zoom</span></figcaption>
+          </figure>
+          
+          <figure class="macro-card">
+            <div class="macro-img-wrap" data-lightbox>
+              <img alt="{c['illumination']['caption_scratch']}" loading="lazy" src="{pfx}media/research/rio-sio/8trscratch.jpg" data-zoomable />
+            </div>
+            <figcaption>{c['illumination']['caption_scratch']} <span class="zoom-hint">🔍 Zoom</span></figcaption>
           </figure>
         </div>
-        <div style="height: 1.25rem;"></div>
-        <div class="cols wide-left">
-          <figure class="photo">
-            <img alt="{c['illumination']['caption_scratch']}" loading="lazy" src="{pfx}media/research/rio-sio/8trscratch.jpg" />
-            <figcaption>{c['illumination']['caption_scratch']}</figcaption>
-          </figure>
-          <div class="callout">
-            <h3>{c['illumination']['callout_title']}</h3>
-            <p>{c['illumination']['callout_p']}</p>
-            <p class="note" style="margin-top: 0.75rem; color: var(--text-muted); font-size: 0.82rem;">{c['illumination']['callout_note']}</p>
-          </div>
+
+        <div class="callout" style="margin-top: 1.5rem; border-left: 4px solid var(--accent-steel);">
+          <h3>{c['illumination']['callout_title']}</h3>
+          <p>{c['illumination']['callout_p']}</p>
+          <p class="note" style="margin-top: 0.75rem; color: var(--text-muted); font-size: 0.82rem;">{c['illumination']['callout_note']}</p>
         </div>
       </div>
     </section>
@@ -1477,19 +1520,25 @@ def generate_rio_sio_detail(site, trans, project, lang):
           <p>{c['mechanical']['lead']}</p>
         </div>
         <div class="cols">
-          <figure class="photo">
-            <img alt="{c['mechanical']['caption_cad']}" loading="lazy" src="{pfx}media/research/rio-sio/9enclosure.jpg" />
+          <figure class="photo-card">
+            <div class="photo-card-media standard-photo">
+              <img alt="{c['mechanical']['caption_cad']}" loading="lazy" src="{pfx}media/research/rio-sio/9enclosure.jpg" />
+            </div>
             <figcaption>{c['mechanical']['caption_cad']}</figcaption>
           </figure>
-          <figure class="photo">
-            <img alt="{c['mechanical']['caption_enclosure']}" loading="lazy" src="{pfx}media/research/rio-sio/20250914_174152.jpg" />
+          <figure class="photo-card">
+            <div class="photo-card-media standard-photo">
+              <img alt="{c['mechanical']['caption_enclosure']}" loading="lazy" src="{pfx}media/research/rio-sio/20250914_174152.jpg" />
+            </div>
             <figcaption>{c['mechanical']['caption_enclosure']}</figcaption>
           </figure>
         </div>
-        <div style="height: 1.25rem;"></div>
+        <div style="height: 1.5rem;"></div>
         <div class="cols wide-left">
-          <figure class="photo">
-            <img alt="{c['mechanical']['caption_cabinet']}" loading="lazy" src="{pfx}media/research/rio-sio/5cabinet.jpg" />
+          <figure class="photo-card">
+            <div class="photo-card-media standard-photo">
+              <img alt="{c['mechanical']['caption_cabinet']}" loading="lazy" src="{pfx}media/research/rio-sio/5cabinet.jpg" />
+            </div>
             <figcaption>{c['mechanical']['caption_cabinet']}</figcaption>
           </figure>
           <div class="callout">
@@ -1504,30 +1553,26 @@ def generate_rio_sio_detail(site, trans, project, lang):
     <!-- 06. Robot Handling & Calibration -->
     <section class="panel" id="robot">
       <div class="container">
-        <div class="sectionhead">
+        <div class="sectionhead" style="text-align: center; max-width: 820px; margin: 0 auto 1.5rem;">
           <span class="num">{c['robot']['num']}</span>
           <h2>{c['robot']['title']}</h2>
-          <p>{c['robot']['lead']}</p>
+          <p style="margin: 0.5rem auto 0;">{c['robot']['lead']}</p>
         </div>
-        <figure class="full-video" id="video1">
+        <figure class="video-showcase" id="video1">
           <div class="video-frame">
             <video class="autoplay-when-visible" controls loop muted playsinline preload="metadata" poster="{pfx}media/research/rio-sio/robot_calibration_poster.jpg" aria-label="{c['robot']['video_title']}">
               <source src="{pfx}media/research/rio-sio/robot_calibration_preview.mp4" type="video/mp4" />
               Your browser cannot play this video.
             </video>
           </div>
-          <figcaption>
-            <strong>{c['robot']['video_title']}</strong>
-            <span class="poster-label">{c['robot']['video_label']}</span>
+          <figcaption class="video-meta">
+            <span class="video-meta-title">{c['robot']['video_title']}</span>
+            <span class="video-meta-tag">{c['robot']['video_label']}</span>
           </figcaption>
         </figure>
-        <div class="section-after-video">
-          <p>{c['robot']['after_video']}</p>
+        <div class="callout" style="max-width: 880px; margin: 1.5rem auto 0; border-left: 4px solid var(--accent-steel);">
+          <p style="font-size: 0.95rem; line-height: 1.65; margin: 0;">{c['robot']['after_video']}</p>
         </div>
-        <figure class="photo" style="max-width: 740px; margin-top: 1.5rem;">
-          <img alt="{c['robot']['caption_teach']}" loading="lazy" src="{pfx}media/research/rio-sio/20250506_175617.jpg" />
-          <figcaption>{c['robot']['caption_teach']}</figcaption>
-        </figure>
       </div>
     </section>
 
@@ -1566,7 +1611,7 @@ def generate_rio_sio_detail(site, trans, project, lang):
           <p>{c['contribution']['lead']}</p>
         </div>
         <div class="cols">
-          <div class="callout">
+          <div class="callout" style="border-left: 4px solid var(--accent-steel);">
             <h3>{c['contribution']['work_title']}</h3>
             <ul class="clean-list">
               {"".join([f"<li>{item}</li>" for item in c['contribution']['work_items']])}
@@ -1590,43 +1635,51 @@ def generate_rio_sio_detail(site, trans, project, lang):
           <p>{c['publication']['lead']}</p>
         </div>
         <div class="cols wide-left">
-          <figure class="photo">
-            <img alt="{c['publication']['caption_poster']}" loading="lazy" src="{pfx}media/research/rio-sio/20250506_172924.jpg" />
+          <figure class="photo-card">
+            <div class="photo-card-media standard-photo">
+              <img alt="{c['publication']['caption_poster']}" loading="lazy" src="{pfx}media/research/rio-sio/20250506_172924.jpg" />
+            </div>
             <figcaption>{c['publication']['caption_poster']}</figcaption>
           </figure>
-          <div class="callout">
-            <span class="kicker">{c['publication']['kicker']}</span>
-            <h3 style="margin-top: 0.5rem;">{c['publication']['paper_title']}</h3>
-            <p>{c['publication']['paper_sub']}</p>
-            <div style="margin-top: 1.25rem;">
-              <a class="btn btn-primary btn-sm" href="https://doi.org/10.1117/12.3111698" rel="noopener noreferrer" target="_blank">{c['publication']['cta_paper']}</a>
+          <div class="callout" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <span class="kicker">{c['publication']['kicker']}</span>
+              <h3 style="margin-top: 0.5rem;">{c['publication']['paper_title']}</h3>
+              <p style="margin-top: 0.5rem; line-height: 1.6;">{c['publication']['paper_sub']}</p>
             </div>
-            <p class="note" style="margin-top: 0.75rem; color: var(--text-muted); font-size: 0.82rem;">{c['publication']['paper_note']}</p>
+            <div>
+              <div style="margin-top: 1.25rem;">
+                <a class="btn btn-primary btn-sm" href="https://doi.org/10.1117/12.3111698" rel="noopener noreferrer" target="_blank">{c['publication']['cta_paper']}</a>
+              </div>
+              <p class="note" style="margin-top: 0.75rem; color: var(--text-muted); font-size: 0.82rem;">{c['publication']['paper_note']}</p>
+            </div>
           </div>
         </div>
         
-        <div class="paper-explainer">
-          <div class="sectionhead">
+        <div class="paper-explainer" style="margin-top: 3.5rem;">
+          <div class="sectionhead" style="text-align: center; max-width: 820px; margin: 0 auto 1.5rem;">
             <span class="num">{c['publication']['explainer_num']}</span>
             <h3>{c['publication']['explainer_title']}</h3>
-            <p>{c['publication']['explainer_sub']}</p>
+            <p style="margin: 0.5rem auto 0;">{c['publication']['explainer_sub']}</p>
           </div>
-          <figure class="full-video" id="micro-video">
+          <figure class="video-showcase" id="micro-video">
             <div class="video-frame">
               <video class="autoplay-when-visible" controls muted playsinline preload="metadata" poster="{pfx}media/research/rio-sio/micro_detective_poster.jpg" aria-label="{c['publication']['video_title']}">
                 <source src="{pfx}media/research/rio-sio/The_Micro-Detective.mp4" type="video/mp4" />
                 Your browser cannot play this video.
               </video>
             </div>
-            <figcaption>
-              <strong>{c['publication']['video_title']}</strong>
-              <span class="poster-label">{c['publication']['video_label']}</span>
+            <figcaption class="video-meta">
+              <span class="video-meta-title">{c['publication']['video_title']}</span>
+              <span class="video-meta-tag">{c['publication']['video_label']}</span>
             </figcaption>
           </figure>
-          <div class="supporting-copy">
-            <p>{c['publication']['explainer_copy']}</p>
+          <div class="supporting-copy" style="max-width: 880px; margin: 1rem auto 0; text-align: center;">
+            <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6;">{c['publication']['explainer_copy']}</p>
           </div>
         </div>
+      </div>
+    </section>
       </div>
     </section>
 

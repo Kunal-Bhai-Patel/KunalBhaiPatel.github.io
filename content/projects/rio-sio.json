@@ -23,6 +23,7 @@
     "de": "Automatisiertes kollaboratives Prüfsystem zur Detektion mikroskopischer Oberflächenfehler bis zu ca. 6 µm."
   },
   "tags": ["PTC Creo", "SolidWorks", "FANUC CR-7iA/L", "Optical Metrology", "Collimated Illumination", "Calibration", "IGF Project 01IF22263N"],
+  "image": "media/research/rio-sio/rio_sio_card.jpg",
   "content": {
     "en": {
       "problem": "High-precision optical components require rigorous quality control to detect minute surface defects (scratches, digs, dust, sub-surface damage) that impair laser transmission or optical imaging. Manual microscopic inspection is slow, operator-fatiguing, and subjective, while conventional Cartesian multi-axis stages lack the kinematic flexibility required for inspecting curved, freeform optical geometries at controlled angles.",
