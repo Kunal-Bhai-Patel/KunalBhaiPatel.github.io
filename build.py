@@ -428,6 +428,10 @@ def render_header(site, trans, lang, current_page, depth=0):
 
       <!-- Mobile Navigation Drawer -->
       <div id="mobileDrawer" class="mobile-drawer" aria-label="Mobile Navigation">
+        <div class="mobile-drawer-brand">
+          <div class="mobile-drawer-name">{site['author']['name']}</div>
+          <div class="mobile-drawer-tag">{site['tagline'][lang]}</div>
+        </div>
         <ul class="mobile-drawer-links">
           <li><a href="{home_url}" class="{home_cls}">{nav['home']}</a></li>
           <li><a href="{projects_url}" class="{projects_cls}">{nav['projects']}</a></li>
