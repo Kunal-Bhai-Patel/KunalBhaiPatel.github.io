@@ -1119,7 +1119,7 @@ def generate_about_page(site, trans, lang):
             </p>
             <div style="display: flex; gap: 0.85rem; flex-wrap: wrap;">
               <a href="{pfx}{lang}/projects/rio-sio/" class="btn btn-primary btn-sm">
-                {"Explore Rio sio Case Study →" if lang == "en" else "Rio sio Fallstudie erkunden →"}
+                {"Explore Rio sio Research Project →" if lang == "en" else "Rio sio Forschungsprojekt erkunden →"}
               </a>
               <a href="{pfx}{lang}/projects/" class="btn btn-secondary btn-sm">
                 {"Workshop Projects →" if lang == "en" else "Werkstattprojekte →"}
@@ -1312,12 +1312,12 @@ def generate_rio_sio_detail(site, trans, project, lang):
     </div>
 
     <!-- 00. Hero Section -->
-    <section class="hero" id="overview">
+    <header class="hero" id="overview">
       <div class="container herogrid">
         <div>
           <span class="kicker">{c['meta']['kicker']}</span>
-          <h1 style="font-size: clamp(2.5rem, 4.5vw, 3.8rem); line-height: 1.15; margin: 0.75rem 0 1.25rem;">{c['meta']['title']}</h1>
-          <p class="lead" style="font-size: 1.18rem; color: var(--text-secondary); line-height: 1.65; max-width: 620px;">{c['meta']['lead']}</p>
+          <h1 style="font-size: clamp(2.3rem, 4.2vw, 3.6rem); line-height: 1.15; margin: 0.75rem 0 1.25rem;">{c['meta']['title']}</h1>
+          <p class="lead" style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.65; max-width: 620px;">{c['meta']['lead']}</p>
           <div class="tags">
             {tags_html}
           </div>
@@ -1331,7 +1331,39 @@ def generate_rio_sio_detail(site, trans, project, lang):
           <figcaption>{c['meta']['hero_caption']}</figcaption>
         </figure>
       </div>
-    </section>
+
+      <!-- Compact Recruiter Project Overview Card -->
+      <div class="container" style="margin-top: 2.25rem;">
+        <div class="rio-overview-card">
+          <div class="rio-overview-header">
+            <span class="rio-overview-badge">{"Research & Development Project Brief" if lang == "en" else "Forschungsprojekt im Überblick"}</span>
+            <span class="rio-overview-meta">{"Master's Thesis Research · TH Deggendorf" if lang == "en" else "Master-Forschungsarbeit · TH Deggendorf"}</span>
+          </div>
+          <div class="rio-overview-grid">
+            <div class="rio-overview-item">
+              <span class="rio-overview-label">{"Research Institution" if lang == "en" else "Forschungsinstitut"}</span>
+              <span class="rio-overview-val">Technologie Campus Teisnach Optik, TH Deggendorf</span>
+            </div>
+            <div class="rio-overview-item">
+              <span class="rio-overview-label">{"Research Focus" if lang == "en" else "Forschungsschwerpunkt"}</span>
+              <span class="rio-overview-val">{"Automated inspection of imperfections on optical surfaces" if lang == "en" else "Automatisierte Inspektion von Unvollkommenheiten auf optischen Oberflächen"}</span>
+            </div>
+            <div class="rio-overview-item">
+              <span class="rio-overview-label">{"Core Technologies" if lang == "en" else "Kerntechnologien"}</span>
+              <span class="rio-overview-val">{"FANUC CR-7iA/L, mechanical design, optical metrology, high-resolution imaging and controlled illumination" if lang == "en" else "FANUC CR-7iA/L, CAD-Konstruktion, optische Messtechnik, hochauflösende Bildgebung und kontrollierte Beleuchtung"}</span>
+            </div>
+            <div class="rio-overview-item">
+              <span class="rio-overview-label">{"My Contributions" if lang == "en" else "Eigene Ingenieurbeiträge"}</span>
+              <span class="rio-overview-val">{"CAD, mechanical and optomechanical integration, optical alignment, illumination experiments, robotic positioning, manual calibration and experimental validation" if lang == "en" else "CAD, mechanische und optomechatronische Integration, optische Justage, Beleuchtungsexperimente, Roboterkinematik, manuelle Kalibrierung und experimentelle Validierung"}</span>
+            </div>
+            <div class="rio-overview-item rio-overview-span">
+              <span class="rio-overview-label">{"Research Outcome" if lang == "en" else "Forschungsergebnis & Validierung"}</span>
+              <span class="rio-overview-val">{"Microscopic surface-defect inspection (~6 µm), experimental prototype and co-authored publication in SPIE Proceedings (DOI: 10.1117/12.3111698)" if lang == "en" else "Mikroskopische Oberflächendefekterkennung (~6 µm), Versuchsprototyp und Co-Autorenschaft in den SPIE Proceedings (DOI: 10.1117/12.3111698)"}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
 
     <!-- 00b. System Demonstration Video -->
     <section class="panel" id="demo">
@@ -1341,7 +1373,7 @@ def generate_rio_sio_detail(site, trans, project, lang):
           <h2>{c['demo']['title']}</h2>
           <p class="video-intro" style="margin: 0.5rem auto 0;">{c['demo']['intro']}</p>
         </div>
-        <figure class="video-showcase" id="video2">
+        <figure class="video-showcase" id="video1">
           <div class="video-frame">
             <video class="autoplay-when-visible" controls loop muted playsinline preload="metadata" poster="{pfx}media/research/rio-sio/system_demo_poster.jpg" aria-label="{c['demo']['video_title']}">
               <source src="{pfx}media/research/rio-sio/system_demo_preview.mp4" type="video/mp4" />
@@ -1558,7 +1590,7 @@ def generate_rio_sio_detail(site, trans, project, lang):
           <h2>{c['robot']['title']}</h2>
           <p style="margin: 0.5rem auto 0;">{c['robot']['lead']}</p>
         </div>
-        <figure class="video-showcase" id="video1">
+        <figure class="video-showcase" id="video2">
           <div class="video-frame">
             <video class="autoplay-when-visible" controls loop muted playsinline preload="metadata" poster="{pfx}media/research/rio-sio/robot_calibration_poster.jpg" aria-label="{c['robot']['video_title']}">
               <source src="{pfx}media/research/rio-sio/robot_calibration_preview.mp4" type="video/mp4" />
@@ -1678,8 +1710,6 @@ def generate_rio_sio_detail(site, trans, project, lang):
             <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6;">{c['publication']['explainer_copy']}</p>
           </div>
         </div>
-      </div>
-    </section>
       </div>
     </section>
 

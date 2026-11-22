@@ -2,8 +2,8 @@
   "id": "rio-sio",
   "category": "professional",
   "category_label": {
-    "en": "Professional / Research",
-    "de": "Beruflich / Forschung"
+    "en": "Research & Development",
+    "de": "Forschung & Entwicklung"
   },
   "featured": true,
   "status": {
@@ -15,8 +15,8 @@
   "organization": "Technologie Campus Teisnach Optik (TH Deggendorf)",
   "funding": "IGF research project 01IF22263N",
   "title": {
-    "en": "Rio sio: Robotic Inspection of Optical Surfaces",
-    "de": "Rio sio: Robotergestützte Prüfung optischer Oberflächen"
+    "en": "Rio sio: Automated Robotic Inspection of Imperfections on Optical Surfaces",
+    "de": "Rio sio: Robotische Inspektion von Unvollkommenheiten in optischen Oberflächen"
   },
   "one_liner": {
     "en": "Automated cobotic optical inspection system demonstrating microscopic imperfection detection down to approximately 6 µm.",
