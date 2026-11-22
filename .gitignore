@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Sensitive / local reference files
+*.private.*
+secrets.*
+*.key
+credentials.*
+
+# Internal briefing notes and prompt specifications
+docs/
+
+# Phase 2 draft visual assets, videos, thesis drafts, and interim reports
+Visuals/
+Report_Phase 1.pdf
+*.pdf
+*.mp4
+*.MP4
+
+# Local distribution directory (built automatically by GitHub Actions in CI/CD)
+dist/

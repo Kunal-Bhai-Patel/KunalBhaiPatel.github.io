@@ -1,0 +1,66 @@
+{
+  "id": "local-ai",
+  "category": "personal",
+  "category_label": {
+    "en": "Personal / Local AI & Systems",
+    "de": "Privat / Lokale KI & Systeme"
+  },
+  "featured": false,
+  "status": {
+    "en": "Exploratory / Experimental Bench",
+    "de": "Experimentelle Versuchsreihe"
+  },
+  "provenance": "USER-DISCUSSED",
+  "period": "Personal Exploration",
+  "organization": "Independent Workshop Study",
+  "title": {
+    "en": "Local AI & Voice Assistant Experiments",
+    "de": "Lokale KI & Sprachassistenten-Experimente"
+  },
+  "one_liner": {
+    "en": "Exploring local-first voice processing, offline speech recognition, and lightweight LLM inference using Ollama and open-source models on commodity hardware.",
+    "de": "Untersuchung von lokalem Voice-Processing, Offline-Spracherkennung und leichtgewichtigen LLMs mit Ollama auf lokaler Standard-Hardware."
+  },
+  "tags": ["Ollama", "Local LLMs", "Open Source Speech", "Linux", "Voice Assistants", "Systems Integration"],
+  "content": {
+    "en": {
+      "problem": "Commercial voice assistants transmit continuous audio streams to remote cloud servers, creating privacy vulnerabilities and failing entirely during network outages. Running local-first voice stacks on commodity consumer hardware poses serious latency, memory, and model quantization challenges.",
+      "approach": "Investigated self-hosted speech and AI stacks across Linux and Windows machines. Tested open-source wake-word engines, local automatic speech recognition (ASR), and quantized local language models running through Ollama. Evaluated inference speeds, RAM consumption, and audio latency bounds on non-datacenter hardware.",
+      "contributions": [
+        "Testing and configuration of local inference pipelines via Ollama on consumer GPUs and CPUs.",
+        "Benchmarking latency across speech-to-text, LLM prompt generation, and text-to-speech synthesis.",
+        "Evaluating Linux audio routing and microphone capture sensitivity for far-field wake word detection."
+      ],
+      "specs": [
+        {"key": "LLM Inference Framework", "value": "Ollama (local quantized models)", "source": "USER-DISCUSSED"},
+        {"key": "Target Environment", "value": "Local Linux & Windows test environments", "source": "USER-DISCUSSED"},
+        {"key": "Project Status", "value": "Exploratory experimentation (not commercialized)", "source": "USER-DISCUSSED"}
+      ],
+      "iterations": "Large language models often exceeded latency targets for real-time conversation. Shifted focus to smaller quantized parameter models (e.g., 3B–7B parameters) to achieve acceptable time-to-first-token responses on local hardware.",
+      "results": "Gained practical insights into memory management, context window trade-offs, and audio pipeline challenges of offline conversational AI.",
+      "lessons": "Running AI locally requires realistic hardware budgeting: the latency bottleneck is rarely compute power alone, but the memory bandwidth required to stream model weights into active registers."
+    },
+    "de": {
+      "problem": "Kommerzielle Sprachassistenten senden kontinuierliche Audioströme an Cloud-Rechenzentren – mit bekannten Datenschutzrisiken und vollständigem Ausfall bei getrennter Internetverbindung. Die lokale Ausführung auf Standard-Hardware steht jedoch vor großen Herausforderungen bezüglich Latenz, Arbeitsspeicher und Quantisierung.",
+      "approach": "Untersuchung lokaler Sprachverarbeitungs- und KI-Pipelines unter Linux und Windows. Erprobung von Open-Source-Keyword-Detektion (Wake Word), lokaler Spracherkennung und quantisierten Sprachmodellen über Ollama. Messung von Inferenzzeiten, RAM-Bedarf und Latenzketten auf herkömmlicher Heimanwender-Hardware.",
+      "contributions": [
+        "Aufbau und Test lokaler Inferenz-Pipelines über Ollama auf Desktop-Hardware.",
+        "Latenzvergleiche von Sprach-zu-Text-, Modellantwort- und Text-zu-Sprache-Stufen.",
+        "Analyse von Audio-Routing und Mikrofonempfindlichkeit unter Linux."
+      ],
+      "specs": [
+        {"key": "Inferenz-Framework", "value": "Ollama (lokal quantisierte Modelle)", "source": "USER-DISCUSSED"},
+        {"key": "Systemumgebung", "value": "Lokale Linux- & Windows-Testrechner", "source": "USER-DISCUSSED"},
+        {"key": "Projektstatus", "value": "Experimentelle Versuchsreihe (kein Fertigprodukt)", "source": "USER-DISCUSSED"}
+      ],
+      "iterations": "Größere Modelle überschritten oft die für flüssige Sprachinteraktionen tolerierbare Antwortzeit. Die Fokussierung auf stark quantisierte 3B- bis 7B-Modelle verbesserte die Zeit bis zum ersten Antwort-Token erheblich.",
+      "results": "Gewinnung fundierter Einblicke in Speicherbandbreiten-Grenzen, Prompt-Verarbeitungszeiten und die Systemanforderungen lokaler Sprachverarbeitung.",
+      "lessons": "Lokale KI verlangt realistisches Ressourcen-Management: Der eigentliche Flaschenhals ist selten die reine Rechenleistung, sondern die Speicherbandbreite beim Laden der Modellgewichte."
+    }
+  },
+  "links": [],
+  "missing_assets": [
+    "High-level block diagram of local voice pipeline",
+    "Sanitized terminal logs showing inference latency benchmarks"
+  ]
+}

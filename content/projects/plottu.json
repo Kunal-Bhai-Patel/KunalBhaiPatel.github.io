@@ -1,0 +1,85 @@
+{
+  "id": "plottu",
+  "category": "personal",
+  "category_label": {
+    "en": "Personal / Mechatronics & Making",
+    "de": "Privat / Mechatronik & Werkstatt"
+  },
+  "featured": true,
+  "status": {
+    "en": "Active Prototype / Iterative Testing",
+    "de": "Aktiver Prototyp / Iterative Erprobung"
+  },
+  "provenance": "USER-DISCUSSED",
+  "period": "Personal Maker Project",
+  "organization": "Independent Workshop Project",
+  "title": {
+    "en": "Plottu: Wi-Fi Desktop Pen Plotter",
+    "de": "Plottu: WLAN-gestützter Stiftplotter"
+  },
+  "one_liner": {
+    "en": "Custom dual-axis kinematics driven by stepper motors, micro-servo pen actuation, and ESP32 FluidNC firmware over Wi-Fi.",
+    "de": "Eigenkonstruierter Zwei-Achs-Stiftplotter mit Schrittmotorantrieb, Servo-Stiftabhebung und ESP32-FluidNC-Steuerung über WLAN."
+  },
+  "tags": ["ESP32", "FluidNC", "MKS TinyBee 1.0", "Stepper Motors", "Micro-Servo", "3D Printing", "G-code", "Motion Control"],
+  "content": {
+    "en": {
+      "problem": "Commercial pen plotters are either costly proprietary units or fragile desktop toys with closed-source firmware and tethered USB connections. The goal was to build a rugged, modular, wireless 2D motion platform capable of drawing vector artwork, technical schematics, and precision lettering directly over local Wi-Fi without trailing USB cables.",
+      "approach": "Designed a custom dual-axis mechanism utilizing linear rods/bearings, timing belts, and NEMA-class stepper motors. Pen actuation (Z-lift) is handled by a responsive micro-servo mounted to a lightweight 3D-printed carriage to minimize moving inertia. The electronics center on an MKS TinyBee 1.0 board running FluidNC on an ESP32, which exposes a standalone browser interface (FigUI) for wireless G-code streaming, calibration, and zeroing.",
+      "contributions": [
+        "Mechanical CAD design of 3D-printed carriages, belt tensioners, endstop mounts, and servo pen-holder linkage.",
+        "Fabrication and iterative tuning of functional FDM parts with heat-set brass threaded inserts.",
+        "Wiring and configuration of the MKS TinyBee controller, stepper driver current limits, and endstop homing logic.",
+        "Firmware setup with FluidNC: pin mapping, step/mm calibration, acceleration limits, and servo PWM duty cycles.",
+        "Vector graphics workflow development: SVG parsing, vector optimization, and toolpath G-code generation."
+      ],
+      "specs": [
+        {"key": "Controller Board", "value": "Makerbase MKS TinyBee 1.0 (ESP32 dual-core)", "source": "USER-DISCUSSED"},
+        {"key": "Motion Firmware", "value": "FluidNC open-source CNC controller", "source": "USER-DISCUSSED"},
+        {"key": "Pen Mechanism", "value": "Micro-servo lever lift with spring compliance", "source": "USER-DISCUSSED"},
+        {"key": "Target Drawing Area", "value": "A4-compatible (target ~235 × 350 mm under verification)", "source": "USER-DISCUSSED"},
+        {"key": "Interface", "value": "WebUI / FigUI over local Wi-Fi (wireless G-code streaming)", "source": "USER-DISCUSSED"},
+        {"key": "Fabrication", "value": "Custom FDM 3D printed mechanical components", "source": "USER-DISCUSSED"}
+      ],
+      "iterations": "Initial plots revealed pen bounce during rapid descent and minor backlash on belt reversals. The pen-lift mechanism was revised through three iterations: replacing a rigid arm with a spring-preloaded compliant slider to accommodate slight paper surface unevenness without tearing paper, and adding software deceleration pauses before pen-down strokes.",
+      "results": "Demonstrated wireless homing, responsive manual jogging via browser WebUI, clean SVG-to-Gcode plotting, and reliable continuous line drawing. Prototyping continues on fine-tuning pen pressure repeatability across diverse pen weights.",
+      "lessons": "Open-loop micro-steppers combined with lightweight 3D printed gantry systems require meticulous belt tension balancing. In pen plotting, the Z-axis mechanical damping is as critical as X/Y accuracy; without compliance, even high-precision steppers produce ink splatters or torn paper."
+    },
+    "de": {
+      "problem": "Kommerzielle Stiftplotter sind entweder teure Spezialgeräte oder mechanisch instabile Bausätze mit proprietärer Software und störender USB-Kabelanbindung. Ziel war die Konstruktion einer steifen, modularen und kabellosen 2D-Kinematik für Vektorgrafiken, technische Zeichnungen und Beschriftungen direkt über das lokale WLAN.",
+      "approach": "Entwicklung einer zweiachsigen Kinematik mit Linearführungen, Zahnriemen und Schrittmotoren. Die Stiftabhebung (Z-Hub) übernimmt ein reaktionsschneller Mikro-Servo auf einem leichten, 3D-gedruckten Schlitten zur Minimierung der bewegten Masse. Als Steuerungszentrale dient ein MKS TinyBee 1.0 Board mit ESP32 und FluidNC-Firmware, welches ein komfortables Web-Interface (FigUI) zur kabellosen G-Code-Übertragung bereitstellt.",
+      "contributions": [
+        "CAD-Konstruktion aller funktionalen 3D-Druckteile: Schlitten, Riemenspanner, Endschalterhalter und Servo-Stifthebel.",
+        "Fertigung und Optimierung von FDM-Funktionsbauteilen mit eingeschmolzenen Gewindeeinsätzen.",
+        "Elektrischer Aufbau des MKS TinyBee Boards, Justage der Schrittmotortreiber und Verdrahtung der Endschalter.",
+        "Konfiguration der FluidNC-Firmware: Pin-Mapping, Schrittweitenkalibrierung (Steps/mm), Beschleunigungsrampen und PWM-Servowerte.",
+        "Workflow-Entwicklung von SVG-Vektordateien über Pfadoptionierung bis zur G-Code-Generierung."
+      ],
+      "specs": [
+        {"key": "Steuerplatine", "value": "Makerbase MKS TinyBee 1.0 (ESP32 Dual-Core)", "source": "USER-DISCUSSED"},
+        {"key": "Firmware", "value": "FluidNC Open-Source CNC-Steuerung", "source": "USER-DISCUSSED"},
+        {"key": "Stifthebemechanik", "value": "Mikro-Servo mit federnder Ausgleichskinematik", "source": "USER-DISCUSSED"},
+        {"key": "Zeichenbereich", "value": "A4-kompatibel (Auslegung ~235 × 350 mm in Verifikation)", "source": "USER-DISCUSSED"},
+        {"key": "Bedienung", "value": "WebUI / FigUI über WLAN (kabelloser G-Code-Transfer)", "source": "USER-DISCUSSED"},
+        {"key": "Fertigungsverfahren", "value": "FDM-3D-Druck mit technischen Thermoplasten", "source": "USER-DISCUSSED"}
+      ],
+      "iterations": "Frühe Testplots zeigten Stiftprellen beim schnellen Absenken und minimale Umkehrspiele. Die Stiftaufnahme wurde in drei Iterationen überarbeitet: Starrkörper wurden durch eine federbelastete Schlittenführung ersetzt, die Papierunebenheiten ausgleicht. Zudem wurden kurze Verweilzeiten in der Firmware vor dem Linienstart implementiert.",
+      "results": "Erfolgreiche Demonstration der kabellosen Referenzfahrt, manueller Achsbewegung im Browser, saubere SVG-Umwandlung und reproduzierbare Linienführung auf Testbögen. Weitere Tests zur Stiftdruckkonstanz bei unterschiedlichen Schreibspitzen laufen.",
+      "lessons": "Bei riemengetriebenen Leichtbau-Gantries ist die gleichmäßige Riemenspannung erfolgskritisch. Beim Plotten ist die mechanische Dämpfung der Z-Achse genauso wichtig wie die X/Y-Schrittauflösung: Ohne Federweg führen kleinste Unebenheiten zu Tintenklecksen oder Papierrissen."
+    }
+  },
+  "links": [
+    {
+      "label": "FluidNC Open Source Firmware Documentation",
+      "url": "http://wiki.fluidnc.com/",
+      "type": "external",
+      "verified": true
+    }
+  ],
+  "missing_assets": [
+    "High-res photographs of assembled Plottu gantry and bench setup",
+    "Close-up photograph of pen-lift servo linkage and carriage",
+    "High-resolution scan/photo of completed complex vector plot on paper",
+    "Short video demonstration of wireless plotting motion"
+  ]
+}

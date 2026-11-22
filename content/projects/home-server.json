@@ -1,0 +1,71 @@
+{
+  "id": "home-server",
+  "category": "personal",
+  "category_label": {
+    "en": "Personal / Linux & Systems",
+    "de": "Privat / Linux & Systemadministration"
+  },
+  "featured": false,
+  "status": {
+    "en": "Operational / Self-Hosted Infrastructure",
+    "de": "Im Produktivbetrieb / Selbst gehostet"
+  },
+  "provenance": "USER-DISCUSSED",
+  "period": "Personal Infrastructure Project",
+  "organization": "Independent Workshop Project",
+  "title": {
+    "en": "Debian Home Server & Self-Hosting",
+    "de": "Debian-Heimserver & Self-Hosting"
+  },
+  "one_liner": {
+    "en": "Repurposing legacy x86 hardware into a quiet, energy-efficient headless Debian 12 server running Nextcloud, Jellyfin, and secure Tailscale mesh networking.",
+    "de": "Nachhaltige Zweitnutzung älterer x86-Hardware als leiser Debian-12-Heimserver für Nextcloud, Jellyfin und verschlüsseltes Tailscale-Netzwerk."
+  },
+  "tags": ["Debian 12", "Linux Administration", "Nextcloud", "Jellyfin", "Tailscale VPN", "Storage Management", "Hardware Repurposing"],
+  "content": {
+    "en": {
+      "problem": "Commercial cloud storage subscriptions lock user data behind proprietary ecosystems with recurring costs and opaque privacy policies. Older laptop and desktop computers often sit idle despite possessing ample CPU performance, low idle power draw, and built-in battery backup capabilities.",
+      "approach": "Repurposed an existing x86 machine into a headless Debian 12 Linux server. Configured automated system updates, local storage arrays, and self-hosted services including Nextcloud for file synchronization and Jellyfin for private media delivery. Secure remote connectivity is handled via zero-trust Tailscale overlay networking, eliminating the need to expose open incoming router ports to the public internet.",
+      "contributions": [
+        "Headless Debian 12 minimal installation, power-management tuning, and system hardening.",
+        "Configuration and maintenance of Nextcloud, database backends, and storage mount points.",
+        "Implementation of Tailscale peer-to-peer encrypted mesh networking for safe remote access without port forwarding.",
+        "Automated backup routines, monitoring, and regular Linux maintenance."
+      ],
+      "specs": [
+        {"key": "Operating System", "value": "Debian GNU/Linux 12 (Bookworm, Headless)", "source": "USER-DISCUSSED"},
+        {"key": "Hardware Base", "value": "Repurposed energy-efficient x86 laptop hardware", "source": "USER-DISCUSSED"},
+        {"key": "Core Services", "value": "Nextcloud, Jellyfin Media Server", "source": "USER-DISCUSSED"},
+        {"key": "Remote Access Architecture", "value": "Encrypted WireGuard-based mesh (Tailscale)", "source": "USER-DISCUSSED"}
+      ],
+      "iterations": "Configured ACPI sleep and thermal fan curves to ensure completely silent passive operation during low-load periods while preventing thermal throttling during multi-gigabyte backup jobs.",
+      "results": "Stable, continuous local and remote file synchronization across personal devices with zero subscription fees and private data ownership.",
+      "lessons": "Repurposed consumer hardware makes an extraordinarily power-efficient home server. Security is best achieved by design: keeping zero public inbound ports open and relying strictly on authenticated overlay VPN meshes."
+    },
+    "de": {
+      "problem": "Kommerzielle Cloud-Speicheranbieter binden Daten an proprietäre Ökosysteme mit laufenden Kosten und unklarem Datenschutz. Ausgemusterte Notebooks oder PCs besitzen hingegen meist mehr als genug Rechenleistung für den Heimbetrieb, verbrauchen wenig Strom und bieten durch den Akku sogar einen integrierten Ausfallschutz.",
+      "approach": "Aufbau eines Headless-Debian-12-Linux-Servers auf Basis älterer x86-Hardware. Konfiguration automatisierter Sicherheitsupdates, lokaler Festplattenverbünde und privater Dienste wie Nextcloud (Dateisynchronisation) und Jellyfin (Medienserver). Der sichere Fernzugriff erfolgt über ein verschlüsseltes Tailscale-Overlay-Netzwerk ohne gefährliche Portweiterleitungen im Router.",
+      "contributions": [
+        "Installation und Härtung eines minimalen Debian-12-Systems inklusive Energieoptimierung.",
+        "Einrichtung und Wartung von Nextcloud, Datenbankanbindung und Speicher-Einhängepunkten.",
+        "Einbindung in ein WireGuard-basiertes Tailscale-Netzwerk für sicheren weltweiten Fernzugriff.",
+        "Automatisierte Backup-Routinen und Systemüberwachung."
+      ],
+      "specs": [
+        {"key": "Betriebssystem", "value": "Debian GNU/Linux 12 (Bookworm, Headless)", "source": "USER-DISCUSSED"},
+        {"key": "Hardwarebasis", "value": "Wiederverwendete, energieeffiziente x86-Laptop-Hardware", "source": "USER-DISCUSSED"},
+        {"key": "Dienste", "value": "Nextcloud, Jellyfin Medienserver", "source": "USER-DISCUSSED"},
+        {"key": "Fernzugriff", "value": "Verschlüsseltes Mesh-Netzwerk (Tailscale / WireGuard)", "source": "USER-DISCUSSED"}
+      ],
+      "iterations": "Optimierung der ACPI-Energieprofile und Lüfterkennlinien für nahezu lautlosen Betrieb bei geringer Last unter Vermeidung von Hitzestaus bei großen Dateiübertragungen.",
+      "results": "Zuverlässige, dauerhafte Dateisynchronisation und Medienbereitstellung über alle persönlichen Endgeräte bei vollständiger Datenhoheit ohne laufende Abokosten.",
+      "lessons": "Ausgemusterte Hardware eignet sich hervorragend als stromsparender Heimserver. Maximale Sicherheit entsteht durch das Vermeiden offener Router-Ports: Sichere Peer-to-Peer-Tunnel sind der Standard für moderne Fernadministration."
+    }
+  },
+  "links": [],
+  "missing_assets": [
+    "High-level sanitized network architecture diagram (without IP addresses or hostnames)",
+    "Sanitized service dashboard screenshot",
+    "Hardware photo of repurposed server setup"
+  ]
+}

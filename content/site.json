@@ -1,0 +1,23 @@
+{
+  "site_name": "Kunal Bhai Patel",
+  "tagline": {
+    "en": "Engineer by profession. Maker by curiosity.",
+    "de": "Ingenieur aus Berufung. Tüftler aus Leidenschaft."
+  },
+  "author": {
+    "name": "Kunal Bhai Patel",
+    "degrees": ["B.Eng. Mechanical Engineering", "M.Eng. Mechatronic & Cyber-Physical Systems"],
+    "location": "Germany",
+    "languages": ["English (Fluent)", "German (Goethe B2 / Professional)"],
+    "current_training": "Creo Konstrukteur (Parametric CAD, Assemblies, Skeleton Modeling, Surfaces)",
+    "linkedin_url": "https://www.linkedin.com/in/kunalbhaipatel",
+    "youtube_channel": "Kunal in Germany",
+    "youtube_handle": "@kunalingermany",
+    "youtube_url": "https://www.youtube.com/@kunalingermany"
+  },
+  "deployment": {
+    "noindex": true,
+    "github_pages": true,
+    "base_path": ""
+  }
+}

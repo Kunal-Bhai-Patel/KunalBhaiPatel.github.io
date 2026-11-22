@@ -1,0 +1,177 @@
+{
+  "lang": "de",
+  "lang_name": "Deutsch",
+  "alt_lang": "en",
+  "alt_lang_name": "English",
+  "nav": {
+    "home": "Startseite",
+    "projects": "Projekte",
+    "research": "Forschung",
+    "about": "Über mich",
+    "contact": "Kontakt",
+    "lang_toggle": "EN",
+    "theme_toggle_aria": "Zwischen hellem und dunklem Design umschalten"
+  },
+  "hero": {
+    "pill": "Maschinenbau · Mechatronik · Robotik · Tüfteln",
+    "title": "Ingenieur aus Berufung. Tüftler aus Leidenschaft.",
+    "lead": "Ich bin Kunal Bhai Patel, Maschinenbau- und Mechatronikingenieur an der Schnittstelle von industrieller Prüftechnik und praktischer Werkstatthardware. Von robotergestützter optischer Messtechnik bis ~6 µm bis zu eigenen Bewegungssteuerungen, Gehäusekonstruktionen und Linux-Systemen.",
+    "cta_projects": "Projekte entdecken →",
+    "cta_research": "Forschung & SPIE-Publikation →",
+    "cta_about": "Über mich →",
+    "credentials": [
+      "M.Eng. Mechatronische Systeme (TH Deggendorf)",
+      "B.Eng. Maschinenbau",
+      "Wohnhaft in Deutschland"
+    ],
+    "visual_badge": "CAD- & HARDWARE-VISUALISIERUNG",
+    "visual_caption_title": "Kinematik- & Prüfaufbau",
+    "visual_caption_sub": "Vorgesehen für Original-Werkstattfoto oder CAD-Rendering"
+  },
+  "pillars": {
+    "section_title": "Zwei gleichberechtigte Schwerpunkte",
+    "section_desc": "Gleiches visuelles und inhaltliches Gewicht für industrielle Forschung und eigenständiges Werkstatt-Engineering.",
+    "professional_badge": "Schwerpunkt 01 · Forschung & Industrie",
+    "professional_title": "Konstruktion & Forschung",
+    "professional_lead": "Forschungsnahe Entwicklung, präzise CAD-Konstruktion und robotergestützte Systemintegration.",
+    "professional_caps": [
+      {"label": "Roboterplattform", "value": "FANUC CR-7iA/L 6-Achs-Cobot"},
+      {"label": "Optische Messtechnik", "value": "~6 µm Fehlerauflösung (nachgewiesen)"},
+      {"label": "CAD & Vorrichtungsbau", "value": "PTC Creo & SolidWorks Baugruppen"},
+      {"label": "Fachpublikation", "value": "SPIE-Tagungsband 2026 (DOI-Link)"}
+    ],
+    "personal_badge": "Schwerpunkt 02 · Werkstatt & Prototypen",
+    "personal_title": "Projekte aus meiner Werkstatt",
+    "personal_lead": "Praktische Mechatronik, Bewegungssteuerungen und selbst gehostete Systeme für den zuverlässigen Dauereinsatz.",
+    "personal_caps": [
+      {"label": "Kinematik & Motion", "value": "Plottu WLAN-Stiftplotter (FluidNC)"},
+      {"label": "Gehäuse & Thermik", "value": "Dual-HDD-Gehäuse mit Zwangsbelüftung"},
+      {"label": "Fertigungstechnik", "value": "FDM-Optimierung & Gewindeeinsätze"},
+      {"label": "Self-Hosting", "value": "Debian 12 Headless + Tailscale"}
+    ],
+    "cta_professional": "Zur Forschungsseite →",
+    "cta_personal": "Zur gesamten Projektgalerie →"
+  },
+  "featured_projects": {
+    "section_title": "Ausgewählte Arbeiten",
+    "section_desc": "Gleiche Aufmerksamkeit für Forschungsergebnisse und eigenständige Hardware-Entwicklungen.",
+    "view_case_study": "Projektdetails ansehen",
+    "view_all_cta": "Alle Projekte in der Übersicht ansehen →",
+    "filter_all": "Alle Arbeiten",
+    "filter_professional": "Beruflich & Forschung",
+    "filter_personal": "Werkstatt & Maker",
+    "badge_research": "Forschung / Prüftechnik",
+    "badge_maker": "Mechatronik / Motion"
+  },
+  "projects_page": {
+    "badge": "Portfolio-Galerie",
+    "title": "Projekte & Werkstatt-Entwicklungen",
+    "lead": "Eine strukturierte Gesamtübersicht aus mechatronischer Forschung, Hardware-Prototypen, Bewegungssteuerungen und eigenständigen Werkstattprojekten. Jedes Projekt steht für praxisnahe CAD-Konstruktion, Montage und systematisches Lösen technischer Probleme.",
+    "filter_all": "Alle Projekte",
+    "filter_professional": "Berufliche Entwicklung",
+    "filter_personal": "Werkstatt & Maker"
+  },
+  "research_page": {
+    "badge": "Angewandte F&E-Messtechnik",
+    "title": "Robotergestützte optische Prüfung & Messtechnik",
+    "lead": "Im Rahmen eines IGF-geförderten Forschungsvorhabens (01IF22263N) am Technologie Campus Teisnach Optik (TH Deggendorf) habe ich an einem cobotgestützten Prüfsystem zur automatisierten Erkennung mikroskopischer Fehler auf Präzisionsoptiken mitgearbeitet.",
+    "paper_badge": "SPIE-Tagungsband 2026",
+    "paper_title": "Cobotic Inspection of Surface Imperfections with Collimated Illumination",
+    "paper_venue": "SPIE Proceedings Vol. 13789, Paper 137890C (2026)",
+    "paper_doi_label": "Offizielle SPIE-Veröffentlichung via DOI öffnen (10.1117/12.3111698)",
+    "paper_doi_url": "https://doi.org/10.1117/12.3111698",
+    "thesis_badge": "Masterarbeit",
+    "thesis_title": "Robotergestützte Prüfung von Oberflächendefekten auf optischen Oberflächen",
+    "thesis_status": "Freigabe nach Prüfung durch Hochschule & Partner ausstehend",
+    "thesis_note": "Gemäß den institutionellen Vorgaben wird die PDF-Datei nach formaler Freigabe zum Download bereitgestellt.",
+    "sections": {
+      "challenge_title": "Die messtechnische Herausforderung",
+      "challenge_text": "Hochpräzise optische Komponenten erfordern eine lückenlose Qualitätskontrolle zur Detektion mikroskopischer Defekte (Kratzer, Ausbrüche, Partikel), welche die Funktion im Lasereinsatz oder in der Abbildungsoptik beeinträchtigen. Die manuelle visuelle Mikroskopie ist zeitaufwendig und ermüdungsanfällig; starre kartesische Prüfaufbauten bieten oft nicht die nötige Flexibilität für gekrümmte Freiformoptiken unter definierten Beleuchtungswinkeln.",
+      "robotics_title": "Kinematische Integration des FANUC-Cobots",
+      "robotics_text": "Zentraler Bestandteil des Versuchsaufbaus ist ein 6-Achs-Leichtbauroboter (FANUC CR-7iA/L). Durch die Montage des optischen Prüfkopfes am Roboterflansch kann das System exakte Oberflächennormalen-Trajektorien über komplexe Optiken abfahren und dabei Arbeitsabstand und Beleuchtungswinkel präzise einhalten.",
+      "optics_title": "Optische Prüfung & Kollimierte UV-Beleuchtung",
+      "optics_text": "Eine gerichtete Spezialbeleuchtung in Kombination mit hochauflösender Bildverarbeitung erzeugt scharfe Fehlerkontraste. Das System wies Oberflächendefekte bis zu einer Größe von ca. 6 µm auf kalibrierten Referenzmustern reproduzierbar nach.",
+      "cad_title": "CAD-Konstruktion & Mechanische Integration",
+      "cad_text": "In PTC Creo Parametric und Dassault SolidWorks habe ich Adapterplatten, Halterungen für Kamera und Beleuchtung sowie Justiervorrichtungen konstruiert, um Schwingungssteifigkeit zu gewährleisten und Mikrovibrationen bei hochauflösenden Aufnahmen zu unterbinden.",
+      "results_title": "Experimentelle Ergebnisse & Nachweise",
+      "results_text": "Das robotergestützte Prüfsystem wies Oberflächendefekte bis zu ca. 6 µm zuverlässig nach. Die Ergebnisse flossen als Co-Autor in die SPIE-Publikation 2026 ('Cobotic Inspection of Surface Imperfections with Collimated Illumination', DOI: 10.1117/12.3111698) ein."
+    },
+    "view_case_study": "Ausführliche Rio sio Fallstudie ansehen →"
+  },
+  "about_page": {
+    "badge": "Werdegang & Hintergrund",
+    "title": "Über Kunal Bhai Patel",
+    "lead": "Maschinenbau- & Mechatronikingenieur, Tüftler und Technikbegeisterter in Deutschland. Verwurzelt in präziser CAD-Konstruktion, Robotik und handwerklichem Werkstatt-Prototyping.",
+    "intro_title": "Ingenieur aus Berufung. Tüftler aus Leidenschaft.",
+    "intro_text": "Mein Werdegang verbindet fundierten Maschinenbau mit moderner Mechatronik. Während meiner Forschungsarbeit am Technologie Campus Teisnach Optik habe ich an einem robotergestützten System zur Erkennung mikroskopischer Fehler auf optischen Oberflächen mitgearbeitet. Außerhalb des Labors löse ich mit Begeisterung praktische Probleme an meiner Werkbank – vom optimierten 3D-Druck-Bauteil über einen WLAN-gesteuerten Stiftplotter bis zum energieeffizienten Debian-Heimserver.",
+    "education_title": "Akademischer Werdegang & Qualifikationen",
+    "education_items": [
+      {
+        "degree": "M.Eng. Mechatronic and Cyber-Physical Systems",
+        "institution": "Technische Hochschule Deggendorf (THD), Deutschland",
+        "period": "10/2021 – 10/2025",
+        "focus": "Robotergestützte Prüftechnik, kollaborative Robotik, optische Messtechnik, Sensorintegration, Masterarbeit Note 2,0."
+      },
+      {
+        "degree": "B.Eng. Mechanical Engineering (Maschinenbau)",
+        "institution": "Shri Shankaracharya Engineering College, Bhilai, Indien",
+        "period": "06/2015 – 11/2019",
+        "focus": "Fertigungstechnik, CAD-Konstruktion, Festigkeitslehre, Finite-Elemente-Analyse (ANSYS) Bachelorprojekt."
+      }
+    ],
+    "training_title": "Intensive CAD-Weiterbildung",
+    "training_text": "Kontinuierlicher Ausbau professioneller CAD-Fähigkeiten durch eine intensive Weiterbildung zum Creo Konstrukteur: parametrische Modellierung, Baugruppen, Skelettmodellierung (Top-Down), Freiformflächen, Blechkonstruktion und normgerechte Zeichnungserstellung.",
+    "competencies_title": "Kernkompetenzen & Werkzeuge",
+    "workshop_title": "Die Werkstatt: Praktisches Prototyping",
+    "workshop_text": "Für mich bedeutet Engineering, Konzepte in funktionierende physikalische Hardware zu überführen. In der Werkstatt trifft Theorie auf reale Toleranzen: FDM-Drucker für belastbare Funktionsteile mit Messing-Gewindeeinsätzen optimieren, ESP32-Mikrocontroller mit FluidNC programmieren und leise Gehäuse für Datenspeicher konstruieren. Nicht alles klappt beim ersten Versuch – genau dieses iterative Lösen macht für mich den Reiz des Ingenieurwesens aus.",
+    "youtube_title": "Den Weg dokumentieren: Kunal in Germany",
+    "youtube_text": "Auf meinem YouTube-Kanal „Kunal in Germany“ (@kunalingermany) teile ich Einblicke in technische Projekte, Lernerfahrungen und meinen Alltag in Deutschland. Für mich ist das eine weitere Möglichkeit, technische Erkenntnisse festzuhalten.",
+    "youtube_cta": "Kanal @kunalingermany auf YouTube besuchen ↗",
+    "website_section": {
+      "title": "Über diese Website",
+      "text": "Diese Portfolio-Website ist selbst ein eigenständiges technisches Projekt. Anstelle von vorgefertigten Templates oder schweren Frameworks wurde die Seite als schlanke, deterministische statische Architektur realisiert – basierend auf HTML5, modernem CSS mit Variablen, Vanilla JavaScript und einem leichtgewichtigen Python-3-Build-Generator. Sie bietet echte zweisprachige Routen (DE/EN), nahtlos umschaltbare helle und dunkle Themes ohne Flackern, tiefe Linktreue und kostenfreies statisches Hosting auf GitHub Pages. KI-gestützte Entwicklungswerkzeuge wurden gezielt eingesetzt, um Build-Skripte, Templating und strukturierte Übersetzungen effizient zu steuern – ein Beleg für strukturierte technische Leitung und lösungsorientiertes Handeln."
+    }
+  },
+  "contact_page": {
+    "badge": "Kontakt aufnehmen",
+    "title": "Kontakt & Fachlicher Austausch",
+    "lead": "Ich freue mich über fachliche Gespräche, mechatronische Forschungskooperationen und interessante ingenieurtechnische Aufgaben in Deutschland und international.",
+    "linkedin_card_title": "LinkedIn-Profil",
+    "linkedin_card_text": "Vernetzen Sie sich direkt auf LinkedIn für berufliche Möglichkeiten, technischen Austausch und Netzwerken.",
+    "linkedin_cta": "LinkedIn-Profil öffnen ↗",
+    "email_card_title": "Direkter Kontakt & Referenzen",
+    "email_card_text": "Sie interessieren sich für meinen Lebenslauf oder Zeugnisse? Gerne können Sie mich direkt per LinkedIn kontaktieren.",
+    "email_cta": "Unterlagen via LinkedIn anfragen ↗",
+    "cv_card_title": "Lebenslauf (PDF)",
+    "cv_card_text": "Eine geprüfte, öffentliche Fassung meines Lebenslaufs steht auf Anfrage bereit. Private Kontaktdaten sind zum Schutz der Privatsphäre geschützt.",
+    "cv_cta": "Lebenslauf auf Anfrage verfügbar",
+    "youtube_card_title": "YouTube-Kanal",
+    "youtube_card_text": "Verfolgen Sie meine Werkstattprojekte, Versuchsaufbauten und Erfahrungen in Deutschland auf YouTube.",
+    "youtube_cta": "YouTube-Kanal ansehen ↗",
+    "notice": "Datenschutzhinweis: Diese Website wird statisch ohne externe Tracking-Tools, Profiling-Cookies oder kostenpflichtige Datenbank-Dienste bereitgestellt."
+  },
+  "footer": {
+    "attribution": "Erstellt von Kunal Bhai Patel · Entwickelt mit HTML, CSS, JavaScript & Python",
+    "rights": "© Kunal Bhai Patel · Maschinenbau- & Mechatronikingenieur",
+    "back_to_top": "Nach oben"
+  },
+  "project_template": {
+    "problem_label": "Die ingenieurtechnische Herausforderung",
+    "approach_label": "Systementwurf & Vorgehen",
+    "specs_label": "Technische Kenndaten & Spezifikationen",
+    "iterations_label": "Herausforderungen & Iterationen",
+    "results_label": "Ergebnisse & Nachweise",
+    "lessons_label": "Wichtigste Erkenntnisse",
+    "gallery_label": "Systemarchitektur & Konzeptuelle Schemata",
+    "back_to_projects": "← Zurück zur Projektübersicht",
+    "contributions_title": "Wesentliche Aufgaben & Beiträge:",
+    "classification_title": "Projektklassifizierung",
+    "category_label": "Kategorie:",
+    "organization_label": "Kontext / Umfeld:",
+    "timeline_label": "Zeitraum:",
+    "publications_title": "Publikationen & Dokumente",
+    "tags_title": "Schlagworte & Werkzeuge",
+    "schematic_caption_title": "Illustratives Kinematik-Schema",
+    "schematic_caption_sub": "Konzeptuelles Vektorschema · Originalaufnahmen folgen nach Freigabe"
+  }
+}

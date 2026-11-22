@@ -1,0 +1,71 @@
+{
+  "id": "hdd-enclosure",
+  "category": "personal",
+  "category_label": {
+    "en": "Personal / Mechanical CAD & Fabrication",
+    "de": "Privat / Mechanische Konstruktion & 3D-Druck"
+  },
+  "featured": false,
+  "status": {
+    "en": "Prototype Iteration / Cooling Tests",
+    "de": "Prototyp-Iteration / thermische Erprobung"
+  },
+  "provenance": "USER-DISCUSSED",
+  "period": "Personal Maker Project",
+  "organization": "Independent Workshop Project",
+  "title": {
+    "en": "Custom Dual-HDD Enclosure",
+    "de": "Individuelles Dual-HDD-Gehäuse"
+  },
+  "one_liner": {
+    "en": "Custom 3D-printed enclosure for two 3.5\" hard drives featuring slide-in mounting, vibration damping, and an 80 mm forced-air cooling tunnel.",
+    "de": "Individuelles 3D-Druck-Gehäuse für zwei 3,5-Zoll-Festplatten mit Einschubmontage, Schwingungsentkopplung und 80-mm-Lüftertunnel."
+  },
+  "tags": ["PTC Creo", "SolidWorks", "FDM 3D Printing", "Thermal Design", "Hardware Prototyping"],
+  "content": {
+    "en": {
+      "problem": "Commercial multi-bay external drive enclosures are either loud, poorly ventilated, or prohibitively bulky. The objective was to design a compact, quiet, stackable dual-bay 3.5\" HDD housing with optimal forced-air cross-flow cooling to preserve drive longevity during heavy local backups.",
+      "approach": "Engineered a parametric CAD model featuring stacked slide-in drive rails with TPU vibration-isolation grommets. A front-to-back intake tunnel directs airflow from a quiet 80 mm fan across drive controller PCBs and casings. Integrated cable routing channels and heat-set brass threaded inserts ensure repeated assembly without stripping plastic threads.",
+      "contributions": [
+        "Mechanical packaging and airflow channel modeling in CAD.",
+        "Design for 3D printability (FDM overhang optimization, minimal support material).",
+        "Integration of vibration-damped drive caddies using heat-set M3/M4 inserts.",
+        "Thermal airflow assessment and fan speed acoustic balancing."
+      ],
+      "specs": [
+        {"key": "Drive Form Factor", "value": "2× 3.5-inch SATA hard disk drives", "source": "USER-DISCUSSED"},
+        {"key": "Cooling System", "value": "Single 80 mm low-RPM axial fan tunnel", "source": "USER-DISCUSSED"},
+        {"key": "Fastening Method", "value": "Brass heat-set threaded inserts (M3/M4)", "source": "USER-DISCUSSED"},
+        {"key": "Fabrication", "value": "FDM printed with structural PETG/PLA", "source": "USER-DISCUSSED"}
+      ],
+      "iterations": "First print revealed slight heat concentration at the rear connector bay. Revised airflow inlet grilles with chamfered guide vanes to decrease air turbulence and noise while increasing volume flow over the upper drive casing.",
+      "results": "Prototype validated drive retention and structural rigidity under full operational drive vibration. Power delivery and enclosure acoustics currently in second revision.",
+      "lessons": "Designing functional enclosures in FDM requires tight tolerance management for drive slide clearances. Printing horizontal cantilever features requires deliberate chamfering (45-degree angles) to avoid messy overhang supports."
+    },
+    "de": {
+      "problem": "Handelsübliche Mehrfach-Festplattengehäuse sind häufig laut, thermisch unzureichend belüftet oder unhandlich groß. Ziel war die Konstruktion eines kompakten, leisen und stapelbaren 3,5-Zoll-Dual-Gehäuses mit zielgerichteter Zwangsbelüftung zur Schonung der Festplatten bei Dauerlast.",
+      "approach": "Konstruktion eines parametrischen CAD-Gehäuses mit Einschubschienen und TPU-Dämpfungselementen zur Schwingungsentkopplung. Ein geführter Strömungskanal leitet die Luft eines 80-mm-Lüfters gezielt an den Festplattengehäusen und Platinen vorbei. Eingeschmolzene Messinggewinde ermöglichen wiederholte Montagen ohne Verschleiß.",
+      "contributions": [
+        "Gehäuseauslegung und Strömungskanalmodellierung im CAD.",
+        "Druckgerechte Konstruktion für FDM-Verfahren ohne übermäßige Stützstrukturen.",
+        "Integration schwingungsgedämpfter Festplattenaufnahmen mit Gewindeeinsätzen.",
+        "Thermische Vorprüfung und akustische Abstimmung der Lüfterdrehzahl."
+      ],
+      "specs": [
+        {"key": "Festplattenformat", "value": "2× 3,5 Zoll SATA-Festplatten", "source": "USER-DISCUSSED"},
+        {"key": "Belüftungskonzept", "value": "80-mm-Axiallüfter im Strömungskanal", "source": "USER-DISCUSSED"},
+        {"key": "Befestigungstechnik", "value": "Eingeschmolzene Messing-Gewindebuchsen (M3/M4)", "source": "USER-DISCUSSED"},
+        {"key": "Fertigungsverfahren", "value": "FDM-Druck mit technischem PETG/PLA", "source": "USER-DISCUSSED"}
+      ],
+      "iterations": "Beim ersten Testdruck zeigte sich ein Hitzestau im Bereich der hinteren Anschlussstecker. Die Einlasslamellen wurden mit 45°-Leitstegen überarbeitet, um Verwirbelungen zu reduzieren und den Luftstrom über die obere Festplatte zu verstärken.",
+      "results": "Erfolgreicher Nachweis der mechanischen Passgenauigkeit und Schwingungsdämpfung im Betrieb. Zweite Revision zur optimierten Kabelführung und Stromversorgung in Arbeit.",
+      "lessons": "Funktionale Gehäusekonstruktionen im 3D-Druck verlangen exakte Maßzugaben für bewegliche Einschübe. Druckgerechte 45°-Fasen an Überhängen ersparen aufwendige Stützstrukturen und verbessern die Oberflächengüte."
+    }
+  },
+  "links": [],
+  "missing_assets": [
+    "CAD exploded-view render of enclosure parts",
+    "Photographs of assembled 3D-printed enclosure with installed drives",
+    "Thermal measurement data log under read/write load"
+  ]
+}

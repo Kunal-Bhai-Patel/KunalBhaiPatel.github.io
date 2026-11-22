@@ -1,0 +1,93 @@
+{
+  "id": "rio-sio",
+  "category": "professional",
+  "category_label": {
+    "en": "Professional / Research",
+    "de": "Beruflich / Forschung"
+  },
+  "featured": true,
+  "status": {
+    "en": "Research Completed / Published (2026)",
+    "de": "Forschung abgeschlossen / Veröffentlicht (2026)"
+  },
+  "provenance": "CV-VERIFIED",
+  "period": "09/2023 – 05/2025",
+  "organization": "Technologie Campus Teisnach Optik (TH Deggendorf)",
+  "funding": "IGF research project 01IF22263N",
+  "title": {
+    "en": "Rio sio: Robotic Inspection of Optical Surfaces",
+    "de": "Rio sio: Robotergestützte Prüfung optischer Oberflächen"
+  },
+  "one_liner": {
+    "en": "Automated cobotic optical inspection system demonstrating microscopic imperfection detection down to approximately 6 µm.",
+    "de": "Automatisiertes kollaboratives Prüfsystem zur Detektion mikroskopischer Oberflächenfehler bis zu ca. 6 µm."
+  },
+  "tags": ["PTC Creo", "SolidWorks", "FANUC CR-7iA/L", "Optical Metrology", "Collimated Illumination", "Calibration", "IGF Project 01IF22263N"],
+  "content": {
+    "en": {
+      "problem": "High-precision optical components require rigorous quality control to detect minute surface defects (scratches, digs, dust, sub-surface damage) that impair laser transmission or optical imaging. Manual microscopic inspection is slow, operator-fatiguing, and subjective, while conventional Cartesian multi-axis stages lack the kinematic flexibility required for inspecting curved, freeform optical geometries at controlled angles.",
+      "approach": "As part of the IGF-funded Rio sio initiative at TC Teisnach Optik, the research team developed a collaborative robotic inspection station. The setup combines a 6-axis collaborative robot (FANUC CR-7iA/L) with specialized collimated illumination and a high-resolution imaging payload. By mounting the optical probe assembly on the robot flange, the system can follow precise surface-normal trajectories across complex optical elements while maintaining strict focal distance and illumination angles.",
+      "contributions": [
+        "Mechanical CAD design of test-rig mounting plates, camera/illumination brackets, and calibration fixtures using PTC Creo and SolidWorks.",
+        "Trajectory planning and motion sequencing on the FANUC CR-7iA/L cobot to execute repeatable multi-angle inspection routines.",
+        "Physical integration and wiring of optical sensors, illumination hardware, and safety interlocks.",
+        "Systematic geometric calibration, repeatability verification, and commissioning of the experimental rig.",
+        "Execution of test series on calibrated reference targets and documentation of detection limits."
+      ],
+      "specs": [
+        {"key": "Detection Limit", "value": "~6 µm imperfections (empirically demonstrated)", "source": "CV-VERIFIED"},
+        {"key": "Robotic Platform", "value": "FANUC CR-7iA/L (6-axis collaborative arm)", "source": "CV-VERIFIED"},
+        {"key": "CAD / Engineering", "value": "PTC Creo Parametric, Dassault SolidWorks", "source": "CV-VERIFIED"},
+        {"key": "Illumination Method", "value": "Collimated directional illumination setup", "source": "USER-DISCUSSED / Paper title"},
+        {"key": "Funding / Program", "value": "IGF Project 01IF22263N", "source": "CV-VERIFIED"},
+        {"key": "Publication", "value": "SPIE Proceedings Vol. 13789, Paper 137890C (2026)", "source": "CV-VERIFIED"}
+      ],
+      "iterations": "Achieving stable defect contrast required tight control over illumination angles and vibration damping. Robotic trajectory jitter during multi-point stops had to be minimized through optimized acceleration/deceleration profiling in the FANUC controller. Mechanical bracket stiffness was iteratively reinforced in Creo to eliminate camera micro-vibrations during high-magnification exposures.",
+      "results": "The robotic inspection station reliably detected surface imperfections down to ~6 µm on test specimens. The findings co-authored by Kunal were published in the SPIE Proceedings (2026) under the title 'Cobotic Inspection of Surface Imperfections with Collimated Illumination' (DOI: 10.1117/12.3111698).",
+      "lessons": "Industrial mechatronics research requires tight coupling between mechanical stiffness, kinematic precision, and optical physics. Even minute structural compliances in brackets distort micro-scale imaging. Working within a multidisciplinary laboratory reinforced the necessity of systematic calibration protocols before acquiring scientific data."
+    },
+    "de": {
+      "problem": "Hochpräzise optische Komponenten erfordern eine lückenlose Qualitätsprüfung zur Erkennung mikroskopischer Oberflächenfehler (Kratzer, Ausbrüche, Partikel), welche die Funktion im Lasereinsatz oder in der Abbildungsoptik beeinträchtigen. Die manuelle visuelle Mikroskopie ist zeitaufwendig und ermüdungsanfällig; starre kartesische Prüfaufbauten bieten oft nicht die nötige Flexibilität für gekrümmte Freiformoptiken.",
+      "approach": "Im Rahmen des IGF-Forschungsvorhabens Rio sio am Technologie Campus Teisnach Optik wurde ein cobotgestützter Prüfaufbau realisiert. Ein 6-Achs-Leichtbauroboter (FANUC CR-7iA/L) führt einen Prüfkopf aus hochauflösender Optik und kollimierter Beleuchtung exakt entlang der Oberflächennormale gekrümmter Prüflinge.",
+      "contributions": [
+        "Konstruktion von Prüfvorrichtungen, Adapterplatten und Halterungen für Optik und Beleuchtung in PTC Creo und SolidWorks.",
+        "Programmierung robotergestützter Bewegungsabläufe und Prüfsequenzen auf dem FANUC CR-7iA/L Cobot.",
+        "Mechanische und elektrische Integration von Kamera, Beleuchtung und Schutzkomponenten in die Zelle.",
+        "Durchführung von Kalibriermessungen, Wiederholgenauigkeitsprüfungen und Inbetriebnahme des Versuchsstandes.",
+        "Strukturierte Auswertung der Messergebnisse und Verfassen der wissenschaftlichen Dokumentation."
+      ],
+      "specs": [
+        {"key": "Nachweisgrenze", "value": "~6 µm Fehlergröße (experimentell nachgewiesen)", "source": "CV-VERIFIED"},
+        {"key": "Roboterplattform", "value": "FANUC CR-7iA/L (6-Achs-Cobot)", "source": "CV-VERIFIED"},
+        {"key": "CAD-Software", "value": "PTC Creo Parametric, Dassault SolidWorks", "source": "CV-VERIFIED"},
+        {"key": "Beleuchtungsverfahren", "value": "Kollimierte Spezialbeleuchtung", "source": "USER-DISCUSSED / Publikation"},
+        {"key": "Förderkennzeichen", "value": "IGF-Vorhaben 01IF22263N", "source": "CV-VERIFIED"},
+        {"key": "Fachpublikation", "value": "SPIE Proceedings Vol. 13789, Paper 137890C (2026)", "source": "CV-VERIFIED"}
+      ],
+      "iterations": "Um reproduzierbare Fehlerkontraste zu gewährleisten, waren exakte Winkelpositionierungen und minimale Schwingungen unerlässlich. Schwingungseffekte beim Positionieren des Cobots wurden durch Glättung der Beschleunigungsprofile in der Robotersteuerung sowie durch gezielte Versteifungsrippen an den CAD-Komponenten eliminiert.",
+      "results": "Das Prüfsystem wies Oberflächendefekte bis zu ca. 6 µm zuverlässig nach. Die Ergebnisse flossen als Co-Autor in die SPIE-Publikation 2026 ('Cobotic Inspection of Surface Imperfections with Collimated Illumination', DOI: 10.1117/12.3111698) ein.",
+      "lessons": "Forschungsnahe Mechatronik verlangt das nahtlose Zusammenspiel von mechanischer Steifigkeit, präziser Kinematik und optischer Messtechnik. Schon minimale Biegeweichheiten im Endeffektor verfälschen Mikroskopieergebnisse. Strukturierte Kalibrierroutinen sind die Grundvoraussetzung für verlässliche wissenschaftliche Messungen."
+    }
+  },
+  "links": [
+    {
+      "label": "SPIE Proceedings Publication (DOI: 10.1117/12.3111698)",
+      "url": "https://doi.org/10.1117/12.3111698",
+      "type": "external",
+      "verified": true
+    },
+    {
+      "label": "Master's Thesis (TH Deggendorf)",
+      "url": "#",
+      "type": "restricted",
+      "verified": false,
+      "notice": "Institutional and IP clearance pending prior to public PDF release."
+    }
+  ],
+  "missing_assets": [
+    "High-resolution photograph of the complete FANUC CR-7iA/L test cell (institutional clearance required)",
+    "CAD assembly render of camera/illumination mounting bracket",
+    "Microscopic imperfection test sample micrographs (~6 µm demonstration)",
+    "Approved thesis executive summary / PDF download file"
+  ]
+}

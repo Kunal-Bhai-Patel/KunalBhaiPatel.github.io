@@ -1,0 +1,70 @@
+{
+  "id": "3d-printing",
+  "category": "personal",
+  "category_label": {
+    "en": "Personal / Fabrication & Tuning",
+    "de": "Privat / Fertigungstechnik & 3D-Druck"
+  },
+  "featured": false,
+  "status": {
+    "en": "Ongoing Maker Practice",
+    "de": "Kontinuierliche Werkstattpraxis"
+  },
+  "provenance": "USER-DISCUSSED",
+  "period": "Continuous Workshop Activity",
+  "organization": "Independent Workshop Practice",
+  "title": {
+    "en": "3D Printing & Mechanical Prototyping",
+    "de": "3D-Druck & Mechanisches Prototyping"
+  },
+  "one_liner": {
+    "en": "FDM printer tuning, tolerance calibration, heat-set insert integration, and functional design for rapid prototyping of mechatronic assemblies.",
+    "de": "FDM-Druckeroptimierung, Toleranzkalibrierung, Gewindeeinsatzmontage und funktionsgerechtes Konstruieren für mechatronische Prototypen."
+  },
+  "tags": ["FDM / FFF", "Cura Slicer", "Calibration Cubes", "Heat-Set Inserts", "Tolerance Verification", "Hardware Prototyping"],
+  "content": {
+    "en": {
+      "problem": "Generic 3D printing often fails when transitioning from decorative trinkets to functional engineering assemblies: press fits crack under thermal strain, screw threads strip in raw plastic, and uncontrolled extrusion tolerances cause binding in linear motion assemblies.",
+      "approach": "Systematically tuned printer mechanics, extrusion multipliers, and slicer settings (Cura) across PLA, PETG, and functional filaments. Implemented standardized design rules for mechanical assemblies: 0.2 mm clearance offsets for sliding fits, standardized holes for M2–M4 brass heat-set inserts, anisotropic layer orientation planning for mechanical load paths, and filament dehydration protocols.",
+      "contributions": [
+        "Iterative calibration of dimensional accuracy on calibration cubes and step blocks.",
+        "Establishing design guidelines for functional prints (chamfers, layer-line orientations, heat-set bosses).",
+        "Fabrication of structural parts for Plottu, HDD enclosures, and lab jigs.",
+        "Maintenance, nozzle replacement, and mechanical squareness tuning of FDM hardware."
+      ],
+      "specs": [
+        {"key": "Technology", "value": "Fused Deposition Modeling (FDM / FFF)", "source": "USER-DISCUSSED"},
+        {"key": "Slicing Software", "value": "Ultimaker Cura (custom mechanical profiles)", "source": "USER-DISCUSSED"},
+        {"key": "Materials", "value": "PLA, PETG, Technical Thermoplastics", "source": "USER-DISCUSSED"},
+        {"key": "Assembly Technique", "value": "Thermal insertion of brass knurled nuts", "source": "USER-DISCUSSED"}
+      ],
+      "iterations": "Resolved inter-layer delamination on structural motor brackets by optimizing print chamber shielding, increasing nozzle temperature by 5°C, and reducing part cooling fan speeds during high-stress layer transitions.",
+      "results": "Delivered dozens of durable, dimensionally accurate mechanical parts capable of enduring continuous mechanical cycling in pen-plotter and enclosure assemblies.",
+      "lessons": "FDM printing is an engineering manufacturing method requiring the same rigor as machining: accounting for material shrinkage, thermal warping, and anisotropic shear planes."
+    },
+    "de": {
+      "problem": "Einfacher 3D-Druck scheitert oft beim Übergang von Deko-Objekten zu hoch belastbaren Funktionsbauteilen: Presssitze reißen, Schraubverbindungen im Kunststoff leiern aus und Maßungenauigkeiten blockieren Linearführungen.",
+      "approach": "Systematische Kalibrierung von Druckermechanik, Extrusionsfaktoren und Slicer-Parametern (Cura) für PLA, PETG und technische Filamente. Etablierung klarer Konstruktionsrichtlinien: definierte Passungstoleranzen (+0,2 mm Spiel), Auslegung von Einschmelzdomen für M2–M4 Messinggewinde, Berücksichtigung der Schichtorientierung bei mechanischer Belastung und konsequente Filamenttrocknung.",
+      "contributions": [
+        "Maßhaltigkeitsprüfung anhand von Kalibrierkörpern und Prüfstufen.",
+        "Entwicklung druckgerechter Konstruktionsstandards für Baugruppen.",
+        "Fertigung aller tragenden Bauteile für Plottu, HDD-Gehäuse und Montagehilfen.",
+        "Wartung, Riemenspannung und Rechtwinkligkeitsausrichtung des FDM-Druckers."
+      ],
+      "specs": [
+        {"key": "Fertigungsverfahren", "value": "Schmelzschichtverfahren (FDM / FFF)", "source": "USER-DISCUSSED"},
+        {"key": "Slicer-Software", "value": "Ultimaker Cura mit optimierten Profilen", "source": "USER-DISCUSSED"},
+        {"key": "Materialien", "value": "PLA, PETG, technische Kunststoffe", "source": "USER-DISCUSSED"},
+        {"key": "Fügetechnik", "value": "Thermisches Einpressen von Messingbuchsen", "source": "USER-DISCUSSED"}
+      ],
+      "iterations": "Beseitigung von Schichttrennungen an Motorhaltern durch thermische Abschirmung, leichte Erhöhung der Düsentemperatur und angepasste Bauteillüfterdrehzahlen.",
+      "results": "Dauerhafte Fertigung maßhaltiger Funktionskomponenten für Stiftplotter und Gehäuse mit hoher Wiederholgenauigkeit.",
+      "lessons": "3D-Druck ist ein vollwertiges Fertigungsverfahren, das wie die spanende Bearbeitung verstanden werden muss: Werkstoffschrumpfung, thermischer Verzug und richtungsabhängige Festigkeiten erfordern gezielte konstruktive Berücksichtigung."
+    }
+  },
+  "links": [],
+  "missing_assets": [
+    "Photos of test prints, calibration artifacts, and heat-set insert installations",
+    "Current printer setup photographs"
+  ]
+}
