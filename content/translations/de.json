@@ -99,10 +99,10 @@
   "about_page": {
     "badge": "Werdegang & Hintergrund",
     "title": "Über Kunal Bhai Patel",
-    "lead": "Maschinenbau- & Mechatronikingenieur, Tüftler und Technikbegeisterter in Deutschland. Verwurzelt in präziser CAD-Konstruktion, Robotik und handwerklichem Werkstatt-Prototyping.",
+    "lead": "Maschinenbau- & Mechatronikingenieur mit Wohnsitz in Nordrhein-Westfalen, Deutschland. Master of Engineering (M.Eng.) in Mechatronische und Cyber-Physische Systeme (TH Deggendorf).",
     "hero_headline": "Am Anfang stand die Neugier.",
     "hero_subtitle": "Mein Weg vom Zerlegen kleiner Spielzeugautos zur Entwicklung robotergestützter Prüfsysteme.",
-    "hero_caption": "Kunal Bhai Patel · M.Eng. Mechatronische Systeme · Maschinenbauingenieur",
+    "hero_caption": "Kunal Bhai Patel · Akademische Abschlussfeier an der TH Deggendorf · Master of Engineering (M.Eng.) – Mechatronische und Cyber-Physische Systeme",
     "chapters": [
       {
         "kicker": "01 / ANFÄNGE",
@@ -156,34 +156,55 @@
     "milestones_title": "Meilensteine & Stationen",
     "milestones": [
       {
-        "period": "06/2015 – 11/2019",
-        "title": "B.Eng. Maschinenbau",
-        "sub": "Bhilai, Indien · Grundlagen in Fertigung, CAD & Mechanik"
+        "period": "07/2026 – 10/2026",
+        "tag": "Berufliche Weiterbildung",
+        "title": "Weiterbildung — Creo Konstrukteur kompakt",
+        "org": "ibb house of engineering GmbH · Petersberg, Hessen, Deutschland",
+        "desc": "Vollzeit-Weiterbildung in PTC Creo Parametric. Schwerpunkte waren Einzelteile, Baugruppen, technische Zeichnungen, Toleranzen, Flächenmodellierung und Blechkonstruktion."
       },
       {
-        "period": "2020",
-        "title": "Goethe-Zertifikat B2",
-        "sub": "Sprachzertifikat vor dem Wechsel nach Deutschland"
+        "period": "09/2023 – 05/2025",
+        "tag": "Forschung & Entwicklung",
+        "title": "Forschung & Entwicklung — Masterarbeit",
+        "org": "Technologie Campus Teisnach Optik, TH Deggendorf",
+        "project": "Rio sio — Robotische Inspektion von Unvollkommenheiten in optischen Oberflächen",
+        "link": "/de/projects/rio-sio/",
+        "desc": "Entwicklung eines robotergestützten optischen Prüfsystems mit CAD-Konstruktion, mechanischer Integration, FANUC-Robotik, Kalibrierung und praktischen Versuchen."
       },
       {
-        "period": "12/2020",
-        "title": "Ankunft in Deutschland",
-        "sub": "Beginn des Masterstudiums in Bayern"
+        "period": "02/2023 – 08/2023",
+        "tag": "Industrieerfahrung",
+        "title": "Werkstudent Forschung",
+        "org": "MAN Energy Solutions SE (heute Everllence) · Deggendorf, Bayern, Deutschland",
+        "desc": "Mitarbeit bei Hochtemperatur-Korrosionsversuchen, Bedienung von Laboranlagen mit Siemens PCS 7 sowie Überwachung und Dokumentation von Versuchen."
       },
       {
         "period": "10/2021 – 10/2025",
-        "title": "M.Eng. Mechatronische Systeme",
-        "sub": "TH Deggendorf · Note 2,0 · Robotik & optische Messtechnik"
+        "tag": "Masterstudium (Parallel absolviert)",
+        "title": "Master of Engineering (M.Eng.) – Mechatronische und Cyber-Physische Systeme",
+        "org": "Technische Hochschule Deggendorf · Abschlussnote: 2,2 (Masterarbeit: 2,0)",
+        "desc": "Masterstudium mit Schwerpunkten in Maschinenbau, Automatisierung und cyber-physischen Systemen. Während des Studiums sammelte ich Industrieerfahrung und arbeitete am Forschungsprojekt Rio sio."
       },
       {
-        "period": "Industrie",
-        "title": "MAN Energy Solutions (heute Everllence)",
-        "sub": "Praktische Industrieerfahrung im Maschinenbau"
+        "period": "Dezember 2020",
+        "tag": "Umzug & Sprache",
+        "title": "Mein Start in Deutschland",
+        "org": "Weiteres Studium in Deutschland",
+        "desc": "Umzug nach Deutschland für mein weiteres Studium. Bereits in Indien hatte ich Deutsch gelernt und das Goethe-Zertifikat B2 erworben."
       },
       {
-        "period": "Forschung",
-        "title": "TC Teisnach Optik (THD)",
-        "sub": "Rio sio Roboterprüfsystem · SPIE-Fachpublikation"
+        "period": "06/2019 – 11/2019",
+        "tag": "Produktion & Montage",
+        "title": "Produktionsingenieur",
+        "org": "TECHB Pvt. Ltd. · Bhilai, Indien",
+        "desc": "Mitarbeit bei Kundeninbetriebnahmen, Fertigung und Montage. Technische Fehleranalyse sowie Abstimmung zwischen Produktion und Engineering."
+      },
+      {
+        "period": "06/2015 – 11/2019",
+        "tag": "Bachelorstudium",
+        "title": "B.Eng. Maschinenbau",
+        "org": "Shri Shankaracharya Engineering College, Bhilai, Indien",
+        "desc": "Studium der mechanischen Konstruktion, Fertigung, CAD/CAM und ingenieurwissenschaftlichen Grundlagen."
       }
     ],
     "competencies_title": "Kernkompetenzen & Werkzeuge",

@@ -99,10 +99,10 @@
   "about_page": {
     "badge": "Biography & Background",
     "title": "About Kunal Bhai Patel",
-    "lead": "Mechanical & Mechatronics Engineer, Builder, and Technology Enthusiast based in Germany. Grounded in rigorous CAD design, robotic automation, and physical maker experimentation.",
+    "lead": "Mechanical & Mechatronics Engineer based in North Rhine-Westphalia, Germany. Master of Engineering (M.Eng.) in Mechatronics and Cyber-Physical Systems (TH Deggendorf).",
     "hero_headline": "Curiosity Was Always the Starting Point.",
     "hero_subtitle": "My journey from taking apart toy cars to building robotic inspection systems.",
-    "hero_caption": "Kunal Bhai Patel · M.Eng. Mechatronic Systems · Mechanical Engineer",
+    "hero_caption": "Kunal Bhai Patel · Graduation Ceremony at TH Deggendorf · Master of Engineering (M.Eng.) in Mechatronics and Cyber-Physical Systems",
     "chapters": [
       {
         "kicker": "01 / BEGINNINGS",
@@ -156,34 +156,55 @@
     "milestones_title": "Milestones & Journey",
     "milestones": [
       {
-        "period": "06/2015 – 11/2019",
-        "title": "B.Eng. Mechanical Engineering",
-        "sub": "Bhilai, India · Manufacturing, CAD & mechanics"
+        "period": "07/2026 – 10/2026",
+        "tag": "Professional Training",
+        "title": "Professional Training — PTC Creo Parametric",
+        "org": "ibb house of engineering GmbH · Petersberg, Hessen, Germany",
+        "desc": "Full-time professional training in parametric CAD design using PTC Creo Parametric, including parts, assemblies, technical drawings, tolerancing, surface modeling and sheet metal design."
       },
       {
-        "period": "2020",
-        "title": "Goethe-Zertifikat B2",
-        "sub": "German language qualification earned in India"
+        "period": "09/2023 – 05/2025",
+        "tag": "Research & Development",
+        "title": "Research & Development — Master's Thesis",
+        "org": "Technologie Campus Teisnach Optik, TH Deggendorf",
+        "project": "Rio sio — Automated Robotic Inspection of Imperfections on Optical Surfaces",
+        "link": "/en/projects/rio-sio/",
+        "desc": "Worked on the development of a robotic optical inspection system, combining CAD design, mechanical and optomechanical integration, FANUC robotics, calibration and experimental testing."
       },
       {
-        "period": "12/2020",
-        "title": "Arrival in Germany",
-        "sub": "Beginning master's studies in Bavaria"
+        "period": "02/2023 – 08/2023",
+        "tag": "Industrial Experience",
+        "title": "Research Working Student",
+        "org": "MAN Energy Solutions SE (now Everllence) · Deggendorf, Bavaria, Germany",
+        "desc": "Supported high-temperature corrosion experiments, operated laboratory systems using Siemens PCS 7, monitored tests and documented measurement results."
       },
       {
         "period": "10/2021 – 10/2025",
-        "title": "M.Eng. Mechatronic Systems",
-        "sub": "TH Deggendorf · Grade 2.0 · Robotics & metrology"
+        "tag": "Master's Degree (Concurrent)",
+        "title": "Master of Engineering (M.Eng.) in Mechatronics and Cyber-Physical Systems",
+        "org": "Technische Hochschule Deggendorf · Final Grade: 2.2 (Thesis: 2.0)",
+        "desc": "Master's studies combining mechanical engineering, automation and cyber-physical systems. Industrial experience and the Rio sio research project took place during these studies."
       },
       {
-        "period": "Industry",
-        "title": "MAN Energy Solutions (now Everllence)",
-        "sub": "Applied industrial engineering experience"
+        "period": "December 2020",
+        "tag": "Relocation & Language",
+        "title": "Moving to Germany",
+        "org": "Higher Education in Germany",
+        "desc": "Moved to Germany to pursue higher education after learning German in India and earning the Goethe-Zertifikat B2."
       },
       {
-        "period": "Research",
-        "title": "TC Teisnach Optik (THD)",
-        "sub": "Rio sio cobotic inspection system · SPIE publication"
+        "period": "06/2019 – 11/2019",
+        "tag": "Industry & Commissioning",
+        "title": "Production Engineer",
+        "org": "TECHB Pvt. Ltd. · Bhilai, India",
+        "desc": "Worked on customer commissioning, production and assembly coordination, technical troubleshooting and communication between manufacturing and engineering."
+      },
+      {
+        "period": "06/2015 – 11/2019",
+        "tag": "Bachelor's Degree",
+        "title": "B.Eng. Mechanical Engineering",
+        "org": "Shri Shankaracharya Engineering College, Bhilai, India",
+        "desc": "Studied mechanical design, manufacturing, CAD/CAM and engineering fundamentals."
       }
     ],
     "competencies_title": "Core Technical Competencies",

@@ -7,10 +7,13 @@
   "author": {
     "name": "Kunal Bhai Patel",
     "email": "kunalbhaipatel@gmail.com",
-    "degrees": ["B.Eng. Mechanical Engineering", "M.Eng. Mechatronic & Cyber-Physical Systems"],
-    "location": "Germany",
+    "degrees": [
+      "B.Eng. Mechanical Engineering",
+      "M.Eng. Mechatronics and Cyber-Physical Systems"
+    ],
+    "location": "North Rhine-Westphalia, Germany",
     "languages": ["English (Fluent)", "German (Goethe B2 / Professional)"],
-    "current_training": "Creo Konstrukteur (Parametric CAD, Assemblies, Skeleton Modeling, Surfaces)",
+    "current_training": "Creo Konstrukteur kompakt (ibb house of engineering GmbH)",
     "linkedin_url": "https://www.linkedin.com/in/kunalbhaipatel",
     "youtube_channel": "Kunal in Germany",
     "youtube_handle": "@kunalingermany",

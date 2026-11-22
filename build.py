@@ -465,6 +465,8 @@ def render_footer(site, trans, lang, depth=0):
 
     # Authorship & tech string
     attribution = footer.get("attribution", f"Created by {author['name']} · Built with HTML, CSS, JavaScript & Python")
+    deg_0 = "B.Eng. Maschinenbau" if lang == "de" else "B.Eng. Mechanical Engineering"
+    deg_1 = "M.Eng. Mechatronische und Cyber-Physische Systeme" if lang == "de" else "M.Eng. Mechatronics and Cyber-Physical Systems"
 
     return f"""
     <footer class="site-footer">
@@ -476,8 +478,8 @@ def render_footer(site, trans, lang, depth=0):
               {site['tagline'][lang]}
             </p>
             <p class="footer-degrees">
-              {author['degrees'][0]}<br>
-              {author['degrees'][1]}
+              {deg_0}<br>
+              {deg_1}
             </p>
           </div>
 
@@ -1046,13 +1048,30 @@ def generate_about_page(site, trans, lang):
     all_chapters_str = "\n".join(chapters_html)
 
     # Milestones Timeline
-    milestones_html = "".join([f"""
-      <div class="about-milestone-item">
-        <span class="about-milestone-period">{m['period']}</span>
-        <div class="about-milestone-title">{m['title']}</div>
-        <div class="about-milestone-sub">{m['sub']}</div>
-      </div>
-    """ for m in a_trans.get("milestones", [])])
+    milestones_html_list = []
+    for m in a_trans.get("milestones", []):
+        tag_html = f'<span class="about-milestone-tag">{m["tag"]}</span>' if m.get("tag") else ""
+        org_html = f'<div class="about-milestone-org">{m["org"]}</div>' if m.get("org") else ""
+        desc_html = f'<div class="about-milestone-desc">{m["desc"]}</div>' if m.get("desc") else ""
+        link_html = ""
+        if m.get("link"):
+            link_url = f"{pfx}{lang}/projects/rio-sio/"
+            link_text = "Explore Rio sio Project →" if lang == "en" else "Rio sio Projekt ansehen →"
+            link_html = f'<div style="margin-top:0.35rem;"><a href="{link_url}" class="about-milestone-link">{link_text}</a></div>'
+
+        milestones_html_list.append(f"""
+        <div class="about-milestone-item">
+          <div class="about-milestone-header">
+            <span class="about-milestone-period">{m['period']}</span>
+            {tag_html}
+          </div>
+          <div class="about-milestone-title">{m['title']}</div>
+          {org_html}
+          {desc_html}
+          {link_html}
+        </div>
+        """)
+    milestones_html = "\n".join(milestones_html_list)
 
     # Competencies table localized
     if lang == "de":
@@ -1099,7 +1118,7 @@ def generate_about_page(site, trans, lang):
             <h2 class="about-hero-headline">{a_trans['hero_headline']}</h2>
             <p class="about-hero-subtitle">{a_trans['hero_subtitle']}</p>
             <p style="color: var(--text-secondary); line-height: 1.72; font-size: 1.05rem; margin-bottom: 1.5rem;">
-              {"My fascination with engineering began long before I knew what an engineer actually did. From taking apart toy cars to explore their motors, to programming collaborative robots and custom kinematics in Bavaria." if lang == "en" else "Meine Begeisterung für Technik begann schon lange bevor ich überhaupt wusste, was ein Ingenieur macht. Vom Zerlegen kleiner Spielzeugautos bis zum Bau robotergestützter Prüfsysteme und eigener Bewegungssteuerungen in Bayern."}
+              {"My fascination with engineering began long before I knew what an engineer actually did. From taking apart toy cars to explore their motors, to programming collaborative robots and custom kinematics." if lang == "en" else "Meine Begeisterung für Technik begann schon lange bevor ich überhaupt wusste, was ein Ingenieur macht. Vom Zerlegen kleiner Spielzeugautos bis zum Bau robotergestützter Prüfsysteme und eigener Bewegungssteuerungen."}
             </p>
             <div style="display: flex; gap: 0.85rem; flex-wrap: wrap;">
               <a href="{pfx}{lang}/projects/rio-sio/" class="btn btn-primary btn-sm">
@@ -1112,7 +1131,10 @@ def generate_about_page(site, trans, lang):
           </div>
 
           <figure class="about-hero-photo-wrapper">
-            <img src="{pfx}media/portrait/kunal_patel_about.jpg" alt="Kunal Bhai Patel — Mechanical & Mechatronics Engineer" loading="eager" width="1400" height="933" />
+            <a href="{pfx}media/portrait/kunal_graduation.jpg" target="_blank" rel="noopener noreferrer" class="about-photo-link" title="{"Click to view full photograph" if lang == "en" else "Klicken zum Vergrößern des Fotos"}">
+              <img src="{pfx}media/portrait/kunal_graduation.jpg" alt="{"Kunal Bhai Patel — Graduation at Technische Hochschule Deggendorf" if lang == "en" else "Kunal Bhai Patel — Akademische Abschlussfeier an der Technischen Hochschule Deggendorf"}" loading="eager" class="about-hero-img" width="2176" height="2589" />
+              <span class="photo-expand-badge">🔍 {"Enlarge" if lang == "en" else "Vergrößern"}</span>
+            </a>
             <figcaption>
               <span>{a_trans['hero_caption']}</span>
             </figcaption>
@@ -1168,9 +1190,9 @@ def generate_about_page(site, trans, lang):
 
             <!-- Location & Contact Box -->
             <div class="sidebar-box">
-              <div class="sidebar-box-title">Location & Contact</div>
-              <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1rem;">
-                {"Based in Deggendorf / Bavaria, Germany.<br>Available for engineering opportunities and collaborations." if lang == "en" else "Wohnhaft in Deggendorf / Bayern, Deutschland.<br>Offen für ingenieurtechnische Aufgaben und Kooperationen."}
+              <div class="sidebar-box-title">{"Location & Contact" if lang == "en" else "Standort & Kontakt"}</div>
+              <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.6;">
+                {"Based in North Rhine-Westphalia, Germany.<br>Available for engineering opportunities and collaborations." if lang == "en" else "Wohnhaft in Nordrhein-Westfalen, Deutschland.<br>Offen für ingenieurtechnische Aufgaben und Kooperationen."}
               </p>
               <a href="{pfx}{lang}/contact/" class="btn btn-primary btn-sm" style="width: 100%;">
                 {trans['nav']['contact']} →
