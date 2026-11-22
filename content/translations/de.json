@@ -13,55 +13,53 @@
     "theme_toggle_aria": "Zwischen hellem und dunklem Design umschalten"
   },
   "hero": {
-    "pill": "Maschinenbau · Mechatronik · Robotik · Tüfteln",
+    "pill": "MASCHINENBAU · MECHATRONIK · ROBOTIK · TÜFTELN",
     "title": "Ingenieur aus Berufung. Tüftler aus Leidenschaft.",
-    "lead": "Ich bin Kunal Bhai Patel, Maschinenbau- und Mechatronikingenieur an der Schnittstelle von industrieller Prüftechnik und praktischer Werkstatthardware. Von robotergestützter optischer Messtechnik bis ~6 µm bis zu eigenen Bewegungssteuerungen, Gehäusekonstruktionen und Linux-Systemen.",
-    "cta_projects": "Projekte entdecken →",
-    "cta_research": "Forschung & SPIE-Publikation →",
-    "cta_about": "Über mich →",
-    "credentials": [
-      "M.Eng. Mechatronische Systeme (TH Deggendorf)",
-      "B.Eng. Maschinenbau",
-      "Wohnhaft in Deutschland"
-    ],
-    "visual_badge": "CAD- & HARDWARE-VISUALISIERUNG",
-    "visual_caption_title": "Kinematik- & Prüfaufbau",
-    "visual_caption_sub": "Vorgesehen für Original-Werkstattfoto oder CAD-Rendering"
+    "lead": "Ich bin Kunal Bhai Patel, Maschinenbau- und Mechatronikingenieur. Ich entwickle gerne technische Ideen und setze sie praktisch um. Von robotergestützten Prüfsystemen bis zu 3D-Druck, Elektronik und eigenen Projekten in meiner Werkstatt – meine Neugier treibt mich an.",
+    "cta_projects": "Meine Projekte entdecken",
+    "cta_research": "Meine Forschung",
+    "cta_about": "Mehr über mich",
+    "credentials_line": "B.Eng. Maschinenbau · M.Eng. Mechatronische und cyber-physische Systeme"
   },
   "pillars": {
-    "section_title": "Zwei gleichberechtigte Schwerpunkte",
-    "section_desc": "Gleiches visuelles und inhaltliches Gewicht für industrielle Forschung und eigenständiges Werkstatt-Engineering.",
-    "professional_badge": "Schwerpunkt 01 · Forschung & Industrie",
-    "professional_title": "Konstruktion & Forschung",
-    "professional_lead": "Forschungsnahe Entwicklung, präzise CAD-Konstruktion und robotergestützte Systemintegration.",
-    "professional_caps": [
-      {"label": "Roboterplattform", "value": "FANUC CR-7iA/L 6-Achs-Cobot"},
-      {"label": "Optische Messtechnik", "value": "~6 µm Fehlerauflösung (nachgewiesen)"},
-      {"label": "CAD & Vorrichtungsbau", "value": "PTC Creo & SolidWorks Baugruppen"},
-      {"label": "Fachpublikation", "value": "SPIE-Tagungsband 2026 (DOI-Link)"}
-    ],
-    "personal_badge": "Schwerpunkt 02 · Werkstatt & Prototypen",
-    "personal_title": "Projekte aus meiner Werkstatt",
-    "personal_lead": "Praktische Mechatronik, Bewegungssteuerungen und selbst gehostete Systeme für den zuverlässigen Dauereinsatz.",
-    "personal_caps": [
-      {"label": "Kinematik & Motion", "value": "Plottu WLAN-Stiftplotter (FluidNC)"},
-      {"label": "Gehäuse & Thermik", "value": "Dual-HDD-Gehäuse mit Zwangsbelüftung"},
-      {"label": "Fertigungstechnik", "value": "FDM-Optimierung & Gewindeeinsätze"},
-      {"label": "Self-Hosting", "value": "Debian 12 Headless + Tailscale"}
-    ],
-    "cta_professional": "Zur Forschungsseite →",
-    "cta_personal": "Zur gesamten Projektgalerie →"
+    "section_badge": "ZWEI SEITEN MEINER ARBEIT",
+    "section_title": "Forschung trifft Neugier.",
+    "section_desc": "Technik begeistert mich – im Forschungslabor genauso wie an meiner eigenen Werkbank.",
+    "card_a_badge": "01 · Konstruktion & Forschung",
+    "card_a_title": "Konstruktion & Forschung",
+    "card_a_desc": "In meiner Arbeit verbinde ich Konstruktion, Robotik und präzise Messtechnik. Besonders gerne entwickle, montiere und teste ich technische Systeme – vom ersten CAD-Modell bis zum funktionierenden Prototyp.",
+    "card_a_cta": "Meine Forschung entdecken",
+    "card_b_badge": "02 · Projekte aus der Werkstatt",
+    "card_b_title": "Projekte aus meiner Werkstatt",
+    "card_b_desc": "Ich baue gerne eigene technische Projekte, probiere neue Ideen aus und suche nach praktischen Lösungen. Dazu gehören 3D-Druck, mechanische Konstruktion, Bewegungssteuerung, Mikrocontroller und Linux-Server.",
+    "card_b_cta": "Meine Projekte entdecken"
   },
   "featured_projects": {
-    "section_title": "Ausgewählte Arbeiten",
-    "section_desc": "Gleiche Aufmerksamkeit für Forschungsergebnisse und eigenständige Hardware-Entwicklungen.",
+    "section_badge": "AUSGEWÄHLTE PROJEKTE",
+    "section_title": "Einige meiner Projekte.",
+    "section_desc": "Ein kleiner Einblick in meine Forschungsarbeit und meine eigenen technischen Projekte.",
+    "rio_sio_title": "Rio sio — Robotische optische Inspektion",
+    "rio_sio_desc": "Ein Forschungsprojekt, das Robotik, mechanische Konstruktion und optische Messtechnik verbindet, um kleinste Fehler auf optischen Oberflächen zu erkennen.",
+    "plottu_title": "Plottu — Mein WLAN-Stiftplotter",
+    "plottu_desc": "Ein eigenes Mechatronikprojekt mit mechanischer Konstruktion, Schrittmotoren, ESP32-Steuerung und drahtloser Bewegungssteuerung.",
+    "view_project": "Projektdetails ansehen",
     "view_case_study": "Projektdetails ansehen",
-    "view_all_cta": "Alle Projekte in der Übersicht ansehen →",
+    "view_all_cta": "Alle Projekte ansehen",
     "filter_all": "Alle Arbeiten",
     "filter_professional": "Beruflich & Forschung",
-    "filter_personal": "Werkstatt & Maker",
-    "badge_research": "Forschung / Prüftechnik",
-    "badge_maker": "Mechatronik / Motion"
+    "filter_personal": "Werkstatt & Maker"
+  },
+  "personal_story": {
+    "badge": "PERSÖNLICHER WEG",
+    "heading": "Alles begann mit Neugier.",
+    "text": "Schon als Kind wollte ich wissen, wie meine Spielzeugautos funktionieren. Deshalb habe ich sie oft auseinandergebaut und mir Motoren, Zahnräder und Kabel genauer angesehen. Diese Neugier begleitet mich bis heute – nur die Maschinen sind inzwischen etwas komplizierter geworden.",
+    "link": "Meine Geschichte lesen"
+  },
+  "home_contact": {
+    "heading": "Lassen Sie uns über Technik sprechen.",
+    "desc": "Ich freue mich über neue Kontakte, interessante technische Projekte und berufliche Möglichkeiten.",
+    "cta_contact": "Kontakt",
+    "cta_linkedin": "LinkedIn"
   },
   "projects_page": {
     "badge": "Portfolio-Galerie",
@@ -201,22 +199,22 @@
     }
   },
   "contact_page": {
-    "badge": "Kontakt aufnehmen",
-    "title": "Kontakt & Fachlicher Austausch",
-    "lead": "Ich freue mich über fachliche Gespräche, mechatronische Forschungskooperationen und interessante ingenieurtechnische Aufgaben in Deutschland und international.",
-    "linkedin_card_title": "LinkedIn-Profil",
-    "linkedin_card_text": "Vernetzen Sie sich direkt auf LinkedIn für berufliche Möglichkeiten, technischen Austausch und Netzwerken.",
-    "linkedin_cta": "LinkedIn-Profil öffnen ↗",
-    "email_card_title": "Direkter Kontakt & Referenzen",
-    "email_card_text": "Sie interessieren sich für meinen Lebenslauf oder Zeugnisse? Gerne können Sie mich direkt per LinkedIn kontaktieren.",
-    "email_cta": "Unterlagen via LinkedIn anfragen ↗",
-    "cv_card_title": "Lebenslauf (PDF)",
-    "cv_card_text": "Eine geprüfte, öffentliche Fassung meines Lebenslaufs steht auf Anfrage bereit. Private Kontaktdaten sind zum Schutz der Privatsphäre geschützt.",
-    "cv_cta": "Lebenslauf auf Anfrage verfügbar",
-    "youtube_card_title": "YouTube-Kanal",
-    "youtube_card_text": "Verfolgen Sie meine Werkstattprojekte, Versuchsaufbauten und Erfahrungen in Deutschland auf YouTube.",
-    "youtube_cta": "YouTube-Kanal ansehen ↗",
-    "notice": "Datenschutzhinweis: Diese Website wird statisch ohne externe Tracking-Tools, Profiling-Cookies oder kostenpflichtige Datenbank-Dienste bereitgestellt."
+    "badge": "KONTAKT",
+    "title": "Ich freue mich auf Ihre Nachricht.",
+    "lead": "Sie haben eine berufliche Möglichkeit, eine technische Frage oder möchten einfach Kontakt aufnehmen? Ich freue mich über Ihre Nachricht.",
+    "email_card_title": "E-Mail schreiben",
+    "email_card_desc": "Für berufliche Anfragen, technische Themen und allgemeine Fragen.",
+    "email_cta": "E-Mail senden",
+    "linkedin_card_title": "Auf LinkedIn vernetzen",
+    "linkedin_card_desc": "Erfahren Sie mehr über meinen beruflichen Werdegang und vernetzen Sie sich mit mir.",
+    "linkedin_cta": "LinkedIn öffnen",
+    "cv_card_title": "Lebenslauf herunterladen",
+    "cv_card_desc": "Ein Überblick über meine Ausbildung, Berufserfahrung und technischen Kenntnisse.",
+    "cv_cta": "Lebenslauf (PDF)",
+    "youtube_card_title": "Kunal in Germany",
+    "youtube_card_desc": "Einblicke in mein Leben und meine Erfahrungen in Deutschland – auch außerhalb der Technik.",
+    "youtube_cta": "YouTube-Kanal besuchen",
+    "notice": "Datenschutzhinweis: Diese Website wird statisch auf GitHub Pages bereitgestellt – ohne serverseitige Formulare, Tracking-Tools oder Profiling-Cookies."
   },
   "footer": {
     "attribution": "Erstellt von Kunal Bhai Patel · Entwickelt mit HTML, CSS, JavaScript & Python",

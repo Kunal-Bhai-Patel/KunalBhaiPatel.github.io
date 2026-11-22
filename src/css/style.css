@@ -555,6 +555,265 @@ a:focus-visible, button:focus-visible {
   justify-content: space-between;
 }
 
+/* Editorial Hero Portrait Frame */
+.hero-portrait-frame {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--card-shadow);
+  transition: all var(--transition-normal);
+  aspect-ratio: 4 / 4.75;
+  max-width: 440px;
+  margin-left: auto;
+}
+
+.hero-portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+}
+
+.hero-subtle-link {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.4rem 0.2rem;
+}
+
+.hero-subtle-link:hover {
+  color: var(--text-primary);
+}
+
+.hero-credentials-line {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-subtle);
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+
+/* Two Sides of Engineering */
+.sides-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75rem;
+}
+
+.side-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.85rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
+  box-shadow: var(--card-shadow);
+  position: relative;
+}
+
+.side-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-medium);
+}
+
+.side-card-badge {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-steel);
+  margin-bottom: 0.65rem;
+  display: block;
+}
+
+.side-card-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.65rem;
+}
+
+.side-card-desc {
+  font-size: 0.94rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.side-card-media {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface-subtle);
+  aspect-ratio: 16 / 9;
+}
+
+.side-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.workshop-visual-card {
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--border-subtle);
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.25rem;
+  text-align: center;
+  gap: 0.75rem;
+}
+
+.workshop-badge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent-steel);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.workshop-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
+}
+
+.workshop-pill-item {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+}
+
+/* Plottu Teaser Visual in Featured Works */
+.plottu-visual-card {
+  width: 100%;
+  height: 100%;
+  background: var(--bg-surface-subtle);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  text-align: center;
+  gap: 0.85rem;
+}
+
+.plottu-badge {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--accent-steel);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.plottu-tech-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  justify-content: center;
+}
+
+.plottu-tech-row span {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 0.22rem 0.55rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+}
+
+/* Personal Story Card */
+.personal-story-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 2.5rem;
+  box-shadow: var(--card-shadow);
+  position: relative;
+}
+
+.personal-story-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 2.5rem;
+  right: 2.5rem;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-steel), transparent);
+}
+
+.personal-story-title {
+  font-size: 1.65rem;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.personal-story-text {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  max-width: 680px;
+}
+
+/* Refined Contact Page Layout */
+.contact-hero-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  padding: 2.25rem;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.contact-hero-content {
+  max-width: 580px;
+}
+
+.contact-email-addr {
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--accent-steel);
+  margin-top: 0.4rem;
+  display: inline-block;
+}
+
+.contact-secondary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
 /* Buttons */
 .btn {
   display: inline-flex;
@@ -2179,6 +2438,21 @@ section.panel {
     gap: 2rem;
   }
 
+  .hero-portrait-frame {
+    max-width: 360px;
+    margin: 0 auto;
+    aspect-ratio: 4 / 4.4;
+  }
+
+  .sides-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .contact-secondary-grid {
+    grid-template-columns: 1fr;
+  }
+
   .pillars-grid {
     grid-template-columns: 1fr;
   }
@@ -2318,6 +2592,24 @@ section.panel {
 
   .hero-section {
     padding: 2.75rem 0 2.25rem 0;
+  }
+
+  .hero-portrait-frame {
+    max-width: 290px;
+    aspect-ratio: 4 / 4;
+    margin: 0 auto;
+  }
+
+  .personal-story-card {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .personal-story-title {
+    font-size: 1.35rem;
+  }
+
+  .contact-hero-card {
+    padding: 1.5rem;
   }
 
   .pillar-capabilities {

@@ -13,55 +13,53 @@
     "theme_toggle_aria": "Toggle light or dark theme"
   },
   "hero": {
-    "pill": "Mechanical Engineering · Mechatronics · Robotics · Making",
+    "pill": "MECHANICAL ENGINEERING · MECHATRONICS · ROBOTICS · MAKING",
     "title": "Engineer by profession. Maker by curiosity.",
-    "lead": "I am a mechanical and mechatronics engineer bridging precision R&D metrology with hands-on workshop hardware. From robotic optical inspection down to ~6 µm to custom motion control, thermal packaging, and Linux infrastructure.",
-    "cta_projects": "Explore Projects →",
-    "cta_research": "Research & SPIE Paper →",
-    "cta_about": "About Kunal →",
-    "credentials": [
-      "M.Eng. Mechatronic Systems (TH Deggendorf)",
-      "B.Eng. Mechanical Engineering",
-      "Based in Germany"
-    ],
-    "visual_badge": "CAD / HARDWARE DISPLAY VIEWPORT",
-    "visual_caption_title": "Technical Kinematics & Inspection Setup",
-    "visual_caption_sub": "Reserved for authentic workshop photo or CAD render"
+    "lead": "I'm Kunal Bhai Patel, a mechanical and mechatronics engineer who enjoys turning ideas into working systems. From robotic optical inspection and precision engineering to 3D printing, electronics and projects built in my own workshop, curiosity drives everything I do.",
+    "cta_projects": "Explore My Projects",
+    "cta_research": "My Research",
+    "cta_about": "Get to Know Me",
+    "credentials_line": "B.Eng. Mechanical Engineering · M.Eng. Mechatronics & Cyber-Physical Systems"
   },
   "pillars": {
-    "section_title": "Two Balanced Pillars",
-    "section_desc": "Equal visual and technical prominence given to industrial R&D engineering and hands-on workshop experimentation.",
-    "professional_badge": "Pillar 01 · Research & Industry",
-    "professional_title": "Engineering & Research",
-    "professional_lead": "Research-driven engineering, precision CAD modeling, and industrial collaborative robotics integration.",
-    "professional_caps": [
-      {"label": "Robotics Platform", "value": "FANUC CR-7iA/L 6-Axis Cobot"},
-      {"label": "Optical Metrology", "value": "~6 µm Imperfection Resolution"},
-      {"label": "CAD & Tooling", "value": "PTC Creo & SolidWorks Fixtures"},
-      {"label": "Publication", "value": "SPIE Proceedings 2026 (DOI Link)"}
-    ],
-    "personal_badge": "Pillar 02 · Workshop & Prototyping",
-    "personal_title": "Projects from My Workshop",
-    "personal_lead": "Practical mechatronics, motion control kinematics, and self-hosted systems built for real-world reliability.",
-    "personal_caps": [
-      {"label": "Motion Control", "value": "Plottu Wi-Fi Pen Plotter (FluidNC)"},
-      {"label": "Packaging & Cooling", "value": "Dual-HDD Forced-Air Enclosure"},
-      {"label": "Fabrication", "value": "FDM Tuning & Heat-Set Inserts"},
-      {"label": "Self-Hosting", "value": "Debian 12 Headless + Tailscale"}
-    ],
-    "cta_professional": "View Dedicated Research Page →",
-    "cta_personal": "View All Projects Gallery →"
+    "section_badge": "TWO SIDES OF MY WORK",
+    "section_title": "Where Research Meets Curiosity.",
+    "section_desc": "I enjoy engineering both in the laboratory and at my own workbench.",
+    "card_a_badge": "01 · Professional Engineering",
+    "card_a_title": "Engineering & Research",
+    "card_a_desc": "My professional work brings together mechanical design, robotics and precision measurement. I enjoy developing, assembling and testing real systems – from the first CAD model to the working prototype.",
+    "card_a_cta": "Explore My Research",
+    "card_b_badge": "02 · Independent Engineering Projects",
+    "card_b_title": "Projects from My Workshop",
+    "card_b_desc": "I like building things, understanding how they work and finding better solutions. My personal projects range from mechanical design and 3D printing to motion control, microcontrollers and Linux servers.",
+    "card_b_cta": "Explore My Projects"
   },
   "featured_projects": {
-    "section_title": "Featured Engineering Works",
-    "section_desc": "Equal prominence for research milestones and independent hardware builds.",
+    "section_badge": "SELECTED PROJECTS",
+    "section_title": "A Few Things I've Built.",
+    "section_desc": "A glimpse into my research and personal engineering projects.",
+    "rio_sio_title": "Rio sio — Robotic Optical Inspection",
+    "rio_sio_desc": "A research project combining collaborative robotics, mechanical design and optical metrology to inspect microscopic imperfections on precision optical surfaces.",
+    "plottu_title": "Plottu — My Wi-Fi Pen Plotter",
+    "plottu_desc": "A personal mechatronics project combining mechanical construction, stepper motors, an ESP32 controller and wireless motion control.",
+    "view_project": "View Project Details",
     "view_case_study": "View Project Details",
-    "view_all_cta": "Explore All Projects in Full Gallery →",
+    "view_all_cta": "View All Projects",
     "filter_all": "All Projects",
     "filter_professional": "Professional Engineering",
-    "filter_personal": "Personal / Maker Projects",
-    "badge_research": "Research / Metrology",
-    "badge_maker": "Mechatronics / Motion"
+    "filter_personal": "Personal / Maker Projects"
+  },
+  "personal_story": {
+    "badge": "PERSONAL STORY",
+    "heading": "It All Started with Curiosity.",
+    "text": "As a child, I was more interested in what was inside my toy cars than simply playing with them. I wanted to understand every motor, gear and wire. Years later, that same curiosity still drives me – only the machines have become a little more complicated.",
+    "link": "Read My Story"
+  },
+  "home_contact": {
+    "heading": "Let's Talk Engineering.",
+    "desc": "I'm always happy to connect about engineering opportunities, interesting technical projects and new ideas.",
+    "cta_contact": "Contact Me",
+    "cta_linkedin": "LinkedIn"
   },
   "projects_page": {
     "badge": "Portfolio Gallery",
@@ -201,22 +199,22 @@
     }
   },
   "contact_page": {
-    "badge": "Get in Touch",
-    "title": "Contact & Professional Inquiries",
-    "lead": "I welcome technical discussions, mechatronic research collaborations, and professional engineering opportunities in Germany and internationally.",
-    "linkedin_card_title": "LinkedIn Professional Profile",
-    "linkedin_card_text": "Connect with me directly on LinkedIn for career opportunities, engineering discussions, and professional networking.",
-    "linkedin_cta": "Open LinkedIn Profile ↗",
-    "email_card_title": "Direct Contact & Credentials",
-    "email_card_text": "Interested in a formal CV or reference documentation? Feel free to request my credentials or send a technical inquiry via LinkedIn.",
-    "email_cta": "Request Credentials via LinkedIn ↗",
-    "cv_card_title": "Curriculum Vitae (PDF)",
-    "cv_card_text": "A reviewed, public version of my curriculum vitae is available upon request. Personal contact numbers and street address are omitted for public safety.",
-    "cv_cta": "CV Available Upon Request",
-    "youtube_card_title": "YouTube Community",
-    "youtube_card_text": "Follow my maker projects, engineering experiments, and experiences in Germany on YouTube.",
-    "youtube_cta": "Watch on YouTube ↗",
-    "notice": "Privacy Notice: This website is hosted statically without third-party tracking, profiling cookies, or paid backend dependencies."
+    "badge": "GET IN TOUCH",
+    "title": "Let's Connect.",
+    "lead": "Whether you have an engineering opportunity, an interesting technical question or simply want to connect, I'd be happy to hear from you.",
+    "email_card_title": "Send Me an Email",
+    "email_card_desc": "For professional opportunities, engineering discussions and general inquiries.",
+    "email_cta": "Write an Email",
+    "linkedin_card_title": "Connect on LinkedIn",
+    "linkedin_card_desc": "Find my professional background and connect with me directly.",
+    "linkedin_cta": "Open LinkedIn",
+    "cv_card_title": "Download My CV",
+    "cv_card_desc": "A concise overview of my education, engineering experience and technical skills.",
+    "cv_cta": "Download CV (PDF)",
+    "youtube_card_title": "Kunal in Germany",
+    "youtube_card_desc": "A look at my experiences and life in Germany beyond my engineering work.",
+    "youtube_cta": "Visit My YouTube Channel",
+    "notice": "Privacy Notice: This website is statically hosted on GitHub Pages without server-side processing, tracking scripts, profiling cookies, or external form dependencies."
   },
   "footer": {
     "attribution": "Created by Kunal Bhai Patel · Built with HTML, CSS, JavaScript & Python",

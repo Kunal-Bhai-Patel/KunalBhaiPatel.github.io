@@ -563,231 +563,211 @@ def render_html_shell(title, description, lang, content, site, trans, current_pa
 """
 
 def generate_homepage(site, trans, projects, lang):
-    """Generates the hybrid homepage: focused hero, 50/50 pillars, small featured gallery, teaser highlights."""
+    """Generates the premium personal engineering homepage:
+    1. Hero: Text & authentic portrait (photo2_Edited.png) in balanced editorial composition.
+    2. Two Sides of My Engineering (Where Research Meets Curiosity): 50/50 balance.
+    3. Selected Projects (A Few Things I've Built): Exactly 2 projects (Rio sio & Plottu).
+    4. Personal Story (It All Started with Curiosity): Warm, authentic biographical introduction.
+    5. Get in Touch (Let's Talk Engineering): Welcoming contact teaser.
+    """
     pfx = get_base_prefix(1)
     hero = trans["hero"]
     pillars = trans["pillars"]
     featured = trans["featured_projects"]
+    story = trans["personal_story"]
+    home_contact = trans["home_contact"]
     author = site["author"]
 
-    # Small featured project gallery (2 highlighted projects: Rio sio & Plottu)
-    featured_list = [p for p in projects if p.get("featured", False)][:2]
-    if not featured_list:
-        featured_list = projects[:2]
+    portrait_url = f"{pfx}media/portrait/photo2_Edited.png"
+    portrait_alt = f"{author['name']} — {hero['title']}"
 
-    featured_cards_html = []
-    for proj in featured_list:
-        p_id = proj["id"]
-        p_title = proj["title"][lang]
-        p_desc = proj["one_liner"][lang]
-        p_status = proj["status"][lang]
-        p_tags = proj["tags"][:3]
-        detail_url = f"{pfx}{lang}/projects/{p_id}/"
-
-        tags_html = "".join([f'<span class="tag-pill">{t}</span>' for t in p_tags])
-        if proj.get("image"):
-            card_visual = f'<img src="{pfx}{proj["image"]}" alt="{p_title}" class="project-card-img" loading="lazy" />'
-        else:
-            card_visual = render_schematic(p_id, lang, is_detail=False)
-
-        featured_cards_html.append(f"""
-        <article class="project-card" data-category="{proj['category']}">
-          <a href="{detail_url}" class="card-media" aria-label="{p_title}">
-            {card_visual}
-          </a>
-          <div class="card-body">
-            <div class="card-meta">
-              <span class="card-category">{proj['category_label'][lang]}</span>
-              <span class="project-status-badge">{p_status}</span>
-            </div>
-            <h3 class="card-title"><a href="{detail_url}">{p_title}</a></h3>
-            <p class="card-desc">{p_desc}</p>
-            <div class="card-tags">{tags_html}</div>
-            <div style="margin-top: 1.25rem;">
-              <a href="{detail_url}" class="btn btn-secondary btn-sm" style="width: 100%;">{featured['view_case_study']} →</a>
-            </div>
-          </div>
-        </article>
-        """)
-
-    featured_cards_str = "\n".join(featured_cards_html)
-
-    # Pillar micro-capability items
-    prof_caps_html = "".join([f"""
-      <div class="cap-item">
-        <span class="cap-label">{c['label']}</span>
-        <span class="cap-value">{c['value']}</span>
-      </div>
-    """ for c in pillars['professional_caps']])
-
-    personal_caps_html = "".join([f"""
-      <div class="cap-item">
-        <span class="cap-label">{c['label']}</span>
-        <span class="cap-value">{c['value']}</span>
-      </div>
-    """ for c in pillars['personal_caps']])
-
-    # Credentials list
-    credentials_html = "".join([f"<span>{cr}</span>" for cr in hero.get("credentials", [])])
-
-    content = f"""
-    <!-- Refined Hero Section with 2-Column Composition -->
+    # Section 1: Hero Section
+    hero_html = f"""
     <section class="hero-section" id="hero">
       <div class="container">
         <div class="hero-grid">
-          <!-- Left Column: Headline, Concise Narrative, CTAs -->
+          <!-- Left Column: Narrative & Action Gateway -->
           <div class="hero-content">
             <div class="hero-pill">
-              <span style="display:inline-block; width:7px; height:7px; border-radius:50%; background:var(--accent-steel);"></span>
+              <span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:var(--accent-steel);"></span>
               {hero['pill']}
             </div>
             <h1 class="hero-title">{hero['title']}</h1>
             <p class="hero-lead">{hero['lead']}</p>
             <div class="hero-ctas">
-              <a href="{pfx}{lang}/projects/" class="btn btn-primary">{hero['cta_projects']}</a>
-              <a href="{pfx}{lang}/research/" class="btn btn-secondary">{hero['cta_research']}</a>
-              <a href="{pfx}{lang}/about/" class="btn btn-outline">{hero['cta_about']}</a>
+              <a href="{pfx}{lang}/projects/" class="btn btn-primary">{hero['cta_projects']} →</a>
+              <a href="{pfx}{lang}/research/" class="btn btn-secondary">{hero['cta_research']} →</a>
+              <a href="{pfx}{lang}/about/" class="hero-subtle-link">{hero['cta_about']} →</a>
             </div>
-            <div class="hero-credentials">
-              {credentials_html}
+            <div class="hero-credentials-line">
+              <span>{hero['credentials_line']}</span>
             </div>
           </div>
 
-          <!-- Right Column: Authentic Engineering Display Viewport -->
+          <!-- Right Column: Authentic Editorial Portrait -->
           <div class="hero-visual">
-            <div class="hero-visual-frame">
-              <div class="hero-visual-header">
-                <div class="hero-visual-dots">
-                  <div class="hero-visual-dot"></div>
-                  <div class="hero-visual-dot"></div>
-                  <div class="hero-visual-dot"></div>
-                </div>
-                <span>{hero['visual_badge']}</span>
-              </div>
-              <div class="hero-visual-inner">
-                {render_hero_visual(lang)}
-              </div>
-              <div class="hero-visual-caption">
-                <span style="color: var(--text-secondary);">{hero['visual_caption_title']}</span>
-                <span>{hero['visual_caption_sub']}</span>
-              </div>
+            <div class="hero-portrait-frame">
+              <img src="{portrait_url}" alt="{portrait_alt}" class="hero-portrait-img" loading="eager" />
             </div>
           </div>
         </div>
       </div>
     </section>
+    """
 
-    <!-- Two Balanced Pillars Section (Equal 50/50 Prominence) -->
-    <section class="section" id="pillars">
+    # Section 2: Two Sides of My Engineering (Where Research Meets Curiosity)
+    fanuc_img_url = f"{pfx}media/research/rio-sio/20250506_175617.jpg"
+    two_sides_html = f"""
+    <section class="section" id="two-sides">
       <div class="container">
         <div class="section-header">
-          <span class="section-badge">{pillars['section_title']}</span>
-          <h2>Professional Precision · Workshop Curiosity</h2>
+          <span class="section-badge">{pillars['section_badge']}</span>
+          <h2>{pillars['section_title']}</h2>
           <p class="section-desc">{pillars['section_desc']}</p>
         </div>
 
-        <div class="pillars-grid">
-          <!-- Pillar 1: Professional Engineering & Research -->
-          <div class="pillar-card">
-            <div class="pillar-header-group">
-              <span class="pillar-badge">{pillars['professional_badge']}</span>
-              <span class="pillar-index">01</span>
+        <div class="sides-grid">
+          <!-- Card A: Professional Engineering & Research -->
+          <div class="side-card">
+            <span class="side-card-badge">{pillars['card_a_badge']}</span>
+            <div class="side-card-media">
+              <img src="{fanuc_img_url}" alt="FANUC CR-7iA/L Robotic Optical Inspection System" class="side-card-img" loading="lazy" />
             </div>
-            <h3 class="pillar-title">{pillars['professional_title']}</h3>
-            <p class="pillar-lead">{pillars['professional_lead']}</p>
-            
-            <div class="pillar-capabilities">
-              {prof_caps_html}
-            </div>
-
-            <div>
-              <a href="{pfx}{lang}/research/" class="btn btn-secondary btn-sm">{pillars['cta_professional']}</a>
+            <h3 class="side-card-title">{pillars['card_a_title']}</h3>
+            <p class="side-card-desc">{pillars['card_a_desc']}</p>
+            <div style="margin-top: auto; padding-top: 1rem;">
+              <a href="{pfx}{lang}/research/" class="btn btn-secondary btn-sm">{pillars['card_a_cta']} →</a>
             </div>
           </div>
 
-          <!-- Pillar 2: Workshop & Maker Projects -->
-          <div class="pillar-card">
-            <div class="pillar-header-group">
-              <span class="pillar-badge">{pillars['personal_badge']}</span>
-              <span class="pillar-index">02</span>
+          <!-- Card B: Projects from My Workshop -->
+          <div class="side-card">
+            <span class="side-card-badge">{pillars['card_b_badge']}</span>
+            <div class="workshop-visual-card">
+              <span class="workshop-badge">{"PRACTICAL MECHATRONICS & PROTOTYPING" if lang == "en" else "PRAKTISCHE MECHATRONIK & PROTOTYPEN"}</span>
+              <div class="workshop-pills-row">
+                <span class="workshop-pill-item">ESP32 & FluidNC</span>
+                <span class="workshop-pill-item">Dual-Axis Kinematics</span>
+                <span class="workshop-pill-item">FDM 3D Printing</span>
+                <span class="workshop-pill-item">Motion Control</span>
+                <span class="workshop-pill-item">Debian Headless</span>
+              </div>
             </div>
-            <h3 class="pillar-title">{pillars['personal_title']}</h3>
-            <p class="pillar-lead">{pillars['personal_lead']}</p>
-            
-            <div class="pillar-capabilities">
-              {personal_caps_html}
-            </div>
-
-            <div>
-              <a href="{pfx}{lang}/projects/" class="btn btn-secondary btn-sm">{pillars['cta_personal']}</a>
+            <h3 class="side-card-title">{pillars['card_b_title']}</h3>
+            <p class="side-card-desc">{pillars['card_b_desc']}</p>
+            <div style="margin-top: auto; padding-top: 1rem;">
+              <a href="{pfx}{lang}/projects/" class="btn btn-secondary btn-sm">{pillars['card_b_cta']} →</a>
             </div>
           </div>
         </div>
       </div>
     </section>
+    """
 
-    <!-- Small Featured Projects Preview -->
-    <section class="section" id="featured-projects">
+    # Section 3: Selected Projects (A Few Things I've Built) - Exactly 2 projects
+    rio_card_img = f"{pfx}media/research/rio-sio/rio_sio_card.jpg"
+    selected_projects_html = f"""
+    <section class="section" id="selected-projects">
       <div class="container">
         <div class="section-header">
-          <span class="section-badge">{featured['section_title']}</span>
-          <h2>Featured Engineering Works</h2>
+          <span class="section-badge">{featured['section_badge']}</span>
+          <h2>{featured['section_title']}</h2>
           <p class="section-desc">{featured['section_desc']}</p>
         </div>
 
-        <div class="projects-grid">
-          {featured_cards_str}
+        <div class="sides-grid">
+          <!-- Featured 1: Rio sio -->
+          <article class="project-card" data-category="research">
+            <a href="{pfx}{lang}/projects/rio-sio/" class="card-media" aria-label="{featured['rio_sio_title']}">
+              <img src="{rio_card_img}" alt="{featured['rio_sio_title']}" class="project-card-img" loading="lazy" />
+            </a>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-category">{"RESEARCH & METROLOGY" if lang == "en" else "FORSCHUNG & MESSTECHNIK"}</span>
+                <span class="project-status-badge">{"Master's Research" if lang == "en" else "Masterarbeit"}</span>
+              </div>
+              <h3 class="card-title"><a href="{pfx}{lang}/projects/rio-sio/">{featured['rio_sio_title']}</a></h3>
+              <p class="card-desc">{featured['rio_sio_desc']}</p>
+              <div style="margin-top: auto; padding-top: 1rem;">
+                <a href="{pfx}{lang}/projects/rio-sio/" class="btn btn-secondary btn-sm" style="width: 100%;">{featured['view_project']} →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Featured 2: Plottu -->
+          <article class="project-card" data-category="personal">
+            <a href="{pfx}{lang}/projects/plottu/" class="card-media" aria-label="{featured['plottu_title']}">
+              <div class="plottu-visual-card">
+                <span class="plottu-badge">{"2D WIRELESS MOTION PLATFORM" if lang == "en" else "KABELLOSE 2D-BEWEGUNGSPLATTFORM"}</span>
+                <div class="plottu-tech-row">
+                  <span>ESP32</span>
+                  <span>FluidNC</span>
+                  <span>NEMA Steppers</span>
+                  <span>Micro-Servo</span>
+                </div>
+              </div>
+            </a>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-category">{"PERSONAL / MECHATRONICS" if lang == "en" else "PRIVAT / MECHATRONIK"}</span>
+                <span class="project-status-badge">{"Active Prototype" if lang == "en" else "Aktiver Prototyp"}</span>
+              </div>
+              <h3 class="card-title"><a href="{pfx}{lang}/projects/plottu/">{featured['plottu_title']}</a></h3>
+              <p class="card-desc">{featured['plottu_desc']}</p>
+              <div style="margin-top: auto; padding-top: 1rem;">
+                <a href="{pfx}{lang}/projects/plottu/" class="btn btn-secondary btn-sm" style="width: 100%;">{featured['view_project']} →</a>
+              </div>
+            </div>
+          </article>
         </div>
 
         <div style="text-align: center; margin-top: 2.5rem;">
           <a href="{pfx}{lang}/projects/" class="btn btn-primary">
-            {featured['view_all_cta']}
+            {featured['view_all_cta']} →
           </a>
         </div>
       </div>
     </section>
+    """
 
-    <!-- Brief Research Highlight Teaser -->
-    <section class="section" id="research-teaser">
-      <div class="container">
-        <div class="research-highlight-box">
-          <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: 0.75rem;">
-            <h3 style="font-size: 1.35rem; color: var(--text-primary);">{trans['research_page']['paper_title']}</h3>
-            <span class="project-status-badge">{trans['research_page']['paper_badge']}</span>
-          </div>
-          <p style="color: var(--text-secondary); margin-bottom: 1.25rem; font-size: 0.95rem;">
-            {trans['research_page']['lead']}
-          </p>
-          <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;">
-            <a href="{pfx}{lang}/research/" class="btn btn-secondary btn-sm">
-              {trans['research_page']['title']} →
-            </a>
-            <a href="https://doi.org/10.1117/12.3111698" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
-              SPIE Paper (DOI: 10.1117/12.3111698) ↗
-            </a>
+    # Section 4: Personal Story (It All Started with Curiosity)
+    personal_story_html = f"""
+    <section class="section" id="story">
+      <div class="container container-narrow">
+        <div class="personal-story-card">
+          <span class="section-badge">{story['badge']}</span>
+          <h2 class="personal-story-title">{story['heading']}</h2>
+          <p class="personal-story-text">{story['text']}</p>
+          <div style="margin-top: 1.5rem;">
+            <a href="{pfx}{lang}/about/" class="btn btn-secondary btn-sm">{story['link']} →</a>
           </div>
         </div>
       </div>
     </section>
+    """
 
-    <!-- Connect & Contact CTA -->
-    <section class="section" id="contact-teaser">
+    # Section 5: Get in Touch (Let's Talk Engineering)
+    home_contact_html = f"""
+    <section class="section" id="home-contact">
       <div class="container container-narrow" style="text-align: center;">
-        <span class="section-badge">{trans['contact_page']['badge']}</span>
-        <h2 style="margin-bottom: 1rem;">{trans['contact_page']['title']}</h2>
-        <p style="font-size: 1.08rem; color: var(--text-secondary); margin-bottom: 2rem;">
-          {trans['contact_page']['lead']}
+        <h2 style="font-size: 1.85rem; margin-bottom: 0.85rem;">{home_contact['heading']}</h2>
+        <p style="font-size: 1.05rem; color: var(--text-secondary); max-width: 580px; margin: 0 auto 1.75rem; line-height: 1.6;">
+          {home_contact['desc']}
         </p>
-        <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem;">
-          <a href="{pfx}{lang}/contact/" class="btn btn-primary">
-            {trans['nav']['contact']} →
-          </a>
-          <a href="{author['linkedin_url']}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-            LinkedIn Profile ↗
-          </a>
+        <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 0.85rem;">
+          <a href="{pfx}{lang}/contact/" class="btn btn-primary">{home_contact['cta_contact']} →</a>
+          <a href="{author['linkedin_url']}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">{home_contact['cta_linkedin']} ↗</a>
         </div>
       </div>
     </section>
+    """
+
+    content = f"""
+    {hero_html}
+    {two_sides_html}
+    {selected_projects_html}
+    {personal_story_html}
+    {home_contact_html}
     """
 
     return render_html_shell(
@@ -1214,10 +1194,11 @@ def generate_about_page(site, trans, lang):
     )
 
 def generate_contact_page(site, trans, lang):
-    """Generates the dedicated Contact page with clear direct channels."""
+    """Generates the simplified, elegant Contact page with direct channels (Email, LinkedIn, CV, YouTube). No forms."""
     pfx = get_base_prefix(2)
     c_trans = trans["contact_page"]
     author = site["author"]
+    cv_url = f"{pfx}media/Kunal_Bhai_Patel_CV.pdf"
 
     content = f"""
     <!-- Dedicated Contact Header -->
@@ -1229,58 +1210,68 @@ def generate_contact_page(site, trans, lang):
       </div>
     </header>
 
-    <!-- Contact Cards Grid -->
+    <!-- Contact Channels Section -->
     <section class="section">
       <div class="container">
-        <div class="contact-grid">
-          <!-- Card 1: LinkedIn Profile -->
+        <!-- Option 1: Prominent Direct Email Channel -->
+        <div class="contact-hero-card">
+          <div class="contact-hero-content">
+            <span class="section-badge" style="margin-bottom: 0.35rem;">{"DIRECT INQUIRIES" if lang == "en" else "DIREKTE ANFRAGEN"}</span>
+            <h2 style="font-size: 1.45rem; margin-bottom: 0.45rem;">{c_trans['email_card_title']}</h2>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 0.5rem;">
+              {c_trans['email_card_desc']}
+            </p>
+            <a href="mailto:{author['email']}" class="contact-email-addr">{author['email']}</a>
+          </div>
+          <div>
+            <a href="mailto:{author['email']}" class="btn btn-primary">
+              {c_trans['email_cta']} →
+            </a>
+          </div>
+        </div>
+
+        <!-- Secondary Channels Grid: LinkedIn, Curriculum Vitae, YouTube -->
+        <div class="contact-secondary-grid">
+          <!-- Option 2: LinkedIn -->
           <div class="contact-card">
+            <span class="side-card-badge">LINKEDIN</span>
             <h3 class="contact-card-title">{c_trans['linkedin_card_title']}</h3>
-            <p class="contact-card-text">{c_trans['linkedin_card_text']}</p>
-            <div>
-              <a href="{author['linkedin_url']}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="width: 100%;">
-                {c_trans['linkedin_cta']}
-              </a>
-            </div>
-          </div>
-
-          <!-- Card 2: Professional Inquiries -->
-          <div class="contact-card">
-            <h3 class="contact-card-title">{c_trans['email_card_title']}</h3>
-            <p class="contact-card-text">{c_trans['email_card_text']}</p>
-            <div>
+            <p class="contact-card-text">{c_trans['linkedin_card_desc']}</p>
+            <div style="margin-top: auto; padding-top: 1rem;">
               <a href="{author['linkedin_url']}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="width: 100%;">
-                {c_trans['email_cta']}
+                {c_trans['linkedin_cta']} ↗
               </a>
             </div>
           </div>
 
-          <!-- Card 3: Curriculum Vitae -->
+          <!-- Option 3: Curriculum Vitae -->
           <div class="contact-card">
+            <span class="side-card-badge">CURRICULUM VITAE</span>
             <h3 class="contact-card-title">{c_trans['cv_card_title']}</h3>
-            <p class="contact-card-text">{c_trans['cv_card_text']}</p>
-            <div>
-              <a href="{author['linkedin_url']}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="width: 100%;">
+            <p class="contact-card-text">{c_trans['cv_card_desc']}</p>
+            <div style="margin-top: auto; padding-top: 1rem;">
+              <a href="{cv_url}" download="Kunal_Bhai_Patel_CV.pdf" class="btn btn-secondary btn-sm" style="width: 100%;">
                 {c_trans['cv_cta']}
               </a>
             </div>
           </div>
 
-          <!-- Card 4: YouTube Channel -->
+          <!-- Option 4: YouTube -->
           <div class="contact-card">
+            <span class="side-card-badge">YOUTUBE</span>
             <h3 class="contact-card-title">{c_trans['youtube_card_title']}</h3>
-            <p class="contact-card-text">{c_trans['youtube_card_text']}</p>
-            <div>
+            <p class="contact-card-text">{c_trans['youtube_card_desc']}</p>
+            <div style="margin-top: auto; padding-top: 1rem;">
               <a href="{author['youtube_url']}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="width: 100%;">
-                {c_trans['youtube_cta']}
+                {c_trans['youtube_cta']} ↗
               </a>
             </div>
           </div>
         </div>
 
         <!-- Privacy & Static Hosting Notice -->
-        <div style="text-align: center; margin-top: 3rem; padding: 1.5rem; background: var(--bg-surface-subtle); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); max-width: 680px; margin-left: auto; margin-right: auto;">
-          <p style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted);">
+        <div style="text-align: center; margin-top: 3.5rem; padding: 1.5rem; background: var(--bg-surface-subtle); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); max-width: 720px; margin-left: auto; margin-right: auto;">
+          <p style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted); line-height: 1.55;">
             {c_trans['notice']}
           </p>
         </div>
