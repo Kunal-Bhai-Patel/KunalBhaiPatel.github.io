@@ -581,6 +581,10 @@ def generate_homepage(site, trans, projects, lang):
     home_contact = trans["home_contact"]
     author = site["author"]
 
+    cv_filename = "Kunal_Bhai_Patel_CV_Public_EN.pdf" if lang == "en" else "Kunal_Bhai_Patel_CV_Public_DE.pdf"
+    cv_url = f"{pfx}downloads/{cv_filename}"
+    cv_cta = "Download CV (PDF)" if lang == "en" else "Lebenslauf herunterladen (PDF)"
+
     portrait_url = f"{pfx}media/portrait/photo2_Edited.png"
     portrait_alt = f"{author['name']} — {hero['title']}"
 
@@ -799,6 +803,9 @@ def generate_homepage(site, trans, projects, lang):
         <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 0.85rem;">
           <a href="{pfx}{lang}/contact/" class="btn btn-primary">{home_contact['cta_contact']} →</a>
           <a href="{author['linkedin_url']}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">{home_contact['cta_linkedin']} ↗</a>
+          <a href="{cv_url}" download="{cv_filename}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            <span class="btn-icon">📄</span> {cv_cta}
+          </a>
         </div>
       </div>
     </section>
@@ -1075,6 +1082,10 @@ def generate_about_page(site, trans, lang):
     a_trans = trans["about_page"]
     author = site["author"]
 
+    cv_filename = "Kunal_Bhai_Patel_CV_Public_EN.pdf" if lang == "en" else "Kunal_Bhai_Patel_CV_Public_DE.pdf"
+    cv_url = f"{pfx}downloads/{cv_filename}"
+    cv_cta = "Download CV (PDF)" if lang == "en" else "Lebenslauf herunterladen (PDF)"
+
     # Editorial Chapters HTML
     chapters_html = []
     for ch in a_trans.get("chapters", []):
@@ -1170,6 +1181,9 @@ def generate_about_page(site, trans, lang):
               <a href="{pfx}{lang}/projects/" class="btn btn-secondary btn-sm">
                 {"Workshop Projects →" if lang == "en" else "Werkstattprojekte →"}
               </a>
+              <a href="{cv_url}" download="{cv_filename}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                <span class="btn-icon">📄</span> {cv_cta}
+              </a>
             </div>
           </div>
 
@@ -1241,6 +1255,17 @@ def generate_about_page(site, trans, lang):
                 {trans['nav']['contact']} →
               </a>
             </div>
+
+            <!-- Curriculum Vitae Download Box -->
+            <div class="sidebar-box">
+              <div class="sidebar-box-title">{"Curriculum Vitae" if lang == "en" else "Lebenslauf"}</div>
+              <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.6;">
+                {"A concise two-page overview of my engineering education, practical experience, and technical competencies." if lang == "en" else "Eine kompakte zweiseitige Übersicht über Ausbildung, praktische Ingenieurerfahrung und Fachkenntnisse."}
+              </p>
+              <a href="{cv_url}" download="{cv_filename}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="width: 100%;">
+                <span class="btn-icon">📄</span> {cv_cta}
+              </a>
+            </div>
           </aside>
         </div>
       </div>
@@ -1263,7 +1288,8 @@ def generate_contact_page(site, trans, lang):
     pfx = get_base_prefix(2)
     c_trans = trans["contact_page"]
     author = site["author"]
-    cv_url = f"{pfx}media/Kunal_Bhai_Patel_CV.pdf"
+    cv_filename = "Kunal_Bhai_Patel_CV_Public_EN.pdf" if lang == "en" else "Kunal_Bhai_Patel_CV_Public_DE.pdf"
+    cv_url = f"{pfx}downloads/{cv_filename}"
 
     subject_raw = "Engineering Inquiry | Kunal Bhai Patel" if lang == "en" else "Ingenieuranfrage | Kunal Bhai Patel"
     subject_encoded = urllib.parse.quote(subject_raw)
@@ -1396,8 +1422,8 @@ def generate_contact_page(site, trans, lang):
             <h3 class="contact-card-title">{c_trans['cv_card_title']}</h3>
             <p class="contact-card-text">{c_trans['cv_card_desc']}</p>
             <div style="margin-top: auto; padding-top: 1rem;">
-              <a href="{cv_url}" download="Kunal_Bhai_Patel_CV.pdf" class="btn btn-secondary btn-sm" style="width: 100%;">
-                {c_trans['cv_cta']}
+              <a href="{cv_url}" download="{cv_filename}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="width: 100%;">
+                <span class="btn-icon">📄</span> {c_trans['cv_cta']}
               </a>
             </div>
           </div>
