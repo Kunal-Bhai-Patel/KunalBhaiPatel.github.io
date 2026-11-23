@@ -867,36 +867,66 @@ def generate_projects_page(site, trans, projects, lang):
     )
 
 def generate_research_page(site, trans, lang):
-    """Generates the dedicated Research page with in-depth metrology and SPIE paper details."""
+    """Generates the Research overview page featuring 3 back-to-back cards in a responsive grid, matching the Projects gallery layout."""
     pfx = get_base_prefix(2)
     r_trans = trans["research_page"]
     author = site["author"]
-    sections = r_trans["sections"]
+    
+    rio = r_trans["rio_sio"]
+    man = r_trans["man_energy"]
+    pub = r_trans["publication"]
 
-    # Localized metadata items
+    # Tile 1: Rio sio
+    rio_url = f"{pfx}{lang}/projects/rio-sio/"
+    rio_tags = ["FANUC CR-7iA/L", "Optical Metrology", "PTC Creo", "Controlled Light"]
+    rio_tags_html = "".join([f'<span class="tag-pill">{t}</span>' for t in rio_tags])
+    
+    # Tile 2: MAN Energy Solutions
+    man_url = f"{pfx}{lang}/projects/man-energy/"
+    man_tags = ["MAN Energy Solutions", "High Pressure", "Siemens PCS 7", "Operating Manuals"]
+    man_tags_html = "".join([f'<span class="tag-pill">{t}</span>' for t in man_tags])
+    
+    # Tile 3: SPIE Publication
+    pub_url = pub["doi_url"]
+    pub_tags = ["SPIE Proceedings", "DOI: 10.1117/12.3111698", "Peer-Reviewed", "Paper 137890C"]
+    pub_tags_html = "".join([f'<span class="tag-pill">{t}</span>' for t in pub_tags])
+
     if lang == "de":
-        meta_items = [
-            ("Nachweisgrenze", "~6 µm Fehlergröße (nachgewiesen)"),
-            ("Roboterplattform", "FANUC CR-7iA/L 6-Achs-Cobot"),
-            ("Forschungseinrichtung", "TC Teisnach Optik / TH Deggendorf"),
-            ("Förderprogramm", "IGF Vorhaben 01IF22263N")
-        ]
+        rio_badge = "FORSCHUNGSSCHWERPUNKT · MASTERARBEIT"
+        rio_status = "Abgeschlossen · TH Deggendorf"
+        rio_tile_title = "Rio sio: Robotische Prüfung optischer Oberflächen"
+        rio_tile_desc = "Automatisierte Prüfung mikroskopischer Fehler auf optischen Oberflächen bis ca. 6 µm mit kollaborativem Roboter und Spezialbeleuchtung."
+        rio_cta = "Forschungsprojekt erkunden →"
+
+        man_badge = "INDUSTRIELLE FORSCHUNGSERFAHRUNG"
+        man_status = "Praxistätigkeit (2023)"
+        man_tile_title = "MAN Energy Solutions: Industrielle Versuchstechnik"
+        man_tile_desc = "Betrieb von Hochdruck-Prüfständen, Gassteuerung (O2 / N2) über Siemens PCS 7, Ventilschaltungen und zweisprachige Handbücher."
+        man_cta = "Erfahrungsbericht ansehen →"
+
+        pub_badge = "WISSENSCHAFTLICHE PUBLIKATION"
+        pub_status = "SPIE Proceedings (2026)"
+        pub_tile_title = "Cobotic Inspection of Surface Imperfections"
+        pub_tile_desc = "Veröffentlichung der Forschungsergebnisse aus Rio sio: Kollimierte UV-Beleuchtung und mikroskopische Defekterkennung."
+        pub_cta = "Offizielle Publikation (DOI) ↗"
     else:
-        meta_items = [
-            ("Detection Limit", "~6 µm Imperfection Resolution"),
-            ("Cobot Platform", "FANUC CR-7iA/L 6-Axis Cobot"),
-            ("Research Facility", "TC Teisnach Optik / TH Deggendorf"),
-            ("Funding Program", "IGF Project 01IF22263N")
-        ]
+        rio_badge = "FEATURED R&D · MASTER'S THESIS"
+        rio_status = "Completed Research · TH Deggendorf"
+        rio_tile_title = "Rio sio: Robotic Inspection of Optical Surfaces"
+        rio_tile_desc = "Automated inspection of microscopic imperfections on optical surfaces down to ~6 µm using a collaborative robot and collimated illumination."
+        rio_cta = "Explore Research Project →"
 
-    research_meta_grid_html = "".join([f"""
-      <div class="research-meta-item">
-        <span class="research-meta-label">{m[0]}</span>
-        <span class="research-meta-value">{m[1]}</span>
-      </div>
-    """ for m in meta_items])
+        man_badge = "INDUSTRIAL RESEARCH EXPERIENCE"
+        man_status = "Industrial Experience (2023)"
+        man_tile_title = "MAN Energy Solutions: High-Pressure Test Bench"
+        man_tile_desc = "High-pressure test bench operation, oxygen and nitrogen gas control via Siemens PCS 7, valve operation, and authoring bilingual operating manuals."
+        man_cta = "Explore Experience Details →"
 
-    schematic_svg = render_schematic("rio-sio", lang, is_detail=True)
+        pub_badge = "SCIENTIFIC PUBLICATION"
+        pub_status = "SPIE Proceedings (2026)"
+        pub_tile_title = "Cobotic Inspection of Surface Imperfections"
+        pub_tile_desc = "Co-authored peer-reviewed paper presenting the Rio sio experimental setup, collimated illumination, and ~6 µm defect resolution."
+        pub_cta = "Access Official Paper (DOI) ↗"
 
     content = f"""
     <!-- Dedicated Research Header -->
@@ -904,113 +934,81 @@ def generate_research_page(site, trans, lang):
       <div class="container">
         <span class="page-badge">{r_trans['badge']}</span>
         <h1 class="page-title">{r_trans['title']}</h1>
-        <p class="page-lead">{r_trans['lead']}</p>
+        <p class="page-lead" style="max-width: 820px;">{r_trans['lead']}</p>
       </div>
     </header>
 
-    <!-- Research Main Content -->
+    <!-- Research Overview Gallery Section: 3 Tiles Back-to-Back -->
     <section class="section">
       <div class="container">
-        <!-- Official SPIE Publication Feature Box -->
-        <div class="research-highlight-box" style="margin-bottom: 3rem;">
-          <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: 0.75rem;">
-            <h2 style="font-size: 1.4rem; color: var(--text-primary);">{r_trans['paper_title']}</h2>
-            <span class="project-status-badge">{r_trans['paper_badge']}</span>
-          </div>
-          <p style="color: var(--text-secondary); margin-bottom: 1.25rem; font-family: var(--font-mono); font-size: 0.88rem;">
-            {r_trans['paper_venue']} · DOI: 10.1117/12.3111698
-          </p>
-
-          <div class="research-meta-grid">
-            {research_meta_grid_html}
-          </div>
-
-          <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-top: 1.5rem;">
-            <a href="{r_trans['paper_doi_url']}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
-              📄 {r_trans['paper_doi_label']} ↗
+        
+        <div class="projects-grid">
+          
+          <!-- Tile 1: Rio sio -->
+          <article class="project-card" data-category="professional">
+            <a href="{rio_url}" class="card-media" aria-label="{rio_tile_title}">
+              <img src="{pfx}media/research/rio-sio/rio_sio_card.jpg" alt="{rio_tile_title}" class="project-card-img" loading="eager" />
             </a>
-            <span class="btn btn-outline btn-sm btn-disabled" title="{r_trans['thesis_note']}">
-              📄 {r_trans['thesis_title']} ({r_trans['thesis_status']})
-            </span>
-            <a href="{pfx}{lang}/projects/rio-sio/" class="btn btn-secondary btn-sm">
-              {r_trans['view_case_study']}
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-category">{rio_badge}</span>
+                <span class="project-status-badge">{rio_status}</span>
+              </div>
+              <h2 class="card-title"><a href="{rio_url}">{rio_tile_title}</a></h2>
+              <p class="card-desc">{rio_tile_desc}</p>
+              <div class="card-tags">{rio_tags_html}</div>
+              <div style="margin-top: 1.25rem;">
+                <a href="{rio_url}" class="btn btn-primary btn-sm" style="width: 100%;">
+                  {rio_cta}
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tile 2: MAN Energy Solutions -->
+          <article class="project-card" data-category="professional">
+            <a href="{man_url}" class="card-media" aria-label="{man_tile_title}">
+              <img src="{pfx}media/research/man-energy/man_test_bench_illustrative.jpg" alt="{man_tile_title}" class="project-card-img" loading="eager" />
             </a>
-          </div>
-        </div>
-
-        <!-- Technical Breakdown Columns -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-bottom: 3rem;">
-          <div>
-            <h3 style="font-size: 1.2rem; margin-bottom: 0.75rem; color: var(--text-primary);">
-              01. {sections['challenge_title']}
-            </h3>
-            <p style="color: var(--text-secondary); line-height: 1.68; margin-bottom: 2rem;">
-              {sections['challenge_text']}
-            </p>
-
-            <h3 style="font-size: 1.2rem; margin-bottom: 0.75rem; color: var(--text-primary);">
-              02. {sections['robotics_title']}
-            </h3>
-            <p style="color: var(--text-secondary); line-height: 1.68;">
-              {sections['robotics_text']}
-            </p>
-          </div>
-
-          <div>
-            <h3 style="font-size: 1.2rem; margin-bottom: 0.75rem; color: var(--text-primary);">
-              03. {sections['optics_title']}
-            </h3>
-            <p style="color: var(--text-secondary); line-height: 1.68; margin-bottom: 2rem;">
-              {sections['optics_text']}
-            </p>
-
-            <h3 style="font-size: 1.2rem; margin-bottom: 0.75rem; color: var(--text-primary);">
-              04. {sections['cad_title']}
-            </h3>
-            <p style="color: var(--text-secondary); line-height: 1.68;">
-              {sections['cad_text']}
-            </p>
-          </div>
-        </div>
-
-        <!-- Research Rig & Laboratory Showcase -->
-        <div class="research-rig-showcase">
-          <div class="detail-schematic-container">
-            {schematic_svg}
-            <div class="schematic-caption">
-              <span>FANUC CR-7iA/L Robotic Optical Inspection Test Rig</span>
-              <span>Vector Schematic · DOI: 10.1117/12.3111698</span>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-category">{man_badge}</span>
+                <span class="project-status-badge">{man_status}</span>
+              </div>
+              <h2 class="card-title"><a href="{man_url}">{man_tile_title}</a></h2>
+              <p class="card-desc">{man_tile_desc}</p>
+              <div class="card-tags">{man_tags_html}</div>
+              <div style="margin-top: 1.25rem;">
+                <a href="{man_url}" class="btn btn-secondary btn-sm" style="width: 100%;">
+                  {man_cta}
+                </a>
+              </div>
             </div>
-          </div>
-          <div class="research-photo-showcase">
-            <div class="research-photo-wrap">
-              <img src="{pfx}media/research/rio-sio/rio_sio_card.jpg" alt="Kunal Bhai Patel with FANUC CR-7iA/L robot test rig" loading="lazy" />
-            </div>
-            <div class="research-photo-desc">
-              <p>
-                {"Experimental cobotic metrology cell at TC Teisnach Optik: FANUC CR-7iA/L collaborative arm equipped with custom collimated dark-field illumination." if lang == "en" else "Kollaborative Messzelle am TC Teisnach Optik: FANUC CR-7iA/L Cobot mit eigens entwickelter kollimierter Dunkelfeldbeleuchtung."}
-              </p>
-              <a href="{pfx}{lang}/projects/rio-sio/" class="btn btn-secondary btn-sm">
-                {r_trans['view_case_study']}
-              </a>
-            </div>
-          </div>
-        </div>
+          </article>
 
-        <!-- Results & Conclusion Box -->
-        <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 2rem;">
-          <h3 style="font-size: 1.2rem; margin-bottom: 0.75rem; color: var(--text-primary);">
-            05. {sections['results_title']}
-          </h3>
-          <p style="color: var(--text-secondary); line-height: 1.68; margin-bottom: 1.5rem;">
-            {sections['results_text']}
-          </p>
-          <div>
-            <a href="{pfx}{lang}/projects/rio-sio/" class="btn btn-secondary">
-              {r_trans['view_case_study']}
+          <!-- Tile 3: SPIE Publication -->
+          <article class="project-card" data-category="professional">
+            <a href="{pub_url}" target="_blank" rel="noopener noreferrer" class="card-media" aria-label="{pub_tile_title}">
+              <img src="{pfx}media/research/rio-sio/mirror0_375wave1706.jpg" alt="{pub_tile_title}" class="project-card-img" loading="lazy" />
             </a>
-          </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-category">{pub_badge}</span>
+                <span class="project-status-badge">{pub_status}</span>
+              </div>
+              <h2 class="card-title"><a href="{pub_url}" target="_blank" rel="noopener noreferrer">{pub_tile_title}</a></h2>
+              <p class="card-desc">{pub_tile_desc}</p>
+              <div class="card-tags">{pub_tags_html}</div>
+              <div style="margin-top: 1.25rem;">
+                <a href="{pub_url}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="width: 100%;">
+                  {pub_cta}
+                </a>
+              </div>
+            </div>
+          </article>
+
         </div>
+
       </div>
     </section>
     """
@@ -2278,12 +2276,213 @@ def generate_ufo_detail(site, trans, project, lang):
         depth=3
     )
 
+def generate_man_energy_detail(site, trans, project, lang):
+    """Generates the dedicated MAN Energy Solutions industrial experience detail page with 3 images, 7 in-depth points, and bilingual manual coverage."""
+    pfx = get_base_prefix(3)
+    m = trans["man_energy_case_study"]
+    ov = m["overview"]
+    p_tmpl = trans["project_template"]
+    p_title = project["title"][lang]
+    p_oneliner = project["one_liner"][lang]
+    
+    # Specs rows
+    specs_rows = []
+    for spec in project["content"][lang]["specs"]:
+        specs_rows.append(f"""
+        <tr>
+          <td class="spec-key">{spec['key']}</td>
+          <td class="spec-val">{spec['value']}</td>
+        </tr>
+        """)
+    specs_table_html = "".join(specs_rows)
+
+    # 7 Core Points HTML
+    points_html = []
+    for pt in m["points"]:
+        points_html.append(f"""
+        <div class="ufo-step-card">
+          <div class="ufo-step-header">
+            <span class="ufo-step-badge">{pt['num']}</span>
+            <h3 class="ufo-step-title">{pt['title']}</h3>
+          </div>
+          <p style="color: var(--text-secondary); line-height: 1.72; margin: 0; font-size: 0.96rem;">
+            {pt['text']}
+          </p>
+        </div>
+        """)
+    points_str = "\n".join(points_html)
+
+    # 3 Illustrative Images HTML
+    images_html = []
+    for img in m["images"]:
+        images_html.append(f"""
+        <figure class="photo-card" style="margin-bottom: 2rem;">
+          <div class="photo-card-media contain-technical" data-lightbox>
+            <img src="{pfx}{img['src']}" alt="{img['alt']}" loading="lazy" data-zoomable />
+          </div>
+          <figcaption style="padding: 0.85rem 1rem; background: var(--bg-surface); border-top: 1px solid var(--border-subtle); display: flex; flex-direction: column; gap: 0.35rem;">
+            <strong style="color: var(--text-primary); font-size: 0.92rem;">{img['title']}</strong>
+            <span style="color: var(--text-secondary); font-size: 0.84rem; line-height: 1.45;">{img['caption']}</span>
+            <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); font-style: italic;">{img['disclaimer']}</span>
+          </figcaption>
+        </figure>
+        """)
+    images_str = "\n".join(images_html)
+
+    content = f"""
+    <div class="container" style="padding-top: 1.5rem; padding-bottom: 0.5rem;">
+      <a href="{pfx}{lang}/research/" class="back-link">{m['back_to_research']}</a>
+    </div>
+
+    <!-- Hero Header -->
+    <header class="detail-hero">
+      <div class="container">
+        <div class="project-kicker-row">
+          <span class="kicker">{m['kicker']}</span>
+          <span class="project-status-badge">{project['status'][lang]}</span>
+        </div>
+        <h1 class="detail-title">{m['title']}</h1>
+        <p class="detail-lead" style="max-width: 820px;">{m['lead']}</p>
+        <div class="card-tags" style="margin-top: 1rem;">
+          {"".join([f'<span class="tag-pill">{t}</span>' for t in project['tags'][:5]])}
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content & Layout -->
+    <section class="section">
+      <div class="container">
+        
+        <!-- Recruiter Overview Card -->
+        <div class="rio-overview-card" style="margin-bottom: 2.75rem;">
+          <div class="rio-overview-header">
+            <span class="rio-overview-badge">{ov['badge']}</span>
+            <span class="rio-overview-meta">{m['meta_period']}</span>
+          </div>
+          <div class="rio-overview-grid">
+            <div class="rio-overview-item">
+              <span class="rio-overview-label">{ov['company_label']}</span>
+              <span class="rio-overview-val">{ov['company']}</span>
+            </div>
+            <div class="rio-overview-item">
+              <span class="rio-overview-label">{ov['role_label']}</span>
+              <span class="rio-overview-val">{ov['role']}</span>
+            </div>
+            <div class="rio-overview-item">
+              <span class="rio-overview-label">{ov['location_label']}</span>
+              <span class="rio-overview-val">{ov['location']}</span>
+            </div>
+            <div class="rio-overview-item">
+              <span class="rio-overview-label">{ov['systems_label']}</span>
+              <span class="rio-overview-val">{ov['systems']}</span>
+            </div>
+            <div class="rio-overview-item rio-overview-span">
+              <span class="rio-overview-label">{ov['deliverables_label']}</span>
+              <span class="rio-overview-val">{ov['deliverables']}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail-layout">
+          <!-- Main Narrative Column -->
+          <div class="detail-main">
+            
+            <div style="margin-bottom: 2.5rem;">
+              <h2 class="detail-section-title">
+                {"Experimental Role & Engineering Responsibilities" if lang == "en" else "Aufgabenschwerpunkte & Ingenieurpraxis"}
+              </h2>
+              <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem;">
+                {project['content'][lang]['approach']}
+              </p>
+              
+              {points_str}
+            </div>
+
+            <!-- Technical Visuals Showcase -->
+            <div style="margin-bottom: 2.5rem;">
+              <h2 class="detail-section-title">
+                {"Laboratory & Documentation Visuals" if lang == "en" else "Versuchsstands- & Dokumentationsabbildungen"}
+              </h2>
+              <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.5rem; font-size: 0.92rem;">
+                {"The following visual representations illustrate the engineering test bench configuration, the process monitoring environment, and the bilingual documentation workflow developed during this research engagement." if lang == "en" else "Die nachfolgenden Darstellungen veranschaulichen den Aufbau des Hochdruck-Prüfstands, die Prozessüberwachungsumgebung sowie die Struktur der zweisprachigen Prüfstandsdokumentation."}
+              </p>
+              
+              {images_str}
+            </div>
+
+            <!-- Summary & Engineering Takeaway -->
+            <div class="callout" style="border-left: 4px solid var(--accent-steel); margin-top: 2rem;">
+              <strong style="font-size: 1.05rem; display: block; color: var(--text-primary); margin-bottom: 0.5rem;">
+                {"Key Engineering Takeaway" if lang == "en" else "Zentrale Erkenntnisse"}
+              </strong>
+              <p style="color: var(--text-secondary); line-height: 1.68; margin: 0; font-size: 0.92rem;">
+                {project['content'][lang]['lessons']}
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Sidebar Column -->
+          <aside class="detail-sidebar">
+            <div class="sidebar-box">
+              <h3 class="sidebar-box-title">{p_tmpl['specs_label']}</h3>
+              <table class="specs-table">
+                <tbody>
+                  {specs_table_html}
+                </tbody>
+              </table>
+            </div>
+
+            <div class="sidebar-box">
+              <h3 class="sidebar-box-title">{p_tmpl['classification_title']}</h3>
+              <div style="font-size: 0.88rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.5rem;">
+                <div><strong>{p_tmpl['category_label']}</strong> {project['category_label'][lang]}</div>
+                <div><strong>{p_tmpl['organization_label']}</strong> {project['organization']}</div>
+                <div><strong>{p_tmpl['timeline_label']}</strong> {project['period']}</div>
+                <div><strong>Author:</strong> Kunal Bhai Patel</div>
+              </div>
+            </div>
+
+            <div class="sidebar-box" style="border-left: 3px solid var(--accent-steel);">
+              <h3 class="sidebar-box-title">{"Related Research & Projects" if lang == "en" else "Verwandte Projekte"}</h3>
+              <div style="display: flex; flex-direction: column; gap: 0.65rem; margin-top: 0.75rem;">
+                <a href="{pfx}{lang}/projects/rio-sio/" class="btn btn-secondary btn-sm" style="width: 100%; text-align: left;">
+                  🔬 Rio sio Research Project →
+                </a>
+                <a href="{pfx}{lang}/research/" class="btn btn-secondary btn-sm" style="width: 100%; text-align: left;">
+                  📊 Research & Development →
+                </a>
+                <a href="{pfx}{lang}/projects/" class="btn btn-secondary btn-sm" style="width: 100%; text-align: left;">
+                  🛠️ All Engineering Projects →
+                </a>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+      </div>
+    </section>
+    """
+
+    return render_html_shell(
+        title=f"{p_title} | {site['site_name']}",
+        description=p_oneliner,
+        lang=lang,
+        content=content,
+        site=site,
+        trans=trans,
+        current_page=f"project-{project['id']}",
+        depth=3
+    )
+
 def generate_project_detail(site, trans, project, lang):
     """Generates an individual project case study page."""
     if project["id"] == "rio-sio":
         return generate_rio_sio_detail(site, trans, project, lang)
     if project["id"] == "universal-file-organizer":
         return generate_ufo_detail(site, trans, project, lang)
+    if project["id"] == "man-energy":
+        return generate_man_energy_detail(site, trans, project, lang)
 
     pfx = get_base_prefix(3)
     p_content = project["content"][lang]
@@ -2636,8 +2835,19 @@ def build_site():
         p_de_dir.mkdir(parents=True, exist_ok=True)
         with open(p_de_dir / "index.html", "w", encoding="utf-8") as f:
             f.write(generate_project_detail(site, trans_de, proj, "de"))
+
+        # Also support /research/man-energy/ route
+        if p_id == "man-energy":
+            man_en_res = en_res_dir / "man-energy"
+            man_de_res = de_res_dir / "man-energy"
+            man_en_res.mkdir(parents=True, exist_ok=True)
+            man_de_res.mkdir(parents=True, exist_ok=True)
+            with open(man_en_res / "index.html", "w", encoding="utf-8") as f:
+                f.write(generate_project_detail(site, trans_en, proj, "en"))
+            with open(man_de_res / "index.html", "w", encoding="utf-8") as f:
+                f.write(generate_project_detail(site, trans_de, proj, "de"))
             
-    print(f"✓ Generated bilingual project detail pages for {len(projects)} projects (including Rio sio, Plottu, HDD enclosure, Home server, 3D printing, Local AI)")
+    print(f"✓ Generated bilingual project detail pages for {len(projects)} projects (including Rio sio, Plottu, HDD enclosure, Home server, 3D printing, Local AI, Universal File Organizer, MAN Energy Solutions)")
 
     # 7. Add .nojekyll for GitHub Pages
     with open(DIST_DIR / ".nojekyll", "w", encoding="utf-8") as f:

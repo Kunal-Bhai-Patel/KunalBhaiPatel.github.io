@@ -70,31 +70,145 @@
     "filter_personal": "Werkstatt & Maker"
   },
   "research_page": {
-    "badge": "Angewandte F&E-Messtechnik",
-    "title": "Robotergestützte optische Prüfung & Messtechnik",
-    "lead": "Im Rahmen eines IGF-geförderten Forschungsvorhabens (01IF22263N) am Technologie Campus Teisnach Optik (TH Deggendorf) habe ich an einem cobotgestützten Prüfsystem zur automatisierten Erkennung mikroskopischer Fehler auf Präzisionsoptiken mitgearbeitet.",
-    "paper_badge": "SPIE-Tagungsband 2026",
-    "paper_title": "Cobotic Inspection of Surface Imperfections with Collimated Illumination",
-    "paper_venue": "SPIE Proceedings Vol. 13789, Paper 137890C (2026)",
-    "paper_doi_label": "Offizielle SPIE-Veröffentlichung via DOI öffnen (10.1117/12.3111698)",
-    "paper_doi_url": "https://doi.org/10.1117/12.3111698",
-    "thesis_badge": "Masterarbeit",
-    "thesis_title": "Robotergestützte Prüfung von Oberflächendefekten auf optischen Oberflächen",
-    "thesis_status": "Freigabe nach Prüfung durch Hochschule & Partner ausstehend",
-    "thesis_note": "Gemäß den institutionellen Vorgaben wird die PDF-Datei nach formaler Freigabe zum Download bereitgestellt.",
-    "sections": {
-      "challenge_title": "Die messtechnische Herausforderung",
-      "challenge_text": "Hochpräzise optische Komponenten erfordern eine lückenlose Qualitätskontrolle zur Detektion mikroskopischer Defekte (Kratzer, Ausbrüche, Partikel), welche die Funktion im Lasereinsatz oder in der Abbildungsoptik beeinträchtigen. Die manuelle visuelle Mikroskopie ist zeitaufwendig und ermüdungsanfällig; starre kartesische Prüfaufbauten bieten oft nicht die nötige Flexibilität für gekrümmte Freiformoptiken unter definierten Beleuchtungswinkeln.",
-      "robotics_title": "Kinematische Integration des FANUC-Cobots",
-      "robotics_text": "Zentraler Bestandteil des Versuchsaufbaus ist ein 6-Achs-Leichtbauroboter (FANUC CR-7iA/L). Durch die Montage des optischen Prüfkopfes am Roboterflansch kann das System exakte Oberflächennormalen-Trajektorien über komplexe Optiken abfahren und dabei Arbeitsabstand und Beleuchtungswinkel präzise einhalten.",
-      "optics_title": "Optische Prüfung & Kollimierte UV-Beleuchtung",
-      "optics_text": "Eine gerichtete Spezialbeleuchtung in Kombination mit hochauflösender Bildverarbeitung erzeugt scharfe Fehlerkontraste. Das System wies Oberflächendefekte bis zu einer Größe von ca. 6 µm auf kalibrierten Referenzmustern reproduzierbar nach.",
-      "cad_title": "CAD-Konstruktion & Mechanische Integration",
-      "cad_text": "In PTC Creo Parametric und Dassault SolidWorks habe ich Adapterplatten, Halterungen für Kamera und Beleuchtung sowie Justiervorrichtungen konstruiert, um Schwingungssteifigkeit zu gewährleisten und Mikrovibrationen bei hochauflösenden Aufnahmen zu unterbinden.",
-      "results_title": "Experimentelle Ergebnisse & Nachweise",
-      "results_text": "Das robotergestützte Prüfsystem wies Oberflächendefekte bis zu ca. 6 µm zuverlässig nach. Die Ergebnisse flossen als Co-Autor in die SPIE-Publikation 2026 ('Cobotic Inspection of Surface Imperfections with Collimated Illumination', DOI: 10.1117/12.3111698) ein."
+    "badge": "Angewandte F&E · Optische Messtechnik · Versuchstechnik",
+    "title": "Forschung & Entwicklung",
+    "lead": "Meine Arbeit verbindet Laborversuche, mechanische Konstruktion, optische Messtechnik, Robotik und technische Dokumentation. Von industriellen Prüfständen bis zu kollaborativen optischen Inspektionssystemen liegt mein Schwerpunkt darauf, technische Ideen in belastbare Versuchsaufbauten und nachvollziehbare Ergebnisse zu überführen.",
+    "rio_sio": {
+      "kicker": "01 / FORSCHUNGSSCHWERPUNKT · F&E-PROJEKT",
+      "title": "Rio sio — Robotische Inspektion von Unvollkommenheiten in optischen Oberflächen",
+      "meta": "Technologie Campus Teisnach Optik, TH Deggendorf · Master-Forschungsprojekt",
+      "p1": "Am Technologie Campus Teisnach Optik (TH Deggendorf) arbeitete ich an der Entwicklung eines kollaborativen robotergestützten Prüfsystems zur Erkennung mikroskopischer Fehler auf optischen Oberflächen mit.",
+      "p2": "Meine Aufgaben umfassten CAD-Konstruktion, mechanische und optomechanische Integration, optische Ausrichtung, Beleuchtungsversuche, Roboterpositionierung, manuelle Kalibrierung sowie experimentelle Validierung.",
+      "p3": "Das System kombinierte einen FANUC CR-7iA/L Cobot mit hochauflösender Bildgebung, optischer Messtechnik und kontrollierter Beleuchtung. In den Versuchen konnten Oberflächenfehler bis etwa 6 µm nachgewiesen werden.",
+      "institution_label": "Forschungseinrichtung",
+      "institution_val": "Technologie Campus Teisnach Optik / TH Deggendorf",
+      "type_label": "Projekttyp",
+      "type_val": "Master-Forschungsarbeit",
+      "focus_label": "Forschungsschwerpunkt",
+      "focus_val": "Automatisierte robotische Prüfung von Unvollkommenheiten auf optischen Oberflächen",
+      "tech_label": "Kerntechnologien",
+      "tech_val": "FANUC CR-7iA/L Cobot, PTC Creo, SolidWorks, optische Messtechnik, hochauflösende Bildgebung, kontrollierte Beleuchtung",
+      "contrib_label": "Eigene Beiträge",
+      "contrib_val": "CAD-Konstruktion, mechanische & optomechanische Integration, optische Ausrichtung, Beleuchtungsversuche, Roboterpositionierung, manuelle Kalibrierung, Validierung",
+      "results_label": "Nachgewiesene Ergebnisse",
+      "results_val": "Nachweis mikroskopischer Oberflächenfehler bis ca. 6 µm, Entwicklung eines Versuchsprototyps, Co-Autorenschaft SPIE-Publikation",
+      "photo_caption": "Kunal bei der Kalibrierung des Sensorkopfs und des Prüfbereichs am FANUC CR-7iA/L Cobot am TC Teisnach Optik.",
+      "cta_explore": "Rio sio Forschungsprojekt ansehen",
+      "cta_spie": "SPIE-Veröffentlichung öffnen"
     },
-    "view_case_study": "Rio sio Forschungsprojekt ansehen →"
+    "man_energy": {
+      "kicker": "02 / INDUSTRIELLE FORSCHUNGSERFAHRUNG",
+      "title": "Industrielle Forschungserfahrung — MAN Energy Solutions",
+      "meta": "MAN Energy Solutions (heute Everllence) · Werkstudent Forschung · 2023",
+      "p1": "Als Werkstudent Forschung bei MAN Energy Solutions (heute Everllence) unterstützte ich experimentelle Arbeiten in einem industriellen Prüfumfeld.",
+      "p2": "Zu meinen Aufgaben gehörten der Betrieb eines Hochdruck-Prüfstands, die Steuerung von Hochdruck-Sauerstoff und Hochdruck-Stickstoff über Siemens PCS 7 sowie die Bedienung mehrerer Ventile im Prüfablauf. Darüber hinaus überwachte ich Versuchsabläufe, dokumentierte Messwerte und unterstützte die strukturierte technische Dokumentation.",
+      "p3": "Zusätzlich erstellte ich Bedienungsanleitungen für den Prüfstand in deutscher und englischer Sprache. Diese Tätigkeit hat mein Verständnis für industrielle Versuchstechnik, Prozessüberwachung, technische Dokumentation und strukturierte Arbeitsabläufe weiter vertieft.",
+      "company_label": "Unternehmen",
+      "company_val": "MAN Energy Solutions (heute Everllence)",
+      "role_label": "Funktion",
+      "role_val": "Werkstudent Forschung",
+      "period_label": "Zeitraum & Standort",
+      "period_val": "2023 · Deggendorf, Deutschland",
+      "scope_label": "Aufgabenspektrum",
+      "scope_val": "Betrieb von Hochdruck-Prüfständen, Gassteuerung (O2 / N2), Prozessüberwachung über Siemens PCS 7, Ventilbedienung, Messwertdokumentation, zweisprachige Handbücher",
+      "img_alt": "Illustrative Darstellung eines industriellen Hochdruck-Prüfstands und Prozessüberwachungsumfelds",
+      "img_caption": "Illustrative Darstellung (KI-generiert), kein Originalfoto aus dem Unternehmen."
+    },
+    "publication": {
+      "kicker": "03 / WISSENSCHAFTLICHE PUBLIKATION · SPIE PROCEEDINGS",
+      "title": "SPIE-Veröffentlichung",
+      "intro": "Aus dem Forschungsprojekt Rio sio entstand eine Co-Autorschaft in den SPIE Proceedings:",
+      "paper_title": "Cobotic Inspection of Surface Imperfections with Collimated Illumination",
+      "paper_venue": "SPIE Proceedings, Vol. 13789, Paper 137890C (2026)",
+      "doi": "10.1117/12.3111698",
+      "doi_url": "https://doi.org/10.1117/12.3111698",
+      "desc": "Diese Veröffentlichung stellt die Forschungsergebnisse und optischen Messmethoden aus dem Projekt Rio sio vor.",
+      "cta_doi": "Offiziellen DOI öffnen"
+    }
+  },
+  "man_energy_case_study": {
+    "kicker": "INDUSTRIELLE FORSCHUNGSERFAHRUNG · 2023",
+    "title": "Industrielle Forschungserfahrung — MAN Energy Solutions",
+    "meta_period": "02/2023 – 08/2023",
+    "meta_org": "MAN Energy Solutions SE (heute Everllence), Deggendorf",
+    "lead": "Experimentelle Laborversuche, Steuerung von Hochdruck-Gasen (O2 / N2), Prozessüberwachung über Siemens PCS 7 und Erstellung zweisprachiger Prüfstands-Bedienungsanleitungen.",
+    "overview": {
+      "badge": "Praxistätigkeit im Überblick",
+      "company": "MAN Energy Solutions SE (heute Everllence)",
+      "company_label": "Unternehmen",
+      "role": "Werkstudent Forschung",
+      "role_label": "Funktion",
+      "location": "Deggendorf, Bayern, Deutschland",
+      "location_label": "Standort",
+      "period": "Februar 2023 – August 2023",
+      "period_label": "Zeitraum",
+      "systems": "Hochdruck-Prüfstandsanlagen, Gasstrecken, Siemens PCS 7",
+      "systems_label": "Kernsysteme",
+      "deliverables": "Versuchsüberwachung, Messprotokolle, zweisprachige Handbücher (DE / EN)",
+      "deliverables_label": "Zentrale Ergebnisse"
+    },
+    "points": [
+      {
+        "num": "01",
+        "title": "Betrieb von Hochdruck-Prüfständen",
+        "text": "Ich unterstützte den täglichen Betrieb spezialisierter Hochdruck-Prüfstände zur Untersuchung industrieller Komponenten. Dies umfasste gründliche Vorabprüfungen, die Kontrolle der pneumatischen Leitungsdichtheit und die Sicherstellung aller physikalischen Schutzvorrichtungen vor Druckbeaufschlagung."
+      },
+      {
+        "num": "02",
+        "title": "Steuerung von Hochdruck-Sauerstoff und -Stickstoff",
+        "text": "Die Prüfabläufe erforderten eine präzise Regulierung von gasförmigem Hochdruck-Sauerstoff (O2) und Stickstoff (N2). Ich steuerte die Gaszufuhr nach standardisierten Prüfvorschriften und hielt die Versorgungsdrücke bei kontinuierlicher Überwachung der Druckdifferenzen stabil."
+      },
+      {
+        "num": "03",
+        "title": "Prozessüberwachung über Siemens PCS 7",
+        "text": "Die Prozessüberwachung in Echtzeit erfolgte über das industrielle Leitsystem Siemens PCS 7. Ich beobachtete kontinuierliche Sensordaten, glich Druck- und Temperaturmesswerte mit zulässigen Grenzwerten ab und meldete Messabweichungen unverzüglich."
+      },
+      {
+        "num": "04",
+        "title": "Ventilschaltfolgen & Koordinierte Prüfstandsbedienung",
+        "text": "Die Durchführung der Versuchszyklen erforderte das koordinierte Schalten einer komplexen Ventilstrecke aus manuellen, pneumatischen und Sicherheitsventilen. Die exakte Schaltreihenfolge war entscheidend, um Druckstöße zu vermeiden, kontrolliertes Abblasen zu gewährleisten und empfindliche Messaufnehmer zu schützen."
+      },
+      {
+        "num": "05",
+        "title": "Versuchsüberwachung & Messwertdokumentation",
+        "text": "Während jedes Versuchs dokumentierte ich Messwerte, Durchflussparameter und Laufzeiten in standardisierten Prüfprotokollen. Diese Messprotokolle dienten als nachvollziehbare Datengrundlage für nachgelagerte ingenieurwissenschaftliche Auswertungen und Qualitätsprüfungen."
+      },
+      {
+        "num": "06",
+        "title": "Erstellung zweisprachiger Bedienungsanleitungen (DE / EN)",
+        "text": "Eine zentrale Aufgabe war die Erstellung umfassender, anwenderfreundlicher Bedienungsanleitungen für den Prüfstand in deutscher und englischer Sprache. Die Handbücher dokumentierten Arbeitsabläufe, Ventilschaltfolgen, Checklisten zur Fehlersuche sowie Sicherheitsvorschriften für nachfolgende Ingenieure und wissenschaftliche Mitarbeiter."
+      },
+      {
+        "num": "07",
+        "title": "Experimentelle Arbeitsweise & Industrielle Laborsicherheit",
+        "text": "Die Arbeit mit Hochdruck- und Reaktivgasen erforderte höchste Sorgfalt hinsichtlich Arbeitssicherheit und Kontaminationsvermeidung. Ich stellte sicher, dass saubere Gashandhabungsprotokolle strikt eingehalten wurden und Not-Aus- sowie Schnellentlastungsmechanismen jederzeit betriebsbereit blieben."
+      }
+    ],
+    "images": [
+      {
+        "src": "media/research/man-energy/man_test_bench_illustrative.jpg",
+        "alt": "Hochdruck-Prüfstandsanlage mit Rohrleitungsverteiler",
+        "title": "01 — Hochdruck-Prüfstand & Fluidverteiler",
+        "caption": "Edelstahl-Hochdruckrohrleitungen, analoge und digitale Drucksensoren sowie Prüfstandsaufbau mit Mehrventil-Gasstrecken.",
+        "disclaimer": "Illustrative Darstellung (KI-generiert), kein Originalfoto aus dem Unternehmen."
+      },
+      {
+        "src": "media/research/man-energy/man_scada_monitoring.jpg",
+        "alt": "Prozessleitstand mit Siemens PCS 7 Telemetrieanzeige",
+        "title": "02 — Prozessüberwachung & Siemens PCS 7 Leitsystem",
+        "caption": "Leitstand mit R&I-Fließbildern, kontinuierlichen Druckkurven und Messwertüberwachung in Echtzeit.",
+        "disclaimer": "Illustrative Darstellung (KI-generiert), kein Originalfoto aus dem Unternehmen."
+      },
+      {
+        "src": "media/research/man-energy/man_operating_documentation.jpg",
+        "alt": "Ingenieurarbeitsplatz mit geöffnetem Handbuch, Tablet und Messwerkzeugen",
+        "title": "03 — Zweisprachige Bedienungsanleitungen & Dokumentation",
+        "caption": "Strukturierte Handbücher in Deutsch und Englisch mit Schaltfolgen, Vorab-Checklisten und Störungsbehebungsleitfäden.",
+        "disclaimer": "Illustrative Darstellung (KI-generiert), kein Originalfoto aus dem Unternehmen."
+      }
+    ],
+    "back_to_research": "← Zurück zur Forschungsübersicht",
+    "back_to_projects": "← Zurück zur Projektübersicht"
   },
   "about_page": {
     "badge": "Werdegang & Hintergrund",

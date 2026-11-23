@@ -70,31 +70,145 @@
     "filter_personal": "Personal / Maker Projects"
   },
   "research_page": {
-    "badge": "Applied R&D Metrology",
-    "title": "Robotic Optical Inspection & Metrology",
-    "lead": "As part of an IGF-funded research project (01IF22263N) at Technologie Campus Teisnach Optik (TH Deggendorf), I contributed to an automated cobotic inspection system designed to detect microscopic imperfections on precision optical surfaces.",
-    "paper_badge": "SPIE Proceedings 2026",
-    "paper_title": "Cobotic Inspection of Surface Imperfections with Collimated Illumination",
-    "paper_venue": "SPIE Proceedings Vol. 13789, Paper 137890C (2026)",
-    "paper_doi_label": "Access Official SPIE Paper via DOI (10.1117/12.3111698)",
-    "paper_doi_url": "https://doi.org/10.1117/12.3111698",
-    "thesis_badge": "Master's Thesis",
-    "thesis_title": "Robotic Inspection of Imperfections on Optical Surfaces",
-    "thesis_status": "Release pending institutional review & partner clearance",
-    "thesis_note": "In accordance with institutional guidelines, the PDF will be made downloadable once formal release permissions are finalized.",
-    "sections": {
-      "challenge_title": "The Optical Inspection Challenge",
-      "challenge_text": "High-precision optical components require rigorous quality control to detect minute surface defects (scratches, digs, dust, sub-surface damage) that impair laser transmission or optical imaging. Manual microscopic inspection is slow, operator-fatiguing, and subjective, while conventional Cartesian multi-axis stages lack the kinematic flexibility required for inspecting curved, freeform optical geometries at controlled angles.",
-      "robotics_title": "FANUC Cobot Kinematic Integration",
-      "robotics_text": "The inspection platform centers on a 6-axis collaborative robot (FANUC CR-7iA/L). By mounting the optical sensor head on the robot flange, the system can follow precise surface-normal trajectories across complex optical elements while maintaining strict focal distance and illumination angles.",
-      "optics_title": "Optical Measurement & Collimated UV Illumination",
-      "optics_text": "A specialized collimated directional illumination array combined with high-resolution digital imaging provides sharp defect contrast. The experimental setup demonstrated repeatable defect-detection capability down to approximately 6 µm on calibrated reference targets.",
-      "cad_title": "CAD Design & Mechanical Integration",
-      "cad_text": "Using PTC Creo Parametric and Dassault SolidWorks, I designed custom test-rig adapter plates, camera/illumination mounting brackets, calibration targets, and protective safety structures to ensure mechanical stiffness and eliminate micro-vibrations during image capture.",
-      "results_title": "Empirical Results & Demonstrated Capabilities",
-      "results_text": "The robotic inspection station reliably detected surface imperfections down to ~6 µm on test specimens. The findings co-authored by Kunal were published in the SPIE Proceedings (2026) under the title 'Cobotic Inspection of Surface Imperfections with Collimated Illumination' (DOI: 10.1117/12.3111698)."
+    "badge": "Applied R&D · Optical Metrology · Experimental Engineering",
+    "title": "Research & Development",
+    "lead": "My work combines laboratory experimentation, mechanical design, optical metrology, robotics, and technical documentation. From industrial test environments to collaborative robotic inspection systems, I focus on turning engineering ideas into reliable experimental setups and measurable technical results.",
+    "rio_sio": {
+      "kicker": "01 / FEATURED RESEARCH & DEVELOPMENT PROJECT",
+      "title": "Rio sio — Automated Robotic Inspection of Imperfections on Optical Surfaces",
+      "meta": "Technologie Campus Teisnach Optik, TH Deggendorf · Master's Research Project",
+      "p1": "At Technologie Campus Teisnach Optik (TH Deggendorf), I contributed to the development of a collaborative robotic inspection system for detecting microscopic imperfections on optical surfaces.",
+      "p2": "My work combined CAD development, mechanical and optomechanical integration, optical alignment, illumination experiments, robotic positioning, manual calibration, and experimental validation.",
+      "p3": "The system integrated a FANUC CR-7iA/L cobot, high-resolution imaging, optical metrology, and controlled illumination. Experimental results demonstrated the detection of surface defects down to approximately 6 µm.",
+      "institution_label": "Research Institution",
+      "institution_val": "Technologie Campus Teisnach Optik / TH Deggendorf",
+      "type_label": "Project Type",
+      "type_val": "Master's Research Project",
+      "focus_label": "Research Focus",
+      "focus_val": "Automated robotic inspection of imperfections on optical surfaces",
+      "tech_label": "Core Technologies",
+      "tech_val": "FANUC CR-7iA/L cobot, PTC Creo, SolidWorks, optical metrology, high-resolution imaging, controlled illumination",
+      "contrib_label": "My Contributions",
+      "contrib_val": "CAD design, mechanical & optomechanical integration, optical alignment, illumination experiments, robotic positioning, manual calibration, experimental validation",
+      "results_label": "Demonstrated Results",
+      "results_val": "Detection of microscopic surface defects down to ~6 µm, development of an experimental prototype, co-authored SPIE publication",
+      "photo_caption": "Kunal calibrating the sensor head and inspection envelope with the FANUC CR-7iA/L collaborative robot at TC Teisnach Optik.",
+      "cta_explore": "Explore Rio sio Project",
+      "cta_spie": "Open SPIE Publication"
     },
-    "view_case_study": "View Rio sio Research Project →"
+    "man_energy": {
+      "kicker": "02 / INDUSTRIAL RESEARCH EXPERIENCE",
+      "title": "Industrial Research Experience — MAN Energy Solutions",
+      "meta": "MAN Energy Solutions (now Everllence) · Research Working Student · 2023",
+      "p1": "As a Research Working Student at MAN Energy Solutions (now Everllence), I supported experimental laboratory work in an industrial testing environment.",
+      "p2": "My work included operating a high-pressure test bench, controlling high-pressure oxygen and nitrogen through Siemens PCS 7, and operating multiple valves as part of the test workflow. I monitored test procedures, documented measurements, and contributed to clear technical process documentation.",
+      "p3": "In addition, I prepared operating manuals in both English and German for the use of the test bench. This experience strengthened my understanding of industrial experimentation, process monitoring, technical documentation, and structured engineering workflows.",
+      "company_label": "Company",
+      "company_val": "MAN Energy Solutions (now Everllence)",
+      "role_label": "Role",
+      "role_val": "Research Working Student",
+      "period_label": "Period & Location",
+      "period_val": "2023 · Deggendorf, Germany",
+      "scope_label": "Work Scope",
+      "scope_val": "High-pressure test bench operation, gas control (O2 / N2), Siemens PCS 7 monitoring, valve operation, measurement logging, bilingual manuals",
+      "img_alt": "Illustrative visual of an industrial high-pressure test bench and process control laboratory environment",
+      "img_caption": "Illustrative visual (AI-generated), not an original company photograph."
+    },
+    "publication": {
+      "kicker": "03 / SCIENTIFIC PUBLICATION · SPIE PROCEEDINGS",
+      "title": "SPIE Publication",
+      "intro": "The Rio sio research work resulted in a co-authored publication in SPIE Proceedings:",
+      "paper_title": "Cobotic Inspection of Surface Imperfections with Collimated Illumination",
+      "paper_venue": "SPIE Proceedings, Vol. 13789, Paper 137890C (2026)",
+      "doi": "10.1117/12.3111698",
+      "doi_url": "https://doi.org/10.1117/12.3111698",
+      "desc": "This peer-reviewed publication presents the research results and optical metrology methodology from the Rio sio project.",
+      "cta_doi": "Open Official DOI"
+    }
+  },
+  "man_energy_case_study": {
+    "kicker": "INDUSTRIAL RESEARCH EXPERIENCE · 2023",
+    "title": "Industrial Research Experience — MAN Energy Solutions",
+    "meta_period": "02/2023 – 08/2023",
+    "meta_org": "MAN Energy Solutions SE (now Everllence), Deggendorf",
+    "lead": "Experimental laboratory testing, high-pressure gas control (O2 / N2), real-time process surveillance via Siemens PCS 7, and authoring bilingual test bench operating manuals.",
+    "overview": {
+      "badge": "Industrial Experience Brief",
+      "company": "MAN Energy Solutions SE (now Everllence)",
+      "company_label": "Company",
+      "role": "Research Working Student (Werkstudent Forschung)",
+      "role_label": "Role",
+      "location": "Deggendorf, Bavaria, Germany",
+      "location_label": "Location",
+      "period": "February 2023 – August 2023",
+      "period_label": "Period",
+      "systems": "High-pressure test bench systems, gas manifolds, Siemens PCS 7",
+      "systems_label": "Core Systems",
+      "deliverables": "Test monitoring, measurement logs, bilingual operating manuals (DE / EN)",
+      "deliverables_label": "Key Deliverables"
+    },
+    "points": [
+      {
+        "num": "01",
+        "title": "High-Pressure Test Bench Operation",
+        "text": "I supported the day-to-day operation of specialized high-pressure test bench systems used for industrial component evaluation. This involved conducting rigorous pre-test checks, verifying pneumatic line integrity, and ensuring all physical safety barriers were secured before pressure ramp-up."
+      },
+      {
+        "num": "02",
+        "title": "Control of High-Pressure Oxygen and Nitrogen",
+        "text": "Test procedures required precise regulation of high-pressure gaseous oxygen (O2) and nitrogen (N2) flows. I managed pressurized gas delivery according to standardized test protocols, maintaining stable supply pressures while monitoring pressure differentials across test specimens."
+      },
+      {
+        "num": "03",
+        "title": "Process Monitoring via Siemens PCS 7",
+        "text": "Real-time process surveillance was conducted using the Siemens PCS 7 industrial control system interface. I monitored continuous sensor telemetry, verified live pressure and temperature readings against allowable thresholds, and flagged any transient anomalies immediately."
+      },
+      {
+        "num": "04",
+        "title": "Multi-Valve Sequencing and Workflow Operation",
+        "text": "Executing the experimental test cycle involved operating an intricate sequence of manual, pneumatic, and safety relief valves. Correct valve timing was critical to prevent pressure surges, ensure smooth gas venting, and protect sensitive downstream instrumentation."
+      },
+      {
+        "num": "05",
+        "title": "Test Monitoring and Measurement Documentation",
+        "text": "Throughout every test run, I recorded critical sensor metrics, flow parameters, and operational runtimes into standardized engineering logs. These structured measurement logs provided an auditable data trail for subsequent engineering evaluations and quality verification."
+      },
+      {
+        "num": "06",
+        "title": "Authoring Bilingual Operating Manuals (English & German)",
+        "text": "A central contribution of my role was authoring comprehensive, user-friendly operating manuals in both English and German for the test bench setup. These manuals documented step-by-step operating workflows, valve sequence checklists, troubleshooting procedures, and safety guidelines for future engineers and student researchers."
+      },
+      {
+        "num": "07",
+        "title": "Experimental Procedures & Industrial Laboratory Safety",
+        "text": "Working with high-pressure and reactive gas systems reinforced the highest standards of industrial laboratory safety and contamination prevention. I ensured that clean gas handling protocols were meticulously followed and that all emergency isolation mechanisms remained verified and operational."
+      }
+    ],
+    "images": [
+      {
+        "src": "media/research/man-energy/man_test_bench_illustrative.jpg",
+        "alt": "High-pressure test bench facility and manifold system",
+        "title": "01 — High-Pressure Test Bench & Fluid Manifold",
+        "caption": "Stainless steel high-pressure piping manifolds, analog and digital pressure sensors, and multi-valve distribution test bench setup.",
+        "disclaimer": "Illustrative visual (AI-generated), not an original company photograph."
+      },
+      {
+        "src": "media/research/man-energy/man_scada_monitoring.jpg",
+        "alt": "Industrial process control workstation displaying Siemens PCS 7 style telemetry",
+        "title": "02 — Process Surveillance & Siemens PCS 7 Interface",
+        "caption": "Process monitoring workstation with P&ID piping diagrams, real-time pressure curves, and sensor telemetry surveillance.",
+        "disclaimer": "Illustrative visual (AI-generated), not an original company photograph."
+      },
+      {
+        "src": "media/research/man-energy/man_operating_documentation.jpg",
+        "alt": "Engineering workbench with open operating manual, digital tablet, and measurement tools",
+        "title": "03 — Bilingual Operating Manuals & Workflow Documentation",
+        "caption": "Structured operating manuals in English and German documenting step-by-step valve sequences, pre-test checklists, and troubleshooting protocols.",
+        "disclaimer": "Illustrative visual (AI-generated), not an original company photograph."
+      }
+    ],
+    "back_to_research": "← Back to Research Overview",
+    "back_to_projects": "← Back to Projects"
   },
   "about_page": {
     "badge": "Biography & Background",

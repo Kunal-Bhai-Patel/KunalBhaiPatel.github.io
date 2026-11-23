@@ -1,0 +1,74 @@
+{
+  "id": "man-energy",
+  "category": "professional",
+  "category_label": {
+    "en": "Professional / Industrial R&D",
+    "de": "Beruflich / Industrielle F&E"
+  },
+  "featured": true,
+  "status": {
+    "en": "Completed Industrial Experience (2023)",
+    "de": "Abgeschlossene Praxistätigkeit (2023)"
+  },
+  "provenance": "USER-DISCUSSED",
+  "period": "02/2023 – 08/2023",
+  "organization": "MAN Energy Solutions SE (now Everllence), Deggendorf",
+  "image": "media/research/man-energy/man_test_bench_illustrative.jpg",
+  "title": {
+    "en": "Industrial Research Experience — MAN Energy Solutions",
+    "de": "Industrielle Forschungserfahrung — MAN Energy Solutions"
+  },
+  "one_liner": {
+    "en": "Industrial testing, high-pressure test bench operation, gas control (O2 / N2) via Siemens PCS 7, and bilingual operating manuals.",
+    "de": "Industrielle Versuchstechnik, Hochdruck-Prüfstandsbetrieb, Gassteuerung (O2 / N2) über Siemens PCS 7 und zweisprachige Handbücher."
+  },
+  "tags": ["MAN Energy Solutions", "High-Pressure Systems", "Siemens PCS 7", "Process Monitoring", "Oxygen & Nitrogen", "Valve Operation", "Technical Documentation", "Operating Manuals"],
+  "content": {
+    "en": {
+      "problem": "Industrial testing of critical energy infrastructure components requires rigorous experimental verification under high-pressure gas environments. Ensuring safe, reproducible test execution demanded structured operation of high-pressure fluid manifolds, coordinated valve switching, real-time process monitoring, and standardized operating procedures.",
+      "approach": "As a Research Working Student at MAN Energy Solutions (now Everllence), I supported the experimental test workflow on high-pressure test benches. My daily responsibilities centered on operating high-pressure oxygen and nitrogen supply lines, monitoring telemetry via Siemens PCS 7, executing precise multi-valve sequences, and systematically recording measurement logs.",
+      "contributions": [
+        "Supported the day-to-day operation and experimental testing on high-pressure test bench facilities.",
+        "Regulated high-pressure oxygen (O2) and nitrogen (N2) gas flows according to strict test specifications.",
+        "Monitored live test procedures, pressure differentials, and system telemetry through Siemens PCS 7.",
+        "Executed coordinated valve sequencing across manual, pneumatic, and safety relief valves.",
+        "Documented continuous experimental measurements and maintained standardized engineering test logs.",
+        "Authored comprehensive, structured operating manuals in both English and German for the test bench setup."
+      ],
+      "specs": [
+        {"key": "Company / Facility", "value": "MAN Energy Solutions SE (now Everllence), Deggendorf", "source": "USER-DISCUSSED"},
+        {"key": "Role", "value": "Research Working Student (Werkstudent Forschung)", "source": "USER-DISCUSSED"},
+        {"key": "Period", "value": "February 2023 – August 2023", "source": "USER-DISCUSSED"},
+        {"key": "Process Control", "value": "Siemens PCS 7 (Operator surveillance & telemetry monitoring)", "source": "USER-DISCUSSED"},
+        {"key": "Media Handled", "value": "High-pressure gaseous oxygen (O2) and nitrogen (N2)", "source": "USER-DISCUSSED"},
+        {"key": "Key Deliverable", "value": "Bilingual Test Bench Operating Manuals (English & German)", "source": "USER-DISCUSSED"}
+      ],
+      "iterations": "Standard operating procedures were refined based on practical testing runs. Complex valve sequence checklists were organized into clear, sequential color-coded stages in the operating manual, reducing manual transition errors and speeding up pre-test line integrity verification.",
+      "results": "Ensured reliable, incident-free test monitoring across experimental cycles. Delivered finalized bilingual operating manuals in English and German that became standard reference documents for operating personnel and student researchers on the test bench.",
+      "lessons": "Operating industrial high-pressure gas test benches requires uncompromising attention to safety protocols, pneumatic seal integrity, and procedural discipline. Clear technical documentation and standardized operating manuals are just as vital to engineering reliability as the physical hardware itself."
+    },
+    "de": {
+      "problem": "Die industrielle Erprobung kritischer Komponenten im Energiesektor erfordert lückenlose experimentelle Validierungen unter Hochdruckgasbedingungen. Ein sicherer und reproduzierbarer Prüfbetrieb verlangte die strukturierte Bedienung von Hochdruck-Fluidstrecken, koordinierte Ventilschaltungen, lückenlose Prozessüberwachung sowie standardisierte Arbeitsanweisungen.",
+      "approach": "Als Werkstudent Forschung bei MAN Energy Solutions (heute Everllence) unterstützte ich die experimentellen Abläufe an Hochdruck-Prüfständen. Zu den Kernaufgaben gehörten die Bedienung von Hochdruck-Sauerstoff- und Stickstoffleitungen, die Prozessüberwachung über Siemens PCS 7, das Durchführen präziser Ventilschaltfolgen sowie die lückenlose Messwertdokumentation.",
+      "contributions": [
+        "Unterstützung des täglichen Betriebs und der Versuchsdurchführung an Hochdruck-Prüfstandsanlagen.",
+        "Steuerung von Hochdruck-Sauerstoff (O2) und -Stickstoff (N2) nach definierten Prüfvorschriften.",
+        "Überwachung von Versuchsabläufen, Druckdifferenzen und Prozessdaten über das Leitsystem Siemens PCS 7.",
+        "Durchführung koordinierter Ventilschaltungen über manuelle, pneumatische und Sicherheitsventile.",
+        "Systematische Dokumentation von Messwerten und Führung standardisierter Versuchsprotokolle.",
+        "Erstellung vollständiger, strukturierter Bedienungsanleitungen in deutscher und englischer Sprache für den Prüfstand."
+      ],
+      "specs": [
+        {"key": "Unternehmen / Standort", "value": "MAN Energy Solutions SE (heute Everllence), Deggendorf", "source": "USER-DISCUSSED"},
+        {"key": "Funktion", "value": "Werkstudent Forschung", "source": "USER-DISCUSSED"},
+        {"key": "Zeitraum", "value": "Februar 2023 – August 2023", "source": "USER-DISCUSSED"},
+        {"key": "Prozessleitsystem", "value": "Siemens PCS 7 (Bedienerüberwachung & Messdatenanzeige)", "source": "USER-DISCUSSED"},
+        {"key": "Prüfmedien", "value": "Hochdruck-Sauerstoff (O2) und Hochdruck-Stickstoff (N2)", "source": "USER-DISCUSSED"},
+        {"key": "Zentrales Arbeitsergebnis", "value": "Zweisprachige Bedienungsanleitung für den Prüfstand (DE / EN)", "source": "USER-DISCUSSED"}
+      ],
+      "iterations": "Arbeitsabläufe wurden auf Basis praktischer Versuchsreihen kontinuierlich optimiert. Komplexe Ventilschaltfolgen wurden im Handbuch in übersichtliche, sequenzielle Prüfschritte gegliedert, was Bedienfehler minimierte und die Vorabprüfung der Dichtheit beschleunigte.",
+      "results": "Sicherstellung eines störungsfreien Prüfstandsbetriebs über alle Versuchszyklen hinweg. Fertigstellung der zweisprachigen Handbücher (Deutsch und Englisch), die als verlässliche Referenz für das Prüfstandspersonal und nachfolgende Werkstudenten dienen.",
+      "lessons": "Der Umgang mit Hochdruckgasen verlangt kompromisslose Sorgfalt bezüglich Sicherheitsvorschriften, Dichtigkeit und Verfahrensdisziplin. Eine präzise technische Dokumentation und klare Handlungsanweisungen sind für die ingenieurtechnische Zuverlässigkeit genauso entscheidend wie die Prüfstandsmechanik selbst."
+    }
+  }
+}
