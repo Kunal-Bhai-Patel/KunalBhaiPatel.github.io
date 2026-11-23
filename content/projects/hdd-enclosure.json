@@ -6,22 +6,32 @@
     "de": "Privat / Mechanische Konstruktion & 3D-Druck"
   },
   "featured": false,
+  "is_concept": true,
+  "image": "media/projects/hdd-enclosure/scifi_cube_hdd_enclosure.jpg",
+  "image_caption": {
+    "en": "Cybernetic Cube Dual-HDD Desktop Enclosure (Concept Visualization)",
+    "de": "Cybernetisches Dual-HDD-Gehäuse im Würfel-Design (Konzeptdarstellung)"
+  },
+  "concept_disclaimer": {
+    "en": "Illustrative concept visual (AI-assisted). Physical hardware build, CAD models, and detailed step-by-step documentation are in progress.",
+    "de": "Illustrative Konzeptdarstellung (KI-unterstützt). Der physische Hardware-Aufbau, CAD-Modelle und ausführliche Dokumentation sind in Arbeit."
+  },
   "status": {
-    "en": "Prototype Iteration / Cooling Tests",
-    "de": "Prototyp-Iteration / thermische Erprobung"
+    "en": "In Documentation / Thermal & Acoustic Iteration",
+    "de": "In Dokumentation / Thermische Iteration"
   },
   "provenance": "USER-DISCUSSED",
   "period": "Personal Maker Project",
   "organization": "Independent Workshop Project",
   "title": {
-    "en": "Custom Dual-HDD Enclosure",
-    "de": "Individuelles Dual-HDD-Gehäuse"
+    "en": "Cybernetic Cube Dual-HDD Enclosure",
+    "de": "Cybernetisches Dual-HDD-Gehäuse (Würfel-Design)"
   },
   "one_liner": {
-    "en": "Custom 3D-printed enclosure for two 3.5\" hard drives featuring slide-in mounting, vibration damping, and an 80 mm forced-air cooling tunnel.",
-    "de": "Individuelles 3D-Druck-Gehäuse für zwei 3,5-Zoll-Festplatten mit Einschubmontage, Schwingungsentkopplung und 80-mm-Lüftertunnel."
+    "en": "Custom dual 3.5\" HDD desktop enclosure designed as a futuristic cybernetic cube with forced-air cooling, slide-in drive caddies, and glowing green LED conduits.",
+    "de": "Individuelles Dual-3,5-Zoll-HDD-Gehäuse im cybernetischen Würfel-Design mit Zwangsbelüftung, Einschubschlitten und grün leuchtenden Kühlkanälen."
   },
-  "tags": ["PTC Creo", "SolidWorks", "FDM 3D Printing", "Thermal Design", "Hardware Prototyping"],
+  "tags": ["Sci-Fi Cube Design", "PTC Creo", "SolidWorks", "FDM 3D Printing", "Thermal Design", "Hardware Prototyping"],
   "content": {
     "en": {
       "problem": "Commercial multi-bay external drive enclosures are either loud, poorly ventilated, or prohibitively bulky. The objective was to design a compact, quiet, stackable dual-bay 3.5\" HDD housing with optimal forced-air cross-flow cooling to preserve drive longevity during heavy local backups.",

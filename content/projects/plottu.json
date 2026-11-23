@@ -6,9 +6,19 @@
     "de": "Privat / Mechatronik & Werkstatt"
   },
   "featured": true,
+  "is_concept": true,
+  "image": "media/projects/plottu/plottu_h_structure_plotter.jpg",
+  "image_caption": {
+    "en": "Plottu: H-Structure Wi-Fi Desktop Pen Plotter (Concept Visualization)",
+    "de": "Plottu: H-Gantry WLAN-Desktop-Stiftplotter (Konzeptdarstellung)"
+  },
+  "concept_disclaimer": {
+    "en": "Illustrative concept visual (AI-assisted). Physical hardware build, CAD models, and detailed step-by-step documentation are in progress.",
+    "de": "Illustrative Konzeptdarstellung (KI-unterstützt). Der physische Hardware-Aufbau, CAD-Modelle und ausführliche Dokumentation sind in Arbeit."
+  },
   "status": {
-    "en": "Active Prototype / Iterative Testing",
-    "de": "Aktiver Prototyp / Iterative Erprobung"
+    "en": "In Documentation / Active Prototype",
+    "de": "In Dokumentation / Aktiver Prototyp"
   },
   "provenance": "USER-DISCUSSED",
   "period": "Personal Maker Project",

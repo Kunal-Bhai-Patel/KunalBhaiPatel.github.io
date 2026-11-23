@@ -6,22 +6,32 @@
     "de": "Privat / Fertigungstechnik & 3D-Druck"
   },
   "featured": false,
+  "is_concept": true,
+  "image": "media/projects/3d-printing/corexy_3d_printer.jpg",
+  "image_caption": {
+    "en": "DIY Enclosed CoreXY 3D Printer for Functional Prototyping (Concept Visualization)",
+    "de": "Einhausbarer DIY-CoreXY-3D-Drucker für funktionales Prototyping (Konzeptdarstellung)"
+  },
+  "concept_disclaimer": {
+    "en": "Illustrative concept visual (AI-assisted). Physical hardware build, CAD models, and detailed step-by-step documentation are in progress.",
+    "de": "Illustrative Konzeptdarstellung (KI-unterstützt). Der physische Hardware-Aufbau, CAD-Modelle und ausführliche Dokumentation sind in Arbeit."
+  },
   "status": {
-    "en": "Ongoing Maker Practice",
-    "de": "Kontinuierliche Werkstattpraxis"
+    "en": "In Documentation / CoreXY Prototyping",
+    "de": "In Dokumentation / CoreXY-Prototyping"
   },
   "provenance": "USER-DISCUSSED",
   "period": "Continuous Workshop Activity",
   "organization": "Independent Workshop Practice",
   "title": {
-    "en": "3D Printing & Mechanical Prototyping",
-    "de": "3D-Druck & Mechanisches Prototyping"
+    "en": "CoreXY 3D Printing & Mechanical Prototyping",
+    "de": "CoreXY 3D-Druck & Mechanisches Prototyping"
   },
   "one_liner": {
-    "en": "FDM printer tuning, tolerance calibration, heat-set insert integration, and functional design for rapid prototyping of mechatronic assemblies.",
-    "de": "FDM-Druckeroptimierung, Toleranzkalibrierung, Gewindeeinsatzmontage und funktionsgerechtes Konstruieren für mechatronische Prototypen."
+    "en": "Custom CoreXY 3D printer design, FDM tuning, mechanical tolerance verification, and functional prototyping for mechatronic assemblies.",
+    "de": "Eigenkonstruierter CoreXY-3D-Drucker, FDM-Tuning, mechanische Toleranzverifikation und funktionales Prototyping für mechatronische Baugruppen."
   },
-  "tags": ["FDM / FFF", "Cura Slicer", "Calibration Cubes", "Heat-Set Inserts", "Tolerance Verification", "Hardware Prototyping"],
+  "tags": ["CoreXY", "FDM / FFF", "Cura Slicer", "Calibration Cubes", "Heat-Set Inserts", "Tolerance Verification", "Hardware Prototyping"],
   "content": {
     "en": {
       "problem": "Generic 3D printing often fails when transitioning from decorative trinkets to functional engineering assemblies: press fits crack under thermal strain, screw threads strip in raw plastic, and uncontrolled extrusion tolerances cause binding in linear motion assemblies.",

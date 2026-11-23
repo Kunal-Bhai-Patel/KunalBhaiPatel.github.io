@@ -2708,6 +2708,83 @@ section.panel {
   }
 }
 
+/* Concept Previews & Work-in-Progress Documentation Badges */
+.concept-badge {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.65rem;
+  background: rgba(16, 20, 24, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #9bb8d1;
+  border: 1px solid rgba(120, 150, 173, 0.35);
+  border-radius: var(--radius-sm);
+  padding: 0.22rem 0.55rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.concept-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #60a5fa;
+  display: inline-block;
+}
+
+[data-theme="light"] .concept-badge {
+  background: rgba(255, 255, 255, 0.92);
+  color: #4a667d;
+  border-color: rgba(96, 127, 150, 0.35);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .concept-badge-dot {
+  background: #3b82f6;
+}
+
+.project-wip-notice {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  border-left: 4px solid var(--accent-steel);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2.25rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  box-shadow: var(--card-shadow);
+}
+
+.project-wip-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.project-wip-content strong {
+  display: block;
+  font-size: 0.98rem;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+  font-weight: 650;
+}
+
+.project-wip-content p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.62;
+  color: var(--text-secondary);
+}
+
 /* Universal File Organizer Project Styles */
 .ufo-release-card {
   background: var(--bg-surface);

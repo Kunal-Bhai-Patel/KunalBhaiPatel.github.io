@@ -6,9 +6,19 @@
     "de": "Privat / Linux & Systemadministration"
   },
   "featured": false,
+  "is_concept": true,
+  "image": "media/projects/home-server/debian_home_server.jpg",
+  "image_caption": {
+    "en": "Debian 12 Headless Home Server & Tailscale Mesh Infrastructure (Concept Visualization)",
+    "de": "Debian 12 Headless-Heimserver & Tailscale-Mesh-Infrastruktur (Konzeptdarstellung)"
+  },
+  "concept_disclaimer": {
+    "en": "Illustrative concept visual (AI-assisted). Physical hardware setup, system architecture, and detailed documentation are in progress.",
+    "de": "Illustrative Konzeptdarstellung (KI-unterstützt). Der physische Serveraufbau, Systemarchitektur und ausführliche Dokumentation sind in Arbeit."
+  },
   "status": {
-    "en": "Operational / Self-Hosted Infrastructure",
-    "de": "Im Produktivbetrieb / Selbst gehostet"
+    "en": "In Documentation / Homelab Production",
+    "de": "In Dokumentation / Homelab-Betrieb"
   },
   "provenance": "USER-DISCUSSED",
   "period": "Personal Infrastructure Project",

@@ -699,20 +699,13 @@ def generate_homepage(site, trans, projects, lang):
           <!-- Featured 2: Plottu -->
           <article class="project-card" data-category="personal">
             <a href="{pfx}{lang}/projects/plottu/" class="card-media" aria-label="{featured['plottu_title']}">
-              <div class="plottu-visual-card">
-                <span class="plottu-badge">{"2D WIRELESS MOTION PLATFORM" if lang == "en" else "KABELLOSE 2D-BEWEGUNGSPLATTFORM"}</span>
-                <div class="plottu-tech-row">
-                  <span>ESP32</span>
-                  <span>FluidNC</span>
-                  <span>NEMA Steppers</span>
-                  <span>Micro-Servo</span>
-                </div>
-              </div>
+              <span class="concept-badge"><span class="concept-badge-dot"></span>{"Concept · In Documentation" if lang == "en" else "Konzept · In Dokumentation"}</span>
+              <img src="{pfx}media/projects/plottu/plottu_h_structure_plotter.jpg" alt="{featured['plottu_title']}" class="project-card-img" loading="lazy" />
             </a>
             <div class="card-body">
               <div class="card-meta">
                 <span class="card-category">{"PERSONAL / MECHATRONICS" if lang == "en" else "PRIVAT / MECHATRONIK"}</span>
-                <span class="project-status-badge">{"Active Prototype" if lang == "en" else "Aktiver Prototyp"}</span>
+                <span class="project-status-badge">{"In Documentation" if lang == "en" else "In Dokumentation"}</span>
               </div>
               <h3 class="card-title"><a href="{pfx}{lang}/projects/plottu/">{featured['plottu_title']}</a></h3>
               <p class="card-desc">{featured['plottu_desc']}</p>
@@ -800,10 +793,16 @@ def generate_projects_page(site, trans, projects, lang):
         
         detail_url = f"{pfx}{lang}/projects/{p_id}/"
         tags_html = "".join([f'<span class="tag-pill">{t}</span>' for t in p_tags])
+
+        concept_badge_html = ""
+        if proj.get("is_concept"):
+            badge_text = "Concept · In Documentation" if lang == "en" else "Konzept · In Dokumentation"
+            concept_badge_html = f'<span class="concept-badge"><span class="concept-badge-dot"></span>{badge_text}</span>'
+
         if proj.get("image"):
-            card_visual = f'<img src="{pfx}{proj["image"]}" alt="{p_title}" class="project-card-img" loading="lazy" />'
+            card_visual = f'{concept_badge_html}<img src="{pfx}{proj["image"]}" alt="{p_title}" class="project-card-img" loading="lazy" />'
         else:
-            card_visual = render_schematic(p_id, lang, is_detail=False)
+            card_visual = f'{concept_badge_html}{render_schematic(p_id, lang, is_detail=False)}'
 
         project_cards_html.append(f"""
         <article class="project-card" data-category="{cat}">
@@ -2529,6 +2528,42 @@ def generate_project_detail(site, trans, project, lang):
     schematic_caption_title = p_tmpl['schematic_caption_title']
     schematic_caption_sub = p_tmpl['schematic_caption_sub']
 
+    # Project Concept Hero Image & Documentation Notice Banner
+    hero_image_html = ""
+    if project.get("image"):
+        caption_title = project.get("image_caption", {}).get(lang, p_title)
+        disclaimer_text = project.get("concept_disclaimer", {}).get(lang, "Illustrative concept visual (AI-assisted). Detailed documentation in progress." if lang == "en" else "Illustrative Konzeptdarstellung (KI-unterstützt). Ausführliche Dokumentation in Arbeit.")
+        hero_image_html = f"""
+        <figure class="photo-card" style="margin-bottom: 2rem;">
+          <div class="photo-card-media contain-technical" data-lightbox>
+            <img src="{pfx}{project['image']}" alt="{p_title}" loading="eager" data-zoomable />
+          </div>
+          <figcaption style="padding: 0.85rem 1.25rem; background: var(--bg-surface); border-top: 1px solid var(--border-subtle); display: flex; flex-direction: column; gap: 0.35rem;">
+            <strong style="color: var(--text-primary); font-size: 0.95rem;">{caption_title}</strong>
+            <span style="font-family: var(--font-mono); font-size: 0.74rem; color: var(--accent-steel); font-style: italic;">{disclaimer_text}</span>
+          </figcaption>
+        </figure>
+        """
+
+    wip_banner_html = ""
+    if project.get("is_concept"):
+        wip_title = "Project Build & Documentation in Progress" if lang == "en" else "Hardware-Aufbau & Dokumentation in Arbeit"
+        wip_desc = ("The photograph above represents an illustrative concept design of this maker build. "
+                    "The physical hardware prototype, CAD assemblies, and step-by-step engineering documentation "
+                    "are currently being finalized in the workshop and will be published here shortly.") if lang == "en" else (
+                    "Die obige Abbildung ist eine illustrative Konzeptdarstellung dieses Projekts. "
+                    "Der physische Hardware-Aufbau, CAD-Baugruppen und die ausführliche technische Schritt-für-Schritt-Dokumentation "
+                    "werden derzeit in der Werkstatt finalisiert und in Kürze hier veröffentlicht.")
+        wip_banner_html = f"""
+        <div class="project-wip-notice">
+          <div class="project-wip-icon">🛠️</div>
+          <div class="project-wip-content">
+            <strong>{wip_title}</strong>
+            <p>{wip_desc}</p>
+          </div>
+        </div>
+        """
+
     content = f"""
     <!-- Project Detail Hero -->
     <section class="detail-hero">
@@ -2556,6 +2591,9 @@ def generate_project_detail(site, trans, project, lang):
       <div class="detail-layout">
         <!-- Main Column -->
         <div class="detail-main">
+          {hero_image_html}
+          {wip_banner_html}
+
           <!-- 1. Problem Statement -->
           <div>
             <h2 class="detail-section-title">

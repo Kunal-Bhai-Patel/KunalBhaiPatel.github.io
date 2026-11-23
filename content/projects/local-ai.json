@@ -6,9 +6,19 @@
     "de": "Privat / Lokale KI & Systeme"
   },
   "featured": false,
+  "is_concept": true,
+  "image": "media/projects/local-ai/local_ai_voice_assistant.jpg",
+  "image_caption": {
+    "en": "Local-First AI & Offline Voice Assistant Workstation (Concept Visualization)",
+    "de": "Lokale KI- & Offline-Sprachassistenten-Workstation (Konzeptdarstellung)"
+  },
+  "concept_disclaimer": {
+    "en": "Illustrative concept visual (AI-assisted). Edge hardware integration, audio capture setup, and detailed documentation are in progress.",
+    "de": "Illustrative Konzeptdarstellung (KI-unterstützt). Edge-Hardware-Integration, Audioerfassung und ausführliche Dokumentation sind in Arbeit."
+  },
   "status": {
-    "en": "Exploratory / Experimental Bench",
-    "de": "Experimentelle Versuchsreihe"
+    "en": "In Documentation / Experimental Bench",
+    "de": "In Dokumentation / Experimentelle Versuchsreihe"
   },
   "provenance": "USER-DISCUSSED",
   "period": "Personal Exploration",
