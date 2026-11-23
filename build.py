@@ -548,7 +548,7 @@ def render_html_shell(title, description, lang, content, site, trans, current_pa
   </script>
 
   <!-- CSS Design System -->
-  <link rel="stylesheet" href="{pfx}css/style.css">
+  <link rel="stylesheet" href="{pfx}css/style.css?v=20261123c">
 </head>
 <body id="top">
   {header}
@@ -560,7 +560,7 @@ def render_html_shell(title, description, lang, content, site, trans, current_pa
   {footer}
 
   <!-- Client Interaction Script -->
-  <script src="{pfx}js/main.js"></script>
+  <script src="{pfx}js/main.js?v=20261123c"></script>
 </body>
 </html>
 """
@@ -1316,12 +1316,65 @@ def generate_contact_page(site, trans, lang):
             </a>
 
             <!-- Button 2: One-click Copy Email -->
-            <button type="button" class="btn btn-secondary contact-copy-btn" data-email="{author['email']}" aria-label="{"Copy email address" if lang == "en" else "E-Mail-Adresse kopieren"}">
+            <button type="button" class="btn btn-secondary contact-copy-btn" data-email="{author['email']}" onclick="window.copyEmailAddress && window.copyEmailAddress(this, '{author['email']}');" aria-label="{"Copy email address" if lang == "en" else "E-Mail-Adresse kopieren"}">
               <span class="copy-icon">📋</span>
               <span class="copy-text">{c_trans.get('copy_email_cta', 'Copy Email Address' if lang == 'en' else 'E-Mail-Adresse kopieren')}</span>
             </button>
           </div>
         </div>
+
+        <!-- Inline Fail-Safe Copy Handler (Zero Latency & Cache Immunity) -->
+        <script>
+          if (!window.copyEmailAddress) {{
+            window.copyEmailAddress = function(btn, email) {{
+              if (!btn) return;
+              email = email || btn.getAttribute('data-email') || 'kunalbhaipatel@gmail.com';
+              var copyIcon = btn.querySelector('.copy-icon');
+              var copyText = btn.querySelector('.copy-text');
+              var origText = btn.getAttribute('data-orig-text') || (copyText ? copyText.textContent : '');
+              var origIcon = btn.getAttribute('data-orig-icon') || (copyIcon ? copyIcon.textContent : '📋');
+              btn.setAttribute('data-orig-text', origText);
+              btn.setAttribute('data-orig-icon', origIcon);
+
+              btn.classList.add('btn-copied');
+              if (copyIcon) copyIcon.textContent = '✓';
+              if (copyText) {{
+                copyText.textContent = document.documentElement.lang === 'de' ? 'E-Mail kopiert!' : 'Email Copied!';
+              }}
+
+              function fb(text) {{
+                try {{
+                  var ta = document.createElement('textarea');
+                  ta.value = text;
+                  ta.setAttribute('readonly', '');
+                  ta.style.position = 'fixed';
+                  ta.style.left = '-9999px';
+                  document.body.appendChild(ta);
+                  ta.select();
+                  document.execCommand('copy');
+                  document.body.removeChild(ta);
+                }} catch (e) {{}}
+              }}
+
+              try {{
+                if (navigator.clipboard && navigator.clipboard.writeText) {{
+                  navigator.clipboard.writeText(email).catch(function() {{ fb(email); }});
+                }} else {{
+                  fb(email);
+                }}
+              }} catch (err) {{
+                fb(email);
+              }}
+
+              if (btn._copyTimer) clearTimeout(btn._copyTimer);
+              btn._copyTimer = setTimeout(function() {{
+                btn.classList.remove('btn-copied');
+                if (copyIcon) copyIcon.textContent = origIcon;
+                if (copyText) copyText.textContent = origText;
+              }}, 2500);
+            }};
+          }}
+        </script>
 
         <!-- Secondary Channels Grid: LinkedIn, Curriculum Vitae, YouTube -->
         <div class="contact-secondary-grid">

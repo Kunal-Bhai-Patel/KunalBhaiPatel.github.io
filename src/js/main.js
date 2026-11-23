@@ -229,57 +229,72 @@
 
   // 5. One-Click Copy Email to Clipboard with Accessible Visual Feedback
   function setupCopyEmail() {
-    const copyBtns = document.querySelectorAll('.contact-copy-btn');
-    if (!copyBtns.length) return;
+    window.copyEmailAddress = function (btn, email) {
+      if (!btn) return;
+      email = email || btn.getAttribute('data-email') || 'kunalbhaipatel@gmail.com';
+      const copyIcon = btn.querySelector('.copy-icon');
+      const copyText = btn.querySelector('.copy-text');
+      const originalText = btn.getAttribute('data-orig-text') || (copyText ? copyText.textContent : '');
+      const originalIcon = btn.getAttribute('data-orig-icon') || (copyIcon ? copyIcon.textContent : '📋');
 
-    function fallbackCopy(text, onSuccess) {
-      const ta = document.createElement('textarea');
-      ta.value = text;
-      ta.setAttribute('readonly', '');
-      ta.style.position = 'fixed';
-      ta.style.top = '-9999px';
-      ta.style.left = '-9999px';
-      document.body.appendChild(ta);
-      ta.select();
-      try {
-        const successful = document.execCommand('copy');
-        if (successful && onSuccess) onSuccess();
-      } catch (err) {
-        console.error('Fallback copy failed', err);
+      if (!btn.getAttribute('data-orig-text') && copyText) {
+        btn.setAttribute('data-orig-text', originalText);
       }
-      document.body.removeChild(ta);
-    }
+      if (!btn.getAttribute('data-orig-icon') && copyIcon) {
+        btn.setAttribute('data-orig-icon', originalIcon);
+      }
 
+      // Synchronous immediate visual reaction and green animation
+      btn.classList.add('btn-copied');
+      if (copyIcon) copyIcon.textContent = '✓';
+      if (copyText) {
+        const isDe = document.documentElement.lang === 'de';
+        copyText.textContent = isDe ? 'E-Mail kopiert!' : 'Email Copied!';
+      }
+
+      function fallbackCopy(text) {
+        try {
+          const ta = document.createElement('textarea');
+          ta.value = text;
+          ta.setAttribute('readonly', '');
+          ta.style.position = 'fixed';
+          ta.style.top = '-9999px';
+          ta.style.left = '-9999px';
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+        } catch (err) {
+          console.error('Fallback copy failed', err);
+        }
+      }
+
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(email).catch(() => {
+            fallbackCopy(email);
+          });
+        } else {
+          fallbackCopy(email);
+        }
+      } catch (e) {
+        fallbackCopy(email);
+      }
+
+      if (btn._copyTimer) clearTimeout(btn._copyTimer);
+      btn._copyTimer = setTimeout(() => {
+        btn.classList.remove('btn-copied');
+        if (copyIcon) copyIcon.textContent = originalIcon;
+        if (copyText) copyText.textContent = originalText;
+      }, 2500);
+    };
+
+    const copyBtns = document.querySelectorAll('.contact-copy-btn');
     copyBtns.forEach(btn => {
       btn.addEventListener('click', function (e) {
         e.preventDefault();
         const email = this.getAttribute('data-email') || 'kunalbhaipatel@gmail.com';
-        const copyIcon = this.querySelector('.copy-icon');
-        const copyText = this.querySelector('.copy-text');
-        const originalText = copyText ? copyText.textContent : '';
-
-        function triggerSuccess() {
-          btn.classList.add('btn-copied');
-          if (copyIcon) copyIcon.textContent = '✓';
-          if (copyText) {
-            const isDe = document.documentElement.lang === 'de';
-            copyText.textContent = isDe ? 'E-Mail kopiert!' : 'Email Copied!';
-          }
-
-          setTimeout(() => {
-            btn.classList.remove('btn-copied');
-            if (copyIcon) copyIcon.textContent = '📋';
-            if (copyText) copyText.textContent = originalText;
-          }, 2400);
-        }
-
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(email).then(triggerSuccess).catch(() => {
-            fallbackCopy(email, triggerSuccess);
-          });
-        } else {
-          fallbackCopy(email, triggerSuccess);
-        }
+        window.copyEmailAddress(this, email);
       });
     });
   }

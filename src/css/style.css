@@ -831,6 +831,12 @@ a:focus-visible, button:focus-visible {
   width: 100%;
 }
 
+@keyframes copySuccessPulse {
+  0% { transform: scale(1); }
+  35% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
 .contact-copy-btn {
   display: inline-flex;
   align-items: center;
@@ -841,7 +847,7 @@ a:focus-visible, button:focus-visible {
   font-family: var(--font-sans);
   font-size: 0.9rem;
   font-weight: 550;
-  transition: all var(--transition-fast);
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .contact-copy-btn:hover {
@@ -849,16 +855,35 @@ a:focus-visible, button:focus-visible {
   color: var(--text-primary);
 }
 
-.contact-copy-btn.btn-copied {
-  background: rgba(74, 222, 128, 0.15) !important;
-  border-color: #4ade80 !important;
-  color: #4ade80 !important;
+.contact-copy-btn.btn-copied,
+button.contact-copy-btn.btn-copied {
+  background: #10b981 !important;
+  background-color: #10b981 !important;
+  border-color: #059669 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.55), 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+  animation: copySuccessPulse 0.32s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-[data-theme="light"] .contact-copy-btn.btn-copied {
-  background: rgba(34, 197, 94, 0.12) !important;
-  border-color: #16a34a !important;
-  color: #15803d !important;
+.contact-copy-btn.btn-copied .copy-icon,
+.contact-copy-btn.btn-copied .copy-text {
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+[data-theme="light"] .contact-copy-btn.btn-copied,
+[data-theme="light"] button.contact-copy-btn.btn-copied {
+  background: #15803d !important;
+  background-color: #15803d !important;
+  border-color: #166534 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 16px rgba(21, 128, 61, 0.45), 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+[data-theme="light"] .contact-copy-btn.btn-copied .copy-icon,
+[data-theme="light"] .contact-copy-btn.btn-copied .copy-text {
+  color: #ffffff !important;
+  font-weight: 600;
 }
 
 .webmail-quick-links {
