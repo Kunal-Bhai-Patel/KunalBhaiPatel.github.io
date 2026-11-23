@@ -617,108 +617,154 @@ def generate_homepage(site, trans, projects, lang):
     </section>
     """
 
-    # Section 2: Two Sides of My Engineering (Where Research Meets Curiosity)
-    fanuc_img_url = f"{pfx}media/research/rio-sio/20250506_175617.jpg"
-    two_sides_html = f"""
-    <section class="section" id="two-sides">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-badge">{pillars['section_badge']}</span>
-          <h2>{pillars['section_title']}</h2>
-          <p class="section-desc">{pillars['section_desc']}</p>
-        </div>
-
-        <div class="sides-grid">
-          <!-- Card A: Professional Engineering & Research -->
-          <div class="side-card">
-            <span class="side-card-badge">{pillars['card_a_badge']}</span>
-            <div class="side-card-media">
-              <img src="{fanuc_img_url}" alt="FANUC CR-7iA/L Robotic Optical Inspection System" class="side-card-img" loading="lazy" />
-            </div>
-            <h3 class="side-card-title">{pillars['card_a_title']}</h3>
-            <p class="side-card-desc">{pillars['card_a_desc']}</p>
-            <div style="margin-top: auto; padding-top: 1rem;">
-              <a href="{pfx}{lang}/research/" class="btn btn-secondary btn-sm">{pillars['card_a_cta']} →</a>
-            </div>
-          </div>
-
-          <!-- Card B: Projects from My Workshop -->
-          <div class="side-card">
-            <span class="side-card-badge">{pillars['card_b_badge']}</span>
-            <div class="workshop-visual-card">
-              <span class="workshop-badge">{"PRACTICAL MECHATRONICS & PROTOTYPING" if lang == "en" else "PRAKTISCHE MECHATRONIK & PROTOTYPEN"}</span>
-              <div class="workshop-pills-row">
-                <span class="workshop-pill-item">ESP32 & FluidNC</span>
-                <span class="workshop-pill-item">Dual-Axis Kinematics</span>
-                <span class="workshop-pill-item">FDM 3D Printing</span>
-                <span class="workshop-pill-item">Motion Control</span>
-                <span class="workshop-pill-item">Debian Headless</span>
-              </div>
-            </div>
-            <h3 class="side-card-title">{pillars['card_b_title']}</h3>
-            <p class="side-card-desc">{pillars['card_b_desc']}</p>
-            <div style="margin-top: auto; padding-top: 1rem;">
-              <a href="{pfx}{lang}/projects/" class="btn btn-secondary btn-sm">{pillars['card_b_cta']} →</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    """
-
-    # Section 3: Selected Projects (A Few Things I've Built) - Exactly 2 projects
+    # Section 2: Where Research Meets Curiosity — 3 Featured Engineering Highlights
     rio_card_img = f"{pfx}media/research/rio-sio/rio_sio_card.jpg"
-    selected_projects_html = f"""
-    <section class="section" id="selected-projects">
+    man_card_img = f"{pfx}media/research/man-energy/man_test_bench_illustrative.jpg"
+    plottu_card_img = f"{pfx}media/projects/plottu/plottu_h_structure_plotter.jpg"
+
+    if lang == "de":
+        sec_badge = "WO FORSCHUNG AUF NEUGIER TRIFFT"
+        sec_title = "Ausgewählte Arbeiten aus Forschung & Werkstatt"
+        sec_desc = "Eine ausgewogene Auswahl aus hochpräziser optischer Robotik, industrieller Prüfstandspraxis und praktischer Werkstatt-Mechatronik."
+
+        rio_cat = "FORSCHUNG & MESSTECHNIK · TH DEGGENDORF"
+        rio_status = "Masterarbeit"
+        rio_title = "Rio sio: Robotische Prüfung optischer Oberflächen"
+        rio_desc = "Master-Forschungsarbeit am TC Teisnach Optik zur automatisierten Prüfung mikroskopischer Oberflächendefekte bis ca. 6 µm mittels FANUC-Cobot und Spezialbeleuchtung."
+        rio_cta = "Forschungsprojekt erkunden"
+
+        man_cat = "INDUSTRIEPRAXIS · PRÜFSTANDSTECHNIK"
+        man_status = "Werkstudententätigkeit"
+        man_title = "MAN Energy Solutions: Hochdruck-Prüfstände"
+        man_desc = "Bedienung von Hochdruck-Prüfständen (N₂/O₂), Mehrventil-Schaltsequenzen, Siemens PCS 7 SCADA-Prozessüberwachung und Erstellung zweisprachiger Betriebshandbücher."
+        man_cta = "Industrieprojekt ansehen"
+
+        plottu_cat = "MECHATRONIK & PROTOTYPING · WERKSTATT"
+        plottu_status = "In Dokumentation"
+        plottu_title = "Plottu: WLAN-gestützter Stiftplotter"
+        plottu_desc = "Eigenkonstruierte Zwei-Achs-Kinematik mit Schrittmotoren, Servo-Stiftabhebung und ESP32-FluidNC-Steuerung für kabelloses G-Code-Streaming über WLAN."
+        plottu_cta = "Werkstattprojekt ansehen"
+
+        all_projects_cta = "Alle Projekte ansehen (8) →"
+        research_cta = "Forschungsübersicht & SPIE-Publikation →"
+    else:
+        sec_badge = "WHERE RESEARCH MEETS CURIOSITY"
+        sec_title = "Featured Engineering & Research Highlights"
+        sec_desc = "A balanced selection spanning precision optical robotics, industrial test bench operations, and hands-on workshop mechatronics."
+
+        rio_cat = "RESEARCH & METROLOGY · TH DEGGENDORF"
+        rio_status = "Master's Research"
+        rio_title = "Rio sio: Robotic Optical Surface Inspection"
+        rio_desc = "Master's thesis research at TC Teisnach Optik automating surface defect detection down to ~6 µm using a FANUC CR-7iA/L collaborative robot and specialized illumination."
+        rio_cta = "Explore Research Project"
+
+        man_cat = "INDUSTRIAL EXPERIENCE · TEST BENCH"
+        man_status = "Working Student Experience"
+        man_title = "MAN Energy Solutions: High-Pressure Systems"
+        man_desc = "Operation of high-pressure N₂/O₂ test bench systems, valve sequencing, Siemens PCS 7 SCADA monitoring, and authoring comprehensive bilingual operating manuals."
+        man_cta = "Explore Industrial Experience"
+
+        plottu_cat = "MECHATRONICS & PROTOTYPING · WORKSHOP"
+        plottu_status = "In Documentation"
+        plottu_title = "Plottu: Wireless Desktop Pen Plotter"
+        plottu_desc = "Custom dual-axis gantry driven by stepper motors, micro-servo pen actuation, and ESP32 FluidNC firmware streaming G-code over local Wi-Fi."
+        plottu_cta = "Explore Maker Project"
+
+        all_projects_cta = "Explore All Projects (8) →"
+        research_cta = "Research Overview & SPIE Paper →"
+
+    concept_badge_plottu = f'<span class="concept-badge"><span class="concept-badge-dot"></span>{"Concept · In Documentation" if lang == "en" else "Konzept · In Dokumentation"}</span>'
+
+    featured_work_html = f"""
+    <section class="section" id="featured-work">
       <div class="container">
         <div class="section-header">
-          <span class="section-badge">{featured['section_badge']}</span>
-          <h2>{featured['section_title']}</h2>
-          <p class="section-desc">{featured['section_desc']}</p>
+          <span class="section-badge">{sec_badge}</span>
+          <h2>{sec_title}</h2>
+          <p class="section-desc">{sec_desc}</p>
         </div>
 
-        <div class="sides-grid">
-          <!-- Featured 1: Rio sio -->
+        <div class="projects-grid">
+          <!-- Highlight 1: Rio sio -->
           <article class="project-card" data-category="research">
-            <a href="{pfx}{lang}/projects/rio-sio/" class="card-media" aria-label="{featured['rio_sio_title']}">
-              <img src="{rio_card_img}" alt="{featured['rio_sio_title']}" class="project-card-img" loading="lazy" />
+            <a href="{pfx}{lang}/projects/rio-sio/" class="card-media" aria-label="{rio_title}">
+              <img src="{rio_card_img}" alt="{rio_title}" class="project-card-img" loading="lazy" />
             </a>
             <div class="card-body">
               <div class="card-meta">
-                <span class="card-category">{"RESEARCH & METROLOGY" if lang == "en" else "FORSCHUNG & MESSTECHNIK"}</span>
-                <span class="project-status-badge">{"Master's Research" if lang == "en" else "Masterarbeit"}</span>
+                <span class="card-category">{rio_cat}</span>
+                <span class="project-status-badge">{rio_status}</span>
               </div>
-              <h3 class="card-title"><a href="{pfx}{lang}/projects/rio-sio/">{featured['rio_sio_title']}</a></h3>
-              <p class="card-desc">{featured['rio_sio_desc']}</p>
-              <div style="margin-top: auto; padding-top: 1rem;">
-                <a href="{pfx}{lang}/projects/rio-sio/" class="btn btn-secondary btn-sm" style="width: 100%;">{featured['view_project']} →</a>
+              <h3 class="card-title"><a href="{pfx}{lang}/projects/rio-sio/">{rio_title}</a></h3>
+              <p class="card-desc">{rio_desc}</p>
+              <div class="card-tags">
+                <span class="tag-pill">FANUC CR-7iA/L</span>
+                <span class="tag-pill">Optical Metrology</span>
+                <span class="tag-pill">PTC Creo</span>
+                <span class="tag-pill">SPIE Paper</span>
+              </div>
+              <div style="margin-top: 1.25rem;">
+                <a href="{pfx}{lang}/projects/rio-sio/" class="btn btn-secondary btn-sm" style="width: 100%;">{rio_cta} →</a>
               </div>
             </div>
           </article>
 
-          <!-- Featured 2: Plottu -->
-          <article class="project-card" data-category="personal">
-            <a href="{pfx}{lang}/projects/plottu/" class="card-media" aria-label="{featured['plottu_title']}">
-              <span class="concept-badge"><span class="concept-badge-dot"></span>{"Concept · In Documentation" if lang == "en" else "Konzept · In Dokumentation"}</span>
-              <img src="{pfx}media/projects/plottu/plottu_h_structure_plotter.jpg" alt="{featured['plottu_title']}" class="project-card-img" loading="lazy" />
+          <!-- Highlight 2: MAN Energy Solutions -->
+          <article class="project-card" data-category="research">
+            <a href="{pfx}{lang}/projects/man-energy/" class="card-media" aria-label="{man_title}">
+              <img src="{man_card_img}" alt="{man_title}" class="project-card-img" loading="lazy" />
             </a>
             <div class="card-body">
               <div class="card-meta">
-                <span class="card-category">{"PERSONAL / MECHATRONICS" if lang == "en" else "PRIVAT / MECHATRONIK"}</span>
-                <span class="project-status-badge">{"In Documentation" if lang == "en" else "In Dokumentation"}</span>
+                <span class="card-category">{man_cat}</span>
+                <span class="project-status-badge">{man_status}</span>
               </div>
-              <h3 class="card-title"><a href="{pfx}{lang}/projects/plottu/">{featured['plottu_title']}</a></h3>
-              <p class="card-desc">{featured['plottu_desc']}</p>
-              <div style="margin-top: auto; padding-top: 1rem;">
-                <a href="{pfx}{lang}/projects/plottu/" class="btn btn-secondary btn-sm" style="width: 100%;">{featured['view_project']} →</a>
+              <h3 class="card-title"><a href="{pfx}{lang}/projects/man-energy/">{man_title}</a></h3>
+              <p class="card-desc">{man_desc}</p>
+              <div class="card-tags">
+                <span class="tag-pill">High Pressure</span>
+                <span class="tag-pill">Siemens PCS 7</span>
+                <span class="tag-pill">P&ID</span>
+                <span class="tag-pill">Bilingual Manuals</span>
+              </div>
+              <div style="margin-top: 1.25rem;">
+                <a href="{pfx}{lang}/projects/man-energy/" class="btn btn-secondary btn-sm" style="width: 100%;">{man_cta} →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Highlight 3: Plottu -->
+          <article class="project-card" data-category="personal">
+            <a href="{pfx}{lang}/projects/plottu/" class="card-media" aria-label="{plottu_title}">
+              {concept_badge_plottu}
+              <img src="{plottu_card_img}" alt="{plottu_title}" class="project-card-img" loading="lazy" />
+            </a>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-category">{plottu_cat}</span>
+                <span class="project-status-badge">{plottu_status}</span>
+              </div>
+              <h3 class="card-title"><a href="{pfx}{lang}/projects/plottu/">{plottu_title}</a></h3>
+              <p class="card-desc">{plottu_desc}</p>
+              <div class="card-tags">
+                <span class="tag-pill">ESP32</span>
+                <span class="tag-pill">FluidNC</span>
+                <span class="tag-pill">H-Gantry</span>
+                <span class="tag-pill">Wireless G-Code</span>
+              </div>
+              <div style="margin-top: 1.25rem;">
+                <a href="{pfx}{lang}/projects/plottu/" class="btn btn-secondary btn-sm" style="width: 100%;">{plottu_cta} →</a>
               </div>
             </div>
           </article>
         </div>
 
-        <div style="text-align: center; margin-top: 2.5rem;">
+        <div style="text-align: center; margin-top: 2.75rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
           <a href="{pfx}{lang}/projects/" class="btn btn-primary">
-            {featured['view_all_cta']} →
+            {all_projects_cta}
+          </a>
+          <a href="{pfx}{lang}/research/" class="btn btn-secondary">
+            {research_cta}
           </a>
         </div>
       </div>
@@ -759,8 +805,7 @@ def generate_homepage(site, trans, projects, lang):
 
     content = f"""
     {hero_html}
-    {two_sides_html}
-    {selected_projects_html}
+    {featured_work_html}
     {personal_story_html}
     {home_contact_html}
     """

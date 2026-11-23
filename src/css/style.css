@@ -2713,6 +2713,8 @@ section.panel {
   position: absolute;
   top: 0.65rem;
   right: 0.65rem;
+  left: auto;
+  bottom: auto;
   background: rgba(16, 20, 24, 0.88);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -2724,6 +2726,8 @@ section.panel {
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.02em;
+  white-space: nowrap;
+  pointer-events: none;
   z-index: 3;
   display: inline-flex;
   align-items: center;
