@@ -226,4 +226,63 @@
       }
     });
   }
+
+  // 5. One-Click Copy Email to Clipboard with Accessible Visual Feedback
+  function setupCopyEmail() {
+    const copyBtns = document.querySelectorAll('.contact-copy-btn');
+    if (!copyBtns.length) return;
+
+    function fallbackCopy(text, onSuccess) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.top = '-9999px';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        const successful = document.execCommand('copy');
+        if (successful && onSuccess) onSuccess();
+      } catch (err) {
+        console.error('Fallback copy failed', err);
+      }
+      document.body.removeChild(ta);
+    }
+
+    copyBtns.forEach(btn => {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        const email = this.getAttribute('data-email') || 'kunalbhaipatel@gmail.com';
+        const copyIcon = this.querySelector('.copy-icon');
+        const copyText = this.querySelector('.copy-text');
+        const originalText = copyText ? copyText.textContent : '';
+
+        function triggerSuccess() {
+          btn.classList.add('btn-copied');
+          if (copyIcon) copyIcon.textContent = '✓';
+          if (copyText) {
+            const isDe = document.documentElement.lang === 'de';
+            copyText.textContent = isDe ? 'E-Mail kopiert!' : 'Email Copied!';
+          }
+
+          setTimeout(() => {
+            btn.classList.remove('btn-copied');
+            if (copyIcon) copyIcon.textContent = '📋';
+            if (copyText) copyText.textContent = originalText;
+          }, 2400);
+        }
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(email).then(triggerSuccess).catch(() => {
+            fallbackCopy(email, triggerSuccess);
+          });
+        } else {
+          fallbackCopy(email, triggerSuccess);
+        }
+      });
+    });
+  }
+
+  setupCopyEmail();
 })();

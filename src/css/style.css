@@ -806,6 +806,89 @@ a:focus-visible, button:focus-visible {
   color: var(--accent-steel);
   margin-top: 0.4rem;
   display: inline-block;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color var(--transition-fast);
+}
+
+.contact-email-addr:hover {
+  color: var(--text-accent-hover);
+}
+
+.contact-hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: stretch;
+  min-width: 240px;
+}
+
+.contact-email-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.contact-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 550;
+  transition: all var(--transition-fast);
+}
+
+.contact-copy-btn:hover {
+  border-color: var(--accent-steel);
+  color: var(--text-primary);
+}
+
+.contact-copy-btn.btn-copied {
+  background: rgba(74, 222, 128, 0.15) !important;
+  border-color: #4ade80 !important;
+  color: #4ade80 !important;
+}
+
+[data-theme="light"] .contact-copy-btn.btn-copied {
+  background: rgba(34, 197, 94, 0.12) !important;
+  border-color: #16a34a !important;
+  color: #15803d !important;
+}
+
+.webmail-quick-links {
+  margin-top: 0.85rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.webmail-label {
+  color: var(--text-muted);
+}
+
+.webmail-link {
+  color: var(--accent-steel);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--transition-fast);
+}
+
+.webmail-link:hover {
+  color: var(--accent-steel-hover);
+}
+
+.webmail-divider {
+  color: var(--border-medium);
 }
 
 .contact-secondary-grid {

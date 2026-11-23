@@ -13,6 +13,7 @@ import os
 import json
 import shutil
 import glob
+import urllib.parse
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -1264,6 +1265,12 @@ def generate_contact_page(site, trans, lang):
     author = site["author"]
     cv_url = f"{pfx}media/Kunal_Bhai_Patel_CV.pdf"
 
+    subject_raw = "Engineering Inquiry | Kunal Bhai Patel" if lang == "en" else "Ingenieuranfrage | Kunal Bhai Patel"
+    subject_encoded = urllib.parse.quote(subject_raw)
+    mailto_url = f"mailto:{author['email']}?subject={subject_encoded}"
+    outlook_web_url = f"https://outlook.live.com/mail/0/deeplink/compose?to={author['email']}&subject={subject_encoded}"
+    gmail_web_url = f"https://mail.google.com/mail/?view=cm&fs=1&to={author['email']}&su={subject_encoded}"
+
     content = f"""
     <!-- Dedicated Contact Header -->
     <header class="page-header">
@@ -1285,12 +1292,34 @@ def generate_contact_page(site, trans, lang):
             <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 0.5rem;">
               {c_trans['email_card_desc']}
             </p>
-            <a href="mailto:{author['email']}" class="contact-email-addr">{author['email']}</a>
+            <div>
+              <a href="{mailto_url}" class="contact-email-addr" title="{"Click to compose email" if lang == "en" else "Klicken zum Schreiben einer E-Mail"}">{author['email']}</a>
+            </div>
+
+            <!-- Browser Webmail Quick Links -->
+            <div class="webmail-quick-links">
+              <span class="webmail-label">{c_trans.get('open_client_label', 'Or compose directly in:' if lang == 'en' else 'Oder direkt im Browser öffnen:')}</span>
+              <a href="{outlook_web_url}" target="_blank" rel="noopener noreferrer" class="webmail-link">
+                Outlook Web ↗
+              </a>
+              <span class="webmail-divider">·</span>
+              <a href="{gmail_web_url}" target="_blank" rel="noopener noreferrer" class="webmail-link">
+                Gmail ↗
+              </a>
+            </div>
           </div>
-          <div>
-            <a href="mailto:{author['email']}" class="btn btn-primary">
-              {c_trans['email_cta']} →
+
+          <div class="contact-hero-actions">
+            <!-- Button 1: Open Outlook or default mail client -->
+            <a href="{mailto_url}" class="btn btn-primary contact-email-btn" title="{"Open Outlook or default email client" if lang == "en" else "In Outlook oder Standard-Mailprogramm öffnen"}">
+              <span class="btn-icon">✉️</span> {c_trans['email_cta']}
             </a>
+
+            <!-- Button 2: One-click Copy Email -->
+            <button type="button" class="btn btn-secondary contact-copy-btn" data-email="{author['email']}" aria-label="{"Copy email address" if lang == "en" else "E-Mail-Adresse kopieren"}">
+              <span class="copy-icon">📋</span>
+              <span class="copy-text">{c_trans.get('copy_email_cta', 'Copy Email Address' if lang == 'en' else 'E-Mail-Adresse kopieren')}</span>
+            </button>
           </div>
         </div>
 
