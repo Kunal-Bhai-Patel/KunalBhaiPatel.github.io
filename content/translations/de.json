@@ -382,9 +382,15 @@
       "kicker": "FORSCHUNG & ENTWICKLUNG · MASTER-FORSCHUNGSARBEIT",
       "title": "Rio sio.<br>Robotische Inspektion von Unvollkommenheiten in optischen Oberflächen.",
       "lead": "Forschungs- und Entwicklungsprojekt am Technologie Campus Teisnach Optik (TH Deggendorf): Kombination aus Feinwerktechnik, kollaborativer Robotik, kalibrierter optischer Bildgebung und gerichteter Mehrwinkel-Beleuchtung.",
-      "tags": ["Technologie Campus Teisnach Optik", "TH Deggendorf", "FANUC CR-7iA/L", "Optische Messtechnik"],
+      "tags": [
+        "Technologie Campus Teisnach Optik",
+        "TH Deggendorf",
+        "FANUC CR-7iA/L",
+        "Optische Messtechnik"
+      ],
       "cta_explore": "Projekt erkunden ↓",
       "cta_publication": "Forschung & Publikation",
+      "cta_fmea": "FMEA-Fallstudie",
       "hero_caption": "Kunal bei der Arbeit mit dem kollaborativen Roboter FANUC CR-7iA/L während des Forschungsprojekts."
     },
     "demo": {
@@ -489,6 +495,15 @@
       "collab_p1": "Die Bildverarbeitungssoftware in Python zur automatisierten Defekterkennung, Dimensionsanalyse und Bildzusammensetzung (Stitching) wurde von einem Projektkollegen entwickelt. Mein Beitrag lag in der physikalischen Prüfplattform und dem Versuchsablauf, auf dem diese Algorithmen aufbauten.",
       "collab_p2": "Spezifische Zerspanungsarbeiten, Schaltschrankverdrahtung und übergeordnete Projektsteuerung erfolgten in Kooperation mit der Institutswerkstatt und dem Forschungsteam."
     },
+    "fmea": {
+      "num": "08b / PROZESS-FMEA FALLSTUDIE",
+      "title": "Fallstudie zur Prozess-FMEA",
+      "p1": "Nach meinem Masterstudium habe ich den Inspektionsablauf von Rio sio in einer eigenen Fallstudie untersucht. Dabei habe ich die FMEA-Methoden aus dem Modul Funktionale Sicherheit angewendet. Eine zentrale Frage war, wie ein bleibender Oberflächendefekt fälschlich als entfernbare Verunreinigung eingestuft werden kann und wie sich dieser Fehler bei der Prüfung erkennen lässt.",
+      "p2": "Die Fallstudie betrachtet zwölf mögliche Fehlermodi. Die Risikobewertungen sind beispielhaft, die Maßnahmen sind Vorschläge und das Prozessaudit in Anlehnung an VDA 6.3 ist simuliert.",
+      "cta_open": "Fallstudie öffnen (PDF)",
+      "cta_download": "PDF herunterladen",
+      "file_detail": "6 Seiten · Englisch"
+    },
     "publication": {
       "num": "09 / WISSENSCHAFTLICHE PUBLIKATION",
       "title": "Vom Laboraufbau zur internationalen Fachpublikation.",
@@ -520,5 +535,73 @@
       "author_title": "Projektkontext & Einordnung",
       "author_p": "Dieses Portfolio dokumentiert meinen persönlichen ingenieurtechnischen Beitrag zu einem Verbundforschungsprojekt am Technologie Campus Teisnach Optik der Technischen Hochschule Deggendorf. Technische Ergebnisse und Diagramme basieren auf der Masterarbeit und den Projektdokumenten. Die Masterarbeitsdokumentation unterliegt den akademischen Freigabeprozessen und Geheimhaltungsvereinbarungen der beteiligten Projektpartner. Einsichtnahme auf Anfrage."
     }
+  },
+  "cobotic_inspection_page": {
+    "kicker": "WISSENSCHAFTLICHE PUBLIKATION · SPIE PROCEEDINGS (2026)",
+    "title": "Cobot-gestützte Inspektion von Oberflächenfehlern mit kollimierter Beleuchtung",
+    "meta_period": "SPIE Proceedings (2026) · Paper 137890C",
+    "meta_org": "Technologie Campus Teisnach Optik, TH Deggendorf & SPIE",
+    "lead": "Begutachtete Fachpublikation zur automatisierten Prüfung mikroskopischer Fehler auf optischen Oberflächen bis ca. 6 µm mit kollaborativem Roboter, kollimierter Beleuchtung und digitaler Bildverarbeitung.",
+    "overview": {
+      "badge": "Publikationsdetails & Metadaten",
+      "venue": "SPIE Optical Systems Design & Metrology",
+      "venue_label": "Konferenz / Veröffentlichung",
+      "proceedings": "SPIE Proceedings, Vol. 13789, Paper 137890C (2026)",
+      "proceedings_label": "Konferenzband",
+      "doi": "10.1117/12.3111698",
+      "doi_label": "Offizieller DOI",
+      "institution": "TC Teisnach Optik, TH Deggendorf",
+      "institution_label": "Forschungseinrichtung",
+      "resolution": "ca. 6 µm Fehlererkennung",
+      "resolution_label": "Nachgewiesene Auflösung",
+      "authors": "Kunal Bhai Patel, et al.",
+      "authors_label": "Co-Autoren",
+      "peer_review": "Peer-Reviewed (Begutachtete Publikation)",
+      "peer_review_label": "Prüfstatus"
+    },
+    "hero_video": {
+      "kicker": "FACHPUBLIKATION · VIDEO-ERKLÄRUNG",
+      "title": "The Micro-Detective",
+      "subtitle": "Eine anschauliche Erläuterung der veröffentlichten Forschungsarbeit zur robotergestützten Prüfung optischer Oberflächenfehler.",
+      "badge": "KI-Forschungserklärung · Google NotebookLM",
+      "video_label": "Video 03 — The Micro-Detective",
+      "copy": "KI-generiertes Erklärvideo, erstellt mit Google NotebookLM auf Basis des veröffentlichten SPIE-Konferenzbeitrags ('Cobotic Inspection of Surface Imperfections with Collimated Illumination', DOI: 10.1117/12.3111698). Es bietet eine anschauliche Einführung in die optischen Messprinzipien, die Geometrie kollimierter Lichtstrahlen und die Cobot-Kinematik."
+    },
+    "actions": {
+      "primary_doi": "Offizielle Publikation in der SPIE Digital Library öffnen (DOI ↗)",
+      "secondary_rio": "Vollständiges Rio sio Forschungsprojekt erkunden →",
+      "fmea_link": "Fallstudie zur Prozess-FMEA öffnen (PDF ↗)",
+      "doi_notice": "Wissenschaftliche Publikation abrufbar über die SPIE Digital Library (DOI: 10.1117/12.3111698). Erschienen in SPIE Proceedings Vol. 13789."
+    },
+    "pillars": [
+      {
+        "num": "01",
+        "title": "Die messtechnische Herausforderung",
+        "text": "Präzisionsoptische Bauteile erfordern berührungslose Prüfverfahren, die Fehler im Mikrometerbereich bis ca. 6 µm erfassen. Die manuelle Sichtprüfung unter Lupenleuchten ist subjektiv und ermüdend, während Interferometrie sehr zeitintensiv und erschütterungsanfällig ist. Die automatisierte robotergestützte Dunkelfeld-/Hellfeldprüfung bietet eine reproduzierbare Lösung mit hohem Durchsatz."
+      },
+      {
+        "num": "02",
+        "title": "Mehrwinkel-Kollimationsbeleuchtung",
+        "text": "Parallele Lichtstrahlen treffen unter genau berechneten Einfallswinkeln auf die Oberfläche. Auf makellosen Flächen wird die gerichtete Reflexion an der Kameraapertur vorbeigeleitet. Treffen die Strahlen auf Kratzer oder Ausbrüche, wird das Licht gestreut und trifft auf den Sensor – mikroskopische Defekte leuchten kontraststark auf dunklem Grund auf."
+      },
+      {
+        "num": "03",
+        "title": "6-Achs-Cobot-Bewegungsführung",
+        "text": "Ein Leichtbau-Cobot vom Typ FANUC CR-7iA/L führt Prüfkörper und Sensorik auf kalibrierten Mehrachsen-Bahnen. Durch inhärente Kollisionsüberwachung arbeitet der Roboter ohne Schutzzaun direkt neben dem Bedienpersonal und gewährleistet Sub-Millimeter-Wiederholgenauigkeit bei komplex gekrümmten Linsen und Spiegeln."
+      },
+      {
+        "num": "04",
+        "title": "Nachgewiesene Fehlerauflösung bis ca. 6 µm",
+        "text": "Experimentelle Versuchsreihen an kalibrierten Referenzoptiken belegten den zuverlässigen Nachweis von Fehlstellen bis zu ca. 6 µm. Dies schließt die Lücke zwischen manueller Sichtkontrolle und aufwändiger Laborinterferometrie."
+      }
+    ],
+    "citation": {
+      "title": "Offizielle wissenschaftliche Zitation",
+      "lead": "Zur Zitation dieses Konferenzbeitrags in Facharbeiten und Berichten nutzen Sie bitte das offizielle SPIE-Format:",
+      "text": "K. B. Patel et al., \"Cobotic inspection of surface imperfections with collimated illumination,\" Proc. SPIE 13789, Optical Systems Design and Metrology, 137890C (2026). https://doi.org/10.1117/12.3111698",
+      "doi_url": "https://doi.org/10.1117/12.3111698"
+    },
+    "back_to_research": "← Zurück zur Forschungsübersicht",
+    "back_to_projects": "← Zurück zur Projektübersicht"
   }
 }

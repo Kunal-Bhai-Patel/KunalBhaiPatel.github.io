@@ -1,0 +1,90 @@
+{
+  "id": "cobotic-inspection",
+  "category": "professional",
+  "category_label": {
+    "en": "Scientific Publication · SPIE",
+    "de": "Wissenschaftliche Publikation · SPIE"
+  },
+  "featured": false,
+  "status": {
+    "en": "SPIE Proceedings (2026)",
+    "de": "SPIE Proceedings (2026)"
+  },
+  "provenance": "VERIFIED-PUBLICATION",
+  "period": "2025 – 2026",
+  "organization": "Technologie Campus Teisnach Optik, TH Deggendorf & SPIE",
+  "image": "media/research/rio-sio/mirror0_375wave1706.jpg",
+  "title": {
+    "en": "Cobotic Inspection of Surface Imperfections with Collimated Illumination",
+    "de": "Cobot-gestützte Inspektion von Oberflächenfehlern mit kollimierter Beleuchtung"
+  },
+  "one_liner": {
+    "en": "Peer-reviewed research paper on robotic optical surface inspection with multi-angle collimated illumination and ~6 µm defect resolution.",
+    "de": "Fachpublikation zur robotergestützten Prüfung optischer Oberflächen mit kollimierter Beleuchtung und ~6 µm Fehlererkennung."
+  },
+  "tags": [
+    "SPIE Proceedings",
+    "DOI: 10.1117/12.3111698",
+    "Peer-Reviewed",
+    "Paper 137890C",
+    "Optical Metrology",
+    "FANUC CR-7iA/L",
+    "Collimated Light",
+    "~6 µm Resolution"
+  ],
+  "content": {
+    "en": {
+      "problem": "High-precision optical components require rigorous quality control to detect sub-millimeter scratches, digs, and surface contamination down to the single-digit micrometer range. Traditional manual inspection under magnifying loupes is labor-intensive, operator-dependent, and prone to fatigue, while full-aperture interferometry is costly and constrained by rigid vibration isolation requirements. An automated, non-contact, high-sensitivity inspection approach was needed.",
+      "approach": "We developed and validated a cobotic inspection station pairing a 6-DOF collaborative robotic arm (FANUC CR-7iA/L) with directional collimated illumination and machine vision sensors. By directing parallel beams of light across the specimen surface at precise glancing angles, specular reflection is steered away while micro-imperfections scatter light into the camera aperture, producing high-contrast defect signatures.",
+      "contributions": [
+        "Co-authored the peer-reviewed conference paper published in SPIE Proceedings Vol. 13789 (Paper 137890C).",
+        "Engineered the multi-axis collaborative robotic manipulator cell and calibrated optical path tooling.",
+        "Demonstrated reliable optical defect resolution down to ~6 µm on precision test mirrors and lenses.",
+        "Established multi-angle collimated lighting strategies to eliminate specular glare while maximizing scratch contrast.",
+        "Produced the AI-driven research explainer video 'The Micro-Detective' to make complex metrology concepts accessible."
+      ],
+      "specs": [
+        {"key": "Publication Venue", "value": "SPIE Proceedings, Vol. 13789, Paper 137890C (2026)", "source": "VERIFIED-PUBLICATION"},
+        {"key": "Digital Object Identifier (DOI)", "value": "10.1117/12.3111698", "source": "VERIFIED-PUBLICATION"},
+        {"key": "Peer-Review Status", "value": "Peer-Reviewed Conference Proceedings", "source": "VERIFIED-PUBLICATION"},
+        {"key": "Defect Resolution", "value": "~6 µm (empirically demonstrated)", "source": "VERIFIED-PUBLICATION"},
+        {"key": "Cobotic Platform", "value": "FANUC CR-7iA/L (6-Axis Collaborative Robot)", "source": "VERIFIED-PUBLICATION"},
+        {"key": "Illumination Method", "value": "Multi-angle collimated light with directional steering", "source": "VERIFIED-PUBLICATION"},
+        {"key": "Research Institution", "value": "Technologie Campus Teisnach Optik, TH Deggendorf", "source": "VERIFIED-PUBLICATION"}
+      ],
+      "iterations": "Lighting geometry and incident angles were iteratively calibrated to optimize signal-to-noise ratios between defect scattering and clean surface specular reflectance. Robotic scan poses were programmed with smooth spline trajectories to minimize cycle times without compromising optical repeatability.",
+      "results": "The experimental setup demonstrated dependable detection of surface imperfections down to ~6 µm across multiple optical specimens. The paper was officially published in the SPIE Digital Library under DOI 10.1117/12.3111698.",
+      "lessons": "Automated optical metrology requires harmonizing three distinct engineering disciplines: precision optical ray tracing, multi-axis robotic trajectory control, and digital image processing. Collaborative robots uniquely lower the deployment barrier by enabling safe human-in-the-loop operation alongside sensitive optical benches."
+    },
+    "de": {
+      "problem": "Hochpräzise optische Komponenten verlangen strenge Qualitätsprüfungen, um mikroskopische Kratzer, Ausbrüche und Verunreinigungen im einstelligen Mikrometerbereich zuverlässig aufzuspüren. Die manuelle Sichtprüfung unter Lupenleuchten ist ermüdend, subjektiv und schwer reproduzierbar, während Weißlichtinterferometrie teuer und extrem erschütterungsempfindlich ist. Gesucht war ein automatisierter, berührungsloser und hochsensitiver Inspektionsansatz.",
+      "approach": "Es wurde eine robotergestützte Prüfzelle entwickelt, die einen 6-Achs-Leichtbau-Cobot (FANUC CR-7iA/L) mit kollimierter Beleuchtung und digitaler Bildverarbeitung kombiniert. Durch parallel gerichtete Lichtstrahlen unter definierten Einfallswinkeln wird die spiegelnde Reflexion am Sensor vorbeigelenkt, während mikroskopische Fehlstellen Streulicht in die Kamera werfen und kontraststarke Fehlersignaturen erzeugen.",
+      "contributions": [
+        "Co-Autor der begutachteten Fachpublikation in den SPIE Proceedings Vol. 13789 (Paper 137890C).",
+        "Konstruktion und Aufbau der kollaborativen Roboterprüfzelle sowie Kalibrierung des Strahlengangs.",
+        "Nachweis einer zuverlässigen optischen Fehlererkennung bis ca. 6 µm an optischen Prüfkörpern.",
+        "Entwicklung der Mehrwinkel-Beleuchtungsstrategie zur Eliminierung von Glanzeffekten bei maximalem Kratzerkontrast.",
+        "Erstellung des KI-gestützten Erklärvideos 'The Micro-Detective' zur anschaulichen Vermittlung der Messprinzipien."
+      ],
+      "specs": [
+        {"key": "Publikationsorgan", "value": "SPIE Proceedings, Vol. 13789, Paper 137890C (2026)", "source": "VERIFIED-PUBLICATION"},
+        {"key": "Digital Object Identifier (DOI)", "value": "10.1117/12.3111698", "source": "VERIFIED-PUBLICATION"},
+        {"key": "Begutachtungsstatus", "value": "Peer-Reviewed (Fachbegutachtete Konferenzpublikation)", "source": "VERIFIED-PUBLICATION"},
+        {"key": "Nachgewiesene Auflösung", "value": "ca. 6 µm Fehlergröße (empirisch validiert)", "source": "VERIFIED-PUBLICATION"},
+        {"key": "Roboterplattform", "value": "FANUC CR-7iA/L (6-Achs-Cobot)", "source": "VERIFIED-PUBLICATION"},
+        {"key": "Beleuchtungsmethode", "value": "Kollimiertes Licht mit Mehrwinkel-Ausrichtung", "source": "VERIFIED-PUBLICATION"},
+        {"key": "Forschungseinrichtung", "value": "Technologie Campus Teisnach Optik, TH Deggendorf", "source": "VERIFIED-PUBLICATION"}
+      ],
+      "iterations": "Beleuchtungswinkel und Abstandsgeometrien wurden systematisch optimiert, um das Signal-Rausch-Verhältnis zwischen Defektstreuung und glatter Oberfläche zu maximieren. Die Roboterbahnen wurden mit ruckfreien Splines programmiert, um Messzyklen zu beschleunigen und maximale Wiederholgenauigkeit zu garantieren.",
+      "results": "Das System wies mikroskopische Oberflächendefekte bis zu ca. 6 µm auf unterschiedlichen optischen Probekörpern zuverlässig nach. Die Publikation ist über die SPIE Digital Library unter DOI 10.1117/12.3111698 offiziell abrufbar.",
+      "lessons": "Moderne optische Messtechnik erfordert das nahtlose Zusammenspiel von technischer Optik, mechatronischer Bahnplanung und digitaler Bildverarbeitung. Kollaborative Roboter ermöglichen dabei eine sichere Interaktion im industriellen Prüflabor ohne aufwändige Schutzumhausungen."
+    }
+  },
+  "links": [
+    {
+      "label": "Official SPIE Digital Library Paper (DOI: 10.1117/12.3111698)",
+      "url": "https://doi.org/10.1117/12.3111698",
+      "verified": true
+    }
+  ]
+}

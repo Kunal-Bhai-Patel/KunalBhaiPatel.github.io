@@ -23,10 +23,11 @@ Visuals/
 Report_Phase 1.pdf
 *.pdf
 
-# Allow public media assets including optimized web video previews and approved public CV PDFs
+# Allow public media assets including optimized web video previews and approved public PDFs
 !public/media/research/rio-sio/*.mp4
 !public/downloads/*.pdf
 !public/media/*.pdf
+!public/media/research/rio-sio/*.pdf
 
 # Local distribution directory (built automatically by GitHub Actions in CI/CD)
 dist/

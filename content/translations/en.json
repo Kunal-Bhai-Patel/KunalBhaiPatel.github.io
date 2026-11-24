@@ -382,9 +382,15 @@
       "kicker": "RESEARCH & DEVELOPMENT PROJECT · MASTER'S THESIS",
       "title": "Rio sio.<br>Automated Robotic Inspection of Imperfections on Optical Surfaces.",
       "lead": "Research project at Technologie Campus Teisnach Optik (TH Deggendorf): combining precision mechanics, collaborative robotics, calibrated imaging, and controlled multi-angle illumination.",
-      "tags": ["Technologie Campus Teisnach Optik", "TH Deggendorf", "FANUC CR-7iA/L", "Optical metrology"],
+      "tags": [
+        "Technologie Campus Teisnach Optik",
+        "TH Deggendorf",
+        "FANUC CR-7iA/L",
+        "Optical metrology"
+      ],
       "cta_explore": "Explore the project ↓",
       "cta_publication": "Research & Publication",
+      "cta_fmea": "FMEA Case Study",
       "hero_caption": "Kunal working with the FANUC CR-7iA/L collaborative robot during the research project."
     },
     "demo": {
@@ -489,6 +495,15 @@
       "collab_p1": "Python image-processing software for defect identification, dimensional analysis and image stitching was developed by another student. I contributed to the physical system and experimental workflow in which those methods were used.",
       "collab_p2": "Specialized machining, cabinet wiring and other institutional support were also collaborative activities."
     },
+    "fmea": {
+      "num": "08b / PROCESS FMEA CASE STUDY",
+      "title": "Process FMEA Case Study",
+      "p1": "After my master’s, I revisited the Rio sio inspection workflow to apply the FMEA methods I studied in my functional safety coursework. One question I explored was how a permanent surface defect could be mistaken for removable contamination and what inspection controls could catch that error.",
+      "p2": "This self-initiated study covers 12 potential failure modes. The risk ratings are illustrative, the controls are proposed, and the VDA 6.3 process audit is simulated.",
+      "cta_open": "Open case study (PDF)",
+      "cta_download": "Download PDF",
+      "file_detail": "6 pages · English"
+    },
     "publication": {
       "num": "09 / RESEARCH DISSEMINATION",
       "title": "From laboratory development to a research paper.",
@@ -520,5 +535,73 @@
       "author_title": "Project context",
       "author_p": "This portfolio documents my personal engineering contribution to collaborative research undertaken at Technologie Campus Teisnach Optik, TH Deggendorf. Technical results and figures are based on the original thesis and project documentation. The complete master's thesis document is subject to academic clearance and partner non-disclosure agreements, and is available for review upon request."
     }
+  },
+  "cobotic_inspection_page": {
+    "kicker": "SCIENTIFIC PUBLICATION · SPIE PROCEEDINGS (2026)",
+    "title": "Cobotic Inspection of Surface Imperfections with Collimated Illumination",
+    "meta_period": "SPIE Proceedings (2026) · Paper 137890C",
+    "meta_org": "Technologie Campus Teisnach Optik, TH Deggendorf & SPIE",
+    "lead": "Peer-reviewed scientific research paper presenting the Rio sio experimental optical inspection station, multi-angle collimated illumination physics, and demonstrated defect detection down to ~6 µm on precision optical surfaces.",
+    "overview": {
+      "badge": "Publication Details & Metadata",
+      "venue": "SPIE Optical Systems Design & Metrology",
+      "venue_label": "Conference / Venue",
+      "proceedings": "SPIE Proceedings, Vol. 13789, Paper 137890C (2026)",
+      "proceedings_label": "Proceedings Volume",
+      "doi": "10.1117/12.3111698",
+      "doi_label": "Official DOI",
+      "institution": "TC Teisnach Optik, TH Deggendorf",
+      "institution_label": "Research Institution",
+      "resolution": "~6 µm empirical defect detection",
+      "resolution_label": "Demonstrated Sensitivity",
+      "authors": "Kunal Bhai Patel, et al.",
+      "authors_label": "Co-Authors",
+      "peer_review": "Peer-Reviewed Conference Proceedings",
+      "peer_review_label": "Review Status"
+    },
+    "hero_video": {
+      "kicker": "RESEARCH PAPER · VIDEO EXPLAINER",
+      "title": "The Micro-Detective",
+      "subtitle": "An accessible explanation of the published research on robotic inspection of optical surface imperfections.",
+      "badge": "AI Research Explainer · Google NotebookLM",
+      "video_label": "Video 03 — The Micro-Detective",
+      "copy": "AI-generated explainer created with Google NotebookLM using the published SPIE research paper ('Cobotic Inspection of Surface Imperfections with Collimated Illumination', DOI: 10.1117/12.3111698). It provides an engaging, accessible walkthrough of the optical metrology principles, directional illumination geometry, and cobotic kinematics."
+    },
+    "actions": {
+      "primary_doi": "Access Official Paper on SPIE Digital Library (DOI ↗)",
+      "secondary_rio": "Explore Full Rio sio Master's Research →",
+      "fmea_link": "Open Process FMEA Case Study (PDF ↗)",
+      "doi_notice": "Official scientific publication accessible via the SPIE Digital Library (DOI: 10.1117/12.3111698). Published in SPIE Proceedings Vol. 13789."
+    },
+    "pillars": [
+      {
+        "num": "01",
+        "title": "The Optical Metrology Challenge",
+        "text": "Precision optical components require non-contact inspection capable of spotting sub-millimeter defects down to ~6 µm. Traditional manual inspection under magnifying loupes suffers from operator fatigue and subjective variance, while white-light interferometry is slow and sensitive to floor vibrations. Automated robotic dark-field/bright-field illumination offers a repeatable, high-throughput solution."
+      },
+      {
+        "num": "02",
+        "title": "Multi-Angle Collimated Illumination",
+        "text": "Parallel rays from collimated light sources strike the optical surface at precisely calculated incident angles. For an unblemished optical surface, specular reflection is steered outside the camera sensor aperture; however, when the beam encounters microscopic scratches or digs, light scatters into the objective lens, producing intense bright signatures against a dark background."
+      },
+      {
+        "num": "03",
+        "title": "6-DOF Cobotic Spatial Manipulation",
+        "text": "A FANUC CR-7iA/L collaborative robot carries the sensor head and specimen through calibrated multi-pose scanning trajectories. Operating without physical perimeter cages, the cobot enables safe human-in-the-loop interaction while guaranteeing sub-millimeter repeatability across complex planar and curved optical geometries."
+      },
+      {
+        "num": "04",
+        "title": "Demonstrated ~6 µm Defect Detection",
+        "text": "Empirical testing on calibrated optical reference targets demonstrated reliable detection and classification of imperfections down to approximately 6 µm. This bridges the critical gap between high-speed industrial sorting and nanometer-scale laboratory metrology."
+      }
+    ],
+    "citation": {
+      "title": "Official Academic Citation",
+      "lead": "To cite this research work in academic publications or technical reports, please use the standard SPIE citation format below:",
+      "text": "K. B. Patel et al., \"Cobotic inspection of surface imperfections with collimated illumination,\" Proc. SPIE 13789, Optical Systems Design and Metrology, 137890C (2026). https://doi.org/10.1117/12.3111698",
+      "doi_url": "https://doi.org/10.1117/12.3111698"
+    },
+    "back_to_research": "← Back to Research Overview",
+    "back_to_projects": "← Back to Projects"
   }
 }
